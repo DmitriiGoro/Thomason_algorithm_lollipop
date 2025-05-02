@@ -20,6 +20,10 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ThomasonAlgorithm.Core\ThomasonAlgorithm.Core.csproj" />
+  </ItemGroup>
+
 <!--  <ItemGroup>-->
 <!--    <ProjectReference Include="..\..\src\ThomasonAlgorithm.Core\ThomasonAlgorithm.Core.csproj" />-->
 <!--  </ItemGroup>-->

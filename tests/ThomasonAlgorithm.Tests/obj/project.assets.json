@@ -1708,6 +1708,16 @@
         "build": {
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "ThomasonAlgorithm.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ThomasonAlgorithm.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ThomasonAlgorithm.Core.dll": {}
+        }
       }
     }
   },
@@ -5497,11 +5507,17 @@
         "xunit.runner.visualstudio.2.5.3.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "ThomasonAlgorithm.Core/1.0.0": {
+      "type": "project",
+      "path": "../../src/ThomasonAlgorithm.Core/ThomasonAlgorithm.Core.csproj",
+      "msbuildProject": "../../src/ThomasonAlgorithm.Core/ThomasonAlgorithm.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.NET.Test.Sdk >= 17.8.0",
+      "ThomasonAlgorithm.Core >= 1.0.0",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.5.3",
       "xunit.runner.visualstudio >= 2.5.3"
@@ -5531,7 +5547,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/ThomasonAlgorithm.Core.csproj": {
+              "projectPath": "/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/ThomasonAlgorithm.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
