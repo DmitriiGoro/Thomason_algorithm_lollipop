@@ -9,6 +9,8 @@ namespace ThomasonAlgorithm.Tests.GraphGeneratorTests
     {
         [Theory]
         [InlineData(20, 2, 5)]
+        [InlineData(12, 2, 2)]
+        [InlineData(100, 2, 5)]
         [InlineData(22, 3, 6)]
         public void Test_GenerateGraphLimitedChords_ChordLengthsWithinBounds(int n, int kLow, int kUp)
         {
@@ -16,6 +18,7 @@ namespace ThomasonAlgorithm.Tests.GraphGeneratorTests
 
             Assert.NotNull(graph);
             Assert.True(graph.IsCubic());
+            Assert.True(graph.MaxChordLength == kUp || graph.MaxChordLength == kUp - 1);
 
             foreach (var kvp in graph.ChordsLengths)
             {

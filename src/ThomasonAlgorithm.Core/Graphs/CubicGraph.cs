@@ -35,7 +35,14 @@ public class CubicGraph : IGraph
     public CubicGraph(int size)
     {
         AdjacencyMatrix = new int[size, size];
-        HamiltonianCycle = new Dictionary<int, List<int>>();
+    }
+    
+    public CubicGraph(int[,] adjacencyMatrix)
+    {
+        if (!IsCubic(adjacencyMatrix))
+            throw new ArgumentOutOfRangeException(nameof(adjacencyMatrix), "Adjacency matrix is not cubic.");
+        
+        AdjacencyMatrix = adjacencyMatrix;
     }
 
     /// <summary>
@@ -126,6 +133,19 @@ public class CubicGraph : IGraph
         for (int i = 0; i < VertexCount; i++)
         {
             if (GetVertexDegree(i) != 3)
+                return false;
+        }
+        return true;
+    }
+    
+    private bool IsCubic(int[,] adjacencyMatrix)
+    {
+        for (var row = 0; row < adjacencyMatrix.GetLength(0); row++)
+        {
+            var deg = Enumerable.Range(0, adjacencyMatrix.GetLength(1))
+                .Sum(colIndex => adjacencyMatrix[row, colIndex]);
+
+            if (deg != 3)
                 return false;
         }
         return true;
