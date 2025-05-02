@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ThomasonAlgorithm.Core</name>
+    </assembly>
+    <members>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphLimitedChords(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a cubic graph (3-regular graph) where chord lengths are restricted to be within the inclusive range [kLow, kUp].
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum allowed chord length (inclusive).</param>
+            <param name="kUp">The maximum allowed chord length (inclusive).</param>
+            <param name="maxAttempts">Maximum number of attempts to generate a valid graph. Default is 100.</param>
+            <returns>
+            A cubic graph where all chords have lengths within the range [<paramref name="kLow"/>, <paramref name="kUp"/>],
+            or <c>null</c> if generation fails within the given number of attempts.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithOddLengthChords(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a cubic graph (3-regular graph) where only chords of odd lengths within the given bounds are allowed.
+            The resulting graph is guaranteed to be bipartite due to the restriction on odd-length chords.
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum chord length (inclusive).</param>
+            <param name="kUp">The maximum chord length (inclusive).</param>
+            <param name="maxAttempts">Maximum number of attempts to generate a valid graph. Default is 100.</param>
+            <returns>
+            A bipartite cubic graph containing only odd-length chords in the range [<paramref name="kLow"/>, <paramref name="kUp"/>],
+            or <c>null</c> if generation fails within the given number of attempts.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths(System.Int32,System.Int32,System.Int32,ThomasonAlgorithm.Core.Models.Gap,System.Int32)">
+            <summary>
+            Generates a cubic graph (3-regular graph) where chord lengths are within the specified range
+            <paramref name="kLow"/> to <paramref name="kUp"/>, but exclude a specific gap range.
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum allowed chord length.</param>
+            <param name="kUp">The maximum allowed chord length.</param>
+            <param name="gap">
+            A <see cref="T:ThomasonAlgorithm.Core.Models.Gap"/> struct specifying the range of chord lengths to exclude from the graph.
+            For example, if the gap is [5–7], then chords of lengths 5, 6, and 7 will be excluded.
+            </param>
+            <param name="maxAttempts">Maximum number of attempts to generate a valid graph. Default is 100.</param>
+            <returns>
+            A cubic graph that avoids the specified gap in chord lengths, or <c>null</c> if no valid graph is found
+            within the allowed number of attempts.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphFromExactChordsSet(System.Int32,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Int32},System.Int32)">
+            <summary>
+            Generates a cubic graph (3-regular graph) with a precise number of chords for each specified chord length.
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum allowed chord length.</param>
+            <param name="kUp">The maximum allowed chord length.</param>
+            <param name="chordsLengthDictionary">
+            A dictionary mapping chord lengths to the exact number of chords of that length that must appear in the graph.
+            </param>
+            <param name="maxAttempts">The maximum number of attempts to generate a valid graph. Default is 100.</param>
+            <returns>
+            A cubic graph that matches the exact chord length distribution if one is found within the allowed attempts;
+            otherwise, returns <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateCubicGraphWithChordConstraint(System.Int32,System.Int32,System.Int32,System.Func{System.Int32,System.Boolean},System.Int32)">
+            <summary>
+            Generates a random cubic graph (3-regular graph) where possible chord connections 
+            are filtered using the provided predicate on chord lengths.
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum allowed chord length.</param>
+            <param name="kUp">The maximum allowed chord length.</param>
+            <param name="chordLengthPredicate">A predicate function that determines whether a given chord length is allowed.</param>
+            <param name="maxAttempts">The maximum number of attempts to generate a valid graph.</param>
+            <returns>
+            A cubic graph satisfying the chord constraint if generation succeeds within the attempt limit;
+            otherwise, returns <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateExactChordsSet(System.Int32,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Int32},System.Int32)">
+            <summary>
+            Generates a cubic graph (3-regular graph) where the set of chords exactly matches the specified count for each chord length.
+            </summary>
+            <param name="n">The number of vertices in the graph. Must be an even number ≥ 4.</param>
+            <param name="kLow">The minimum possible chord length.</param>
+            <param name="kUp">The maximum possible chord length.</param>
+            <param name="chordsLengthDictionary">
+            A dictionary specifying the exact number of chords required for each chord length.
+            Keys are chord lengths, values are the number of chords of that length required in the graph.
+            </param>
+            <param name="maxAttempts">The maximum number of attempts to generate a valid graph.</param>
+            <returns>
+            A cubic graph satisfying the exact chord length distribution if found within the allowed attempts;
+            otherwise, returns <c>null</c>.
+            </returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GetPossibleNeighbors(System.Int32,System.Func{System.Int32,System.Boolean})">
+            <summary>
+            Generates a dictionary of possible neighbors for each vertex in a graph,
+            based on the provided chord length predicate. This predicate is used to 
+            filter the valid chord lengths between vertices in the graph.
+            </summary>
+            <param name="n">The number of vertices in the graph.</param>
+            <param name="chordLengthPredicate">A predicate function that determines 
+            whether a chord length between two vertices is valid.</param>
+            <returns>A dictionary where the key is a vertex, and the value is a 
+            HashSet of neighboring vertices that satisfy the chord length condition.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Tries to find a perfect matching in the given graph using the provided possible neighbors for each vertex.
+            A perfect matching is a set of edges such that every vertex is matched with exactly one other vertex.
+            </summary>
+            <param name="n">The number of vertices in the graph.</param>
+            <param name="possibleNeighbors">A dictionary where the key is a vertex, and the value is a HashSet of neighboring vertices 
+            that could potentially be matched with the vertex.</param>
+            <param name="graph">The graph in which the perfect matching is being searched for. The graph will be updated with the 
+            lengths of the chords that form part of the matching.</param>
+            <returns>A list of pairs of vertices representing the perfect matching, or null if a perfect matching is not found.</returns>
+            <remarks>
+            The method tries to find a random matching for each vertex, ensuring that no vertex is used in more than one edge 
+            and that the number of edges in the matching matches the total number of vertices in the graph.
+            If a perfect matching cannot be found for all vertices, the method will return null.
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Int32[])">
+            <summary>
+            Tries to find a perfect matching in the graph, where the number of edges with specific chord lengths 
+            corresponds exactly to the provided `neededChords` array. Each entry in `neededChords` specifies 
+            the required number of edges of a particular length.
+            </summary>
+            <param name="n">The number of vertices in the graph.</param>
+            <param name="possibleNeighbors">A dictionary where the key is a vertex, and the value is a HashSet of neighboring vertices 
+            that could potentially be matched with the vertex.</param>
+            <param name="graph">The graph in which the perfect matching is being searched for. The graph will be updated with the 
+            lengths of the chords that form part of the matching.</param>
+            <param name="neededChords">An array where the index represents the chord length, and the value at each index 
+            specifies how many edges of that particular length are needed in the perfect matching.</param>
+            <returns>A list of pairs of vertices representing the perfect matching, or null if a perfect matching is not found.</returns>
+            <remarks>
+            The method tries to find a random matching for each vertex while ensuring that the number of edges of each 
+            chord length in the matching matches the number of times that length is needed as specified in the `neededChords` array.
+            If a perfect matching cannot be found that satisfies the required chord lengths, the method will return null.
+            </remarks>
+        </member>
+    </members>
+</doc>

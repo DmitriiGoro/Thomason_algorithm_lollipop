@@ -4,7 +4,7 @@ namespace ThomasonAlgorithm.Core.Graphs;
 /// Represents a cubic (3-regular) graph, where each vertex has exactly 3 neighbors.
 /// This class manages the graph structure, chord lengths, and Hamiltonian cycle.
 /// </summary>
-public class Graph : IGraph
+public class CubicGraph : IGraph
 {
     public readonly int[,] AdjacencyMatrix;
     
@@ -14,17 +14,28 @@ public class Graph : IGraph
     public int VertexCount => AdjacencyMatrix.GetLength(0);
     
     /// <summary>
+    /// Gets or sets the maximum chord length found in the graph.
+    /// </summary>
+    public int MaxChordLength = -1;
+    
+    /// <summary>
+    /// Dictionary holding the chord lengths and the number of times each chord length occurs.
+    /// </summary>
+    public readonly Dictionary<int, int> ChordsLengths = new Dictionary<int, int>();
+    
+    /// <summary>
+    /// Stores the Hamiltonian cycle of the graph, represented as a dictionary of vertices and their neighbors in the cycle.
+    /// </summary>
+    public Dictionary<int, List<int>> HamiltonianCycle { get; set; }
+
+    /// <summary>
     /// Initializes a new cubic graph with the specified number of vertices.
     /// </summary>
     /// <param name="size">The number of vertices in the graph. Must be an even number >= 4.</param>
-    public Graph(int size)
+    public CubicGraph(int size)
     {
         AdjacencyMatrix = new int[size, size];
-    }
-    
-    public Graph(int[,] adjacencyMatrix)
-    {
-        AdjacencyMatrix = adjacencyMatrix;
+        HamiltonianCycle = new Dictionary<int, List<int>>();
     }
 
     /// <summary>
@@ -39,7 +50,10 @@ public class Graph : IGraph
         ValidateVertex(to);
 
         if (HasEdge(from, to))
-            throw new InvalidOperationException("The edge is already existed.");
+            throw new InvalidOperationException("The edge is already in the graph.");
+
+        if (GetVertexDegree(from) >= 3 || GetVertexDegree(to) >= 3)
+            throw new InvalidOperationException("Vertex degree cannot be greater than 3.");
 
         AdjacencyMatrix[from, to] = 1;
         AdjacencyMatrix[to, from] = 1;
@@ -102,12 +116,44 @@ public class Graph : IGraph
         ValidateVertex(to);
         return AdjacencyMatrix[from, to] == 1;
     }
-
+    
     /// <summary>
-    /// Validates that a vertex index is within the valid range for the graph.
+    /// Checks if the graph is cubic, meaning each vertex has exactly 3 neighbors.
     /// </summary>
-    /// <param name="vertex">The vertex index to be validated.</param>
-    /// <exception cref="ArgumentOutOfRangeException">Thrown if the vertex index is out of range.</exception>
+    /// <returns>True if the graph is cubic; otherwise, false.</returns>
+    public bool IsCubic()
+    {
+        for (int i = 0; i < VertexCount; i++)
+        {
+            if (GetVertexDegree(i) != 3)
+                return false;
+        }
+        return true;
+    }
+    
+    /// <summary>
+    /// Adds a chord length to the collection, increasing its count. 
+    /// If the chord length doesn't exist in the collection, it will be added with an initial count of 1.
+    /// Additionally, the method updates the maximum chord length if the new chord length exceeds the current maximum.
+    /// </summary>
+    /// <param name="chordLength">The length of the chord to be added.</param>
+    /// <remarks>
+    /// This method maintains a collection of chord lengths, where each chord length is mapped to its frequency (how many times it has been added).
+    /// It also keeps track of the maximum chord length encountered during the process.
+    /// </remarks>
+    public void AddChordLength(int chordLength)
+    {
+        if (!ChordsLengths.ContainsKey(chordLength))
+        {
+            ChordsLengths.Add(chordLength, 0);
+        }
+        
+        ChordsLengths[chordLength]++;
+        
+        if (chordLength > MaxChordLength)
+            MaxChordLength = chordLength;
+    }
+
     private void ValidateVertex(int vertex)
     {
         if (vertex < 0 || vertex >= VertexCount)
