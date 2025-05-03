@@ -106,7 +106,7 @@
             This method is used to detect whether the traversal along the Hamiltonian cycle
             forms a closed loop (cycle) or reaches a vertex that is not fully connected (i.e., has a -1 entry).
             </summary>
-            <param name="currentVertex">The starting vertex of the traversal.</param>
+            <param name="traversalStartingVertex">The starting vertex of the traversal.</param>
             <param name="neighbor">The neighbor vertex to move toward initially.</param>
             <param name="hamiltonianCycle">The current Hamiltonian cycle structure (may be partially modified).</param>
             <returns>
@@ -301,9 +301,30 @@
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)">
             <summary>
-            Initializes a new cubic graph with the specified number of vertices.
+            Initializes a new instance of the <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraph"/> class with an empty adjacency matrix of the specified size.
             </summary>
-            <param name="size">The number of vertices in the graph. Must be an even number >= 4.</param>
+            <param name="size">The number of vertices in the graph (the size of the square adjacency matrix).</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when <paramref name="size"/> is less than 4.
+            </exception>
+            <remarks>
+            This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic 
+            construction of edges. It does not enforce the cubic property upon creation. 
+            The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])">
+            <summary>
+            Initializes a new instance of the <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraph"/> class using the provided adjacency matrix.
+            </summary>
+            <param name="adjacencyMatrix">A square matrix representing the adjacency structure of the graph.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown if the provided adjacency matrix does not correspond to a valid cubic graph,
+            i.e., each vertex must have exactly three edges.
+            </exception>
+            <remarks>
+            This constructor ensures that the input graph is cubic at the time of initialization. 
+            </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)">
             <summary>

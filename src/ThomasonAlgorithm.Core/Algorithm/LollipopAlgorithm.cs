@@ -189,34 +189,32 @@ public static class LollipopAlgorithm
     /// This method is used to detect whether the traversal along the Hamiltonian cycle
     /// forms a closed loop (cycle) or reaches a vertex that is not fully connected (i.e., has a -1 entry).
     /// </summary>
-    /// <param name="currentVertex">The starting vertex of the traversal.</param>
+    /// <param name="traversalStartingVertex">The starting vertex of the traversal.</param>
     /// <param name="neighbor">The neighbor vertex to move toward initially.</param>
     /// <param name="hamiltonianCycle">The current Hamiltonian cycle structure (may be partially modified).</param>
     /// <returns>
     /// True if a complete cycle is detected by traversing neighbor;
     /// False if the traversal leads to an unconnected vertex, indicating no cycle.
     /// </returns>
-    private static bool CheckCycle(int currentVertex, int neighbor, Dictionary<int, List<int>> hamiltonianCycle)
+    private static bool CheckCycle(int traversalStartingVertex, int neighbor, Dictionary<int, List<int>> hamiltonianCycle)
     {
-        var visited = new HashSet<int> { currentVertex };
-        var observingVertex = neighbor;
+        var visited = new HashSet<int> { traversalStartingVertex };
+        var currentVertex = neighbor;
 
-        while (!visited.Contains(observingVertex))
+        while (visited.Add(currentVertex))
         {
-            visited.Add(observingVertex);
-            
-            var neighborsInCycle = GetVertexNeighborsInCycle(observingVertex, hamiltonianCycle);   
+            var neighborsInCycle = GetVertexNeighborsInCycle(currentVertex, hamiltonianCycle);   
             
             // If among the neighbors in the Hamiltonian cycle there are vertices
             // that have not been visited yet and are not "empty" slots (-1),
             // then continue the traversal
             if (neighborsInCycle.Any(x => !visited.Contains(x) && x != -1))
             {
-                observingVertex = neighborsInCycle.First(x => !visited.Contains(x) && x != -1);
+                currentVertex = neighborsInCycle.First(x => !visited.Contains(x) && x != -1);
             }
-            // если среди соседей по циклу есть непосещенные вершины и среди них есть "пустые", значит, мы пришли в вершину степени 1 - цикла нет
-            // TODO попробовать изменить условие
-            else if (neighborsInCycle.Any(x => !visited.Contains(x)) && neighborsInCycle.Contains(-1))
+            // if during traversal we have reached 0 vertex - we are in the beginning of the hamiltonian path
+            // and it means that no cycle was found
+            if (currentVertex == 0)
             {
                 return false;
             }

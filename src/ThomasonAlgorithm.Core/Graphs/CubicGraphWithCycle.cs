@@ -26,7 +26,7 @@ public class CubicGraphWithCycle
     
     public Dictionary<int, List<int>> HamiltonianCycle { get; }
     
-    private static Dictionary<int, List<int>> CreateCubicGraphHamiltonianCycle(CubicGraph graph)
+    public static Dictionary<int, List<int>> CreateCubicGraphHamiltonianCycle(CubicGraph graph)
     {
         if (!IsGraphCubic(graph))
             throw new ArgumentOutOfRangeException(nameof(graph), "The given graph is not cubic.");

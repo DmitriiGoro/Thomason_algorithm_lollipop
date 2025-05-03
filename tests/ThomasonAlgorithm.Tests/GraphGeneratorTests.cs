@@ -1,9 +1,7 @@
 using ThomasonAlgorithm.Core.GraphGenerators;
 using ThomasonAlgorithm.Core.Models;
-using Xunit;
-using System.Collections.Generic;
 
-namespace ThomasonAlgorithm.Tests.GraphGeneratorTests
+namespace ThomasonAlgorithm.Tests
 {
     public class GenerateGraphLimitedChordsTests
     {

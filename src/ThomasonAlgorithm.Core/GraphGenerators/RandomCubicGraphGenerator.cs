@@ -175,7 +175,7 @@ public static class RandomCubicGraphGenerator
     private static void ValidateInput(int n, int kLow, int kUp)
     {
         if (n < 4 || n % 2 != 0)
-            throw new ArgumentException("Cubic graph can be constructed with n >= 4.");
+            throw new ArgumentException("Cubic graph can be constructed with n >= 4 only.");
         if (kLow <= 1 || kUp > n / 2)
             throw new ArgumentException("Wrong K value");
     }

@@ -29,14 +29,36 @@ public class CubicGraph : IGraph
     public Dictionary<int, List<int>> HamiltonianCycle { get; set; }
 
     /// <summary>
-    /// Initializes a new cubic graph with the specified number of vertices.
+    /// Initializes a new instance of the <see cref="CubicGraph"/> class with an empty adjacency matrix of the specified size.
     /// </summary>
-    /// <param name="size">The number of vertices in the graph. Must be an even number >= 4.</param>
+    /// <param name="size">The number of vertices in the graph (the size of the square adjacency matrix).</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Thrown when <paramref name="size"/> is less than 4.
+    /// </exception>
+    /// <remarks>
+    /// This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic 
+    /// construction of edges. It does not enforce the cubic property upon creation. 
+    /// The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).
+    /// </remarks>
     public CubicGraph(int size)
     {
+        if (size < 4)
+            throw new ArgumentOutOfRangeException(nameof(size), "Graph must have at least 4 vertices.");
+        
         AdjacencyMatrix = new int[size, size];
     }
     
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CubicGraph"/> class using the provided adjacency matrix.
+    /// </summary>
+    /// <param name="adjacencyMatrix">A square matrix representing the adjacency structure of the graph.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Thrown if the provided adjacency matrix does not correspond to a valid cubic graph,
+    /// i.e., each vertex must have exactly three edges.
+    /// </exception>
+    /// <remarks>
+    /// This constructor ensures that the input graph is cubic at the time of initialization. 
+    /// </remarks>
     public CubicGraph(int[,] adjacencyMatrix)
     {
         if (!IsCubic(adjacencyMatrix))
