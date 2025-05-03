@@ -19,9 +19,5 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<CubicGraphExperiment>()
             .Property(x => x.ChordLengths)
             .HasColumnType("jsonb");
-        
-        modelBuilder.Entity<CubicGraphExperiment>()
-            .Property(x => x.AdjacencyMatrix)
-            .HasColumnType("jsonb");
     } 
 }

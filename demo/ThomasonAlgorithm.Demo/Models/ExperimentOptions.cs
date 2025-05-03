@@ -16,7 +16,7 @@ public sealed record ExperimentOptions{
         if (startVerticesNumber != -1 && startVerticesNumber < 2 * kUp)
             throw new ArgumentOutOfRangeException(nameof(startVerticesNumber), "startVerticesNumber must be greater than or equal to 2 * kUp");
         
-        if (startVerticesNumber % 2 != 0)
+        if (startVerticesNumber != -1 && startVerticesNumber % 2 != 0)
             throw new ArgumentOutOfRangeException(nameof(startVerticesNumber), "startVerticesNumber must be even");
         
         if (maxN < startVerticesNumber)

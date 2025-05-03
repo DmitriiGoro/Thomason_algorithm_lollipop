@@ -4,7 +4,7 @@ namespace ThomasonAlgorithm.Demo.Models;
 
 public sealed record CubicGraphExperiment
 {
-    public CubicGraphExperiment(int verticesNumber, int kLow, int kUp, int maxChordLength, int lollipopStepsNumber, Dictionary<int, int> chordLengths, int[,] adjacencyMatrix)
+    public CubicGraphExperiment(int verticesNumber, int kLow, int kUp, int maxChordLength, int lollipopStepsNumber, Dictionary<int, int> chordLengths)
     {
         VerticesNumber = verticesNumber;
         KLow = kLow;
@@ -12,7 +12,6 @@ public sealed record CubicGraphExperiment
         MaxChordLength = maxChordLength;
         LollipopStepsNumber = lollipopStepsNumber;
         ChordLengths = chordLengths;
-        AdjacencyMatrix = adjacencyMatrix;
         Timestamp = DateTime.UtcNow;        
     }
     
@@ -53,12 +52,6 @@ public sealed record CubicGraphExperiment
     /// </summary>
     [Column("chord_lengths", TypeName = "jsonb")]
     public Dictionary<int, int> ChordLengths { get; set; }
-    
-    /// <summary>
-    /// NxN matrix 
-    /// </summary>
-    [Column("adjacency_matrix", TypeName = "jsonb")]
-    public int[,] AdjacencyMatrix { get; set; }
     
     [Column("timestamp")]
     public DateTime Timestamp { get; set; }

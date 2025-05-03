@@ -6,6 +6,7 @@ using ThomasonAlgorithm.Demo.Models;
 var builder = Host.CreateApplicationBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbInfrastructure(connectionString);
 
 var app = builder.Build();

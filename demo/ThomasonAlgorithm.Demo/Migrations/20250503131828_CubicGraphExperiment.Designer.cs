@@ -33,11 +33,6 @@ namespace ThomasonAlgorithm.Demo.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<int[,]>("AdjacencyMatrix")
-                        .IsRequired()
-                        .HasColumnType("jsonb")
-                        .HasColumnName("adjacency_matrix");
-
                     b.Property<Dictionary<int, int>>("ChordLengths")
                         .IsRequired()
                         .HasColumnType("jsonb")

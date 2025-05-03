@@ -45,14 +45,14 @@ public class CubicGraphExperimentService
                 var lollipopStepsNumber = LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(cubicGraphWithCycle);
 
                 stringBuilder.AppendFormat("lollipop_steps_number: {0}, for graph with n: {1}, kLow: {2}, kUp: {3}", lollipopStepsNumber, n, kLow, kUp);
-                stringBuilder.Clear();
                 lock (Console.Out)
                 {
                     Console.WriteLine(stringBuilder.ToString());
                 }
+                stringBuilder.Clear();
 
 
-                var experiment = new CubicGraphExperiment(n, kLow, kUp, randomCubicGraph.MaxChordLength, lollipopStepsNumber, randomCubicGraph.ChordsLengths, randomCubicGraph.AdjacencyMatrix);
+                var experiment = new CubicGraphExperiment(n, kLow, kUp, randomCubicGraph.MaxChordLength, lollipopStepsNumber, randomCubicGraph.ChordsLengths);
                 lock (experiments)
                 {
                     experiments.Add(experiment);

@@ -23,7 +23,6 @@ namespace ThomasonAlgorithm.Demo.Migrations
                     max_chord_length = table.Column<int>(type: "integer", nullable: false),
                     lollipop_steps_number = table.Column<int>(type: "integer", nullable: false),
                     chord_lengths = table.Column<Dictionary<int, int>>(type: "jsonb", nullable: false),
-                    adjacency_matrix = table.Column<int[,]>(type: "jsonb", nullable: false),
                     timestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
