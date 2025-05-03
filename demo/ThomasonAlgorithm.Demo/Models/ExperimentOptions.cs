@@ -1,7 +1,31 @@
 namespace ThomasonAlgorithm.Demo.Models;
 
+/// <summary>
+/// This record holds the configuration options for running experiments on cubic graphs.
+/// It contains parameters that define the behavior and settings for the graph generation and analysis.
+/// </summary>
 public sealed record ExperimentOptions{
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ExperimentOptions"/> record with the specified parameters.
+    /// </summary>
+    /// <param name="maxN">The maximum number of vertices in the generated graphs.</param>
+    /// <param name="kLow">The lower bound for the chord length in the graph.</param>
+    /// <param name="kUp">The upper bound for the chord length in the graph.</param>
+    /// <param name="maxAttempt">The maximum number of attempts to generate a cubic graph. Defaults to 100.</param>
+    /// <param name="graphSameSize">The number of graphs with the same size to generate. Defaults to 100.</param>
+    /// <param name="startVerticesNumber">The starting number of vertices. If not provided, it defaults to 2 * kUp.</param>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// Thrown when any of the following conditions is violated:
+    /// <list type="bullet">
+    /// <item><description>maxN must be greater than or equal to 2 * kUp</description></item>
+    /// <item><description>startVerticesNumber must be greater than or equal to 2 * kUp, and if provided, must be even</description></item>
+    /// <item><description>maxN must be greater than or equal to startVerticesNumber</description></item>
+    /// <item><description>kUp must be greater than or equal to kLow</description></item>
+    /// <item><description>maxAttempt must be greater than 0</description></item>
+    /// <item><description>graphSameSize must be greater than 0</description></item>
+    /// </list>
+    /// </exception>
     public ExperimentOptions(
         int maxN,
         int kLow,

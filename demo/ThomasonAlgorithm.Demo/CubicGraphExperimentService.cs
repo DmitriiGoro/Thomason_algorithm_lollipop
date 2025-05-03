@@ -9,8 +9,42 @@ using ThomasonAlgorithm.Demo.Models;
 
 namespace ThomasonAlgorithm.Demo;
 
+/// <summary>
+/// Provides functionality to run and persist experiments involving cubic graphs.
+/// 
+/// This service is responsible for:
+/// <list type="bullet">
+/// <item>Generating random cubic graphs with constraints on chord lengths.</item>
+/// <item>Applying the Lollipop algorithm to detect Hamiltonian cycles.</item>
+/// <item>Collecting and logging experiment data for analysis.</item>
+/// <item>Storing results in a PostgreSQL database efficiently using batch inserts.</item>
+/// </list>
+/// </summary>
+/// <remarks>
+/// The service uses dependency injection to obtain <see cref="AppDbContext"/> and supports parallel graph generation for performance.
+/// </remarks>
 public class CubicGraphExperimentService
 {
+    /// <summary>
+    /// Executes a cubic graph experiment cycle based on the provided parameters. 
+    /// For each even vertex count from <paramref name="options.StartVerticesNumber"/> up to <paramref name="options.MaxN"/>, 
+    /// the method generates a number of random cubic graphs, applies the Lollipop algorithm to find a second Hamiltonian cycle, 
+    /// and stores the experiment results in the database in batches.
+    /// </summary>
+    /// <param name="options">The experiment configuration options, including graph size boundaries and algorithm parameters.</param>
+    /// <param name="app">The application host providing access to the dependency injection container.</param>
+    /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+    /// <remarks>
+    /// The method performs the following steps:
+    /// <list type="number">
+    /// <item>Iterates through a range of even-sized vertex counts.</item>
+    /// <item>Generates multiple cubic graphs per size, in parallel.</item>
+    /// <item>Runs the Lollipop algorithm on each graph to compute the number of steps to find a second Hamiltonian cycle.</item>
+    /// <item>Logs basic diagnostic information to the console.</item>
+    /// <item>Stores results in the database in batches for efficiency using BulkInsert.</item>
+    /// </list>
+    /// </remarks>
+    /// <exception cref="InvalidOperationException">Thrown if the DbContext could not be resolved.</exception>
     public async Task ExperimentCubicGraph(ExperimentOptions options, IHost app)
     {
         var (maxN, kLow, kUp, startVerticesNumber, maxAttempt, maxGraphsSameSize) = options;

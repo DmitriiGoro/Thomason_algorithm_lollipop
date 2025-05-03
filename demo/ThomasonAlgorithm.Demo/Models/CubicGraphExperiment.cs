@@ -2,6 +2,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ThomasonAlgorithm.Demo.Models;
 
+/// <summary>
+/// Represents the results of a single cubic graph experiment, including metadata
+/// about the graph's structure and performance of the Lollipop algorithm.
+/// </summary>
 public sealed record CubicGraphExperiment
 {
     public CubicGraphExperiment(int verticesNumber, int kLow, int kUp, int maxChordLength, int lollipopStepsNumber, Dictionary<int, int> chordLengths)
