@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ThomasonAlgorithm.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e365a1400a66725800bb9a04eaaae80c0d5a968b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d629ca9f92ffaf076d23dff8fba45d70a4d25d8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ThomasonAlgorithm.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ThomasonAlgorithm.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,6 +9,5 @@
 /Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/ThomasonAlgorithm.Core.sourcelink.json
 /Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/ThomasonAlgorithm.Core.dll
 /Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/refint/ThomasonAlgorithm.Core.dll
-/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/ThomasonAlgorithm.Core.xml
 /Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/ThomasonAlgorithm.Core.pdb
 /Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core/obj/Debug/net8.0/ref/ThomasonAlgorithm.Core.dll

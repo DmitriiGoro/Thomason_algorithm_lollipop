@@ -124,6 +124,19 @@
             <returns>A <see cref="T:System.Collections.Generic.HashSet`1"/> containing the vertices of the Hamiltonian cycle
             in the order they appear in the cycle starting from 0.</returns>
         </member>
+        <member name="M:ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List{System.Int32},System.Func{System.Int32,System.Boolean})">
+            <summary>
+            Returns the first element in the list that satisfies the specified predicate, or <c>null</c> if no such element exists.
+            </summary>
+            <param name="source">The list of integers to search through.</param>
+            <param name="predicate">The predicate function used to test each element.</param>
+            <returns>
+            The first element that matches the predicate, or <c>null</c> if no matching element is found.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="source"/> or <paramref name="predicate"/> is <c>null</c>.
+            </exception>
+        </member>
         <member name="T:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator">
             <summary>
             A utility class for generating random cubic (3-regular) graphs with a specified number of vertices.
