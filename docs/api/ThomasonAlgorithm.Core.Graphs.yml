@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Graphs
+  commentId: N:ThomasonAlgorithm.Core.Graphs
+  id: ThomasonAlgorithm.Core.Graphs
+  children:
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph
+  - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  - ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: ThomasonAlgorithm.Core.Graphs
+  nameWithType: ThomasonAlgorithm.Core.Graphs
+  fullName: ThomasonAlgorithm.Core.Graphs
+  type: Namespace
+  assemblies:
+  - ThomasonAlgorithm.Core
+references:
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraph
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html
+  name: CubicGraph
+  nameWithType: CubicGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html
+  name: CubicGraphWithCycle
+  nameWithType: CubicGraphWithCycle
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.IGraph
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html
+  name: IGraph
+  nameWithType: IGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph
+- uid: ThomasonAlgorithm.Core.Graphs
+  commentId: N:ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Graphs
+  nameWithType: ThomasonAlgorithm.Core.Graphs
+  fullName: ThomasonAlgorithm.Core.Graphs
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html

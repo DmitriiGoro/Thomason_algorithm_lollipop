@@ -1,0 +1,669 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  commentId: T:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  id: LollipopAlgorithm
+  parent: ThomasonAlgorithm.Core.Algorithm
+  children:
+  - ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  - ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
+  langs:
+  - csharp
+  - vb
+  name: LollipopAlgorithm
+  nameWithType: LollipopAlgorithm
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  type: Class
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: LollipopAlgorithm
+    path: ../src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+    startLine: 17
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Algorithm
+  summary: >-
+    Provides a static implementation of Thomason's Lollipop Algorithm for transforming
+
+    an existing Hamiltonian cycle in a cubic graph into a second distinct Hamiltonian cycle.
+  remarks: >-
+    The algorithm requires a valid Hamiltonian cycle to be provided as input. It modifies a copy of the
+
+    input cycle without altering the original, allowing non-destructive exploration of Hamiltonian paths.
+
+    <p>
+
+    It is assumed that the input Hamiltonian cycle starts at vertex 0.
+
+    The first edge removed during the algorithm's execution is (0, n-1).
+
+    </p>
+  example: []
+  syntax:
+    content: public static class LollipopAlgorithm
+    content.vb: Public Module LollipopAlgorithm
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  id: FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  parent: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  langs:
+  - csharp
+  - vb
+  name: FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle)
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: FindSecondHamiltonianCycleAndReturnSteps
+    path: ../src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+    startLine: 34
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Algorithm
+  summary: >-
+    Applies the Thomason's lollipop algorithm to reconstruct a second Hamiltonian cycle
+
+    from the one provided in the <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle" data-throw-if-not-resolved="false"></xref> instance,
+
+    and returns the number of steps taken by the algorithm.
+  remarks: >-
+    The provided Hamiltonian cycle will be modified in-place to represent the second Hamiltonian cycle.
+
+    Make sure to pass a deep copy if the original cycle should be preserved.
+  example: []
+  syntax:
+    content: public static int FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle cubicGraph)
+    parameters:
+    - id: cubicGraph
+      type: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+      description: An object that encapsulates a cubic graph and one of its Hamiltonian cycles.
+    return:
+      type: System.Int32
+      description: The number of steps performed by the algorithm during the reconstruction of the second cycle.
+    content.vb: Public Shared Function FindSecondHamiltonianCycleAndReturnSteps(cubicGraph As CubicGraphWithCycle) As Integer
+  overload: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps*
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
+  id: GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
+  parent: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  langs:
+  - csharp
+  - vb
+  name: GetHamiltonianCycleSequencedVertices(Dictionary<int, List<int>>)
+  nameWithType: LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(Dictionary<int, List<int>>)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<int>>)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: GetHamiltonianCycleSequencedVertices
+    path: ../src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs
+    startLine: 233
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Algorithm
+  summary: >-
+    Gets the set of vertices in the Hamiltonian cycle, ordered in the sequence 
+
+    they appear in the cycle, starting from vertex 0.
+  example: []
+  syntax:
+    content: public static HashSet<int> GetHamiltonianCycleSequencedVertices(Dictionary<int, List<int>> hamiltonianCycle)
+    parameters:
+    - id: hamiltonianCycle
+      type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+      description: >-
+        A dictionary representing the Hamiltonian cycle,
+            where each vertex is mapped to its list of neighbors in the cycle.
+    return:
+      type: System.Collections.Generic.HashSet{System.Int32}
+      description: >-
+        A <xref href="System.Collections.Generic.HashSet%601" data-throw-if-not-resolved="false"></xref> containing the vertices of the Hamiltonian cycle
+            in the order they appear in the cycle starting from 0.
+    content.vb: Public Shared Function GetHamiltonianCycleSequencedVertices(hamiltonianCycle As Dictionary(Of Integer, List(Of Integer))) As HashSet(Of Integer)
+  overload: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices*
+  nameWithType.vb: LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(Dictionary(Of Integer, List(Of Integer)))
+  fullName.vb: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary(Of Integer, System.Collections.Generic.List(Of Integer)))
+  name.vb: GetHamiltonianCycleSequencedVertices(Dictionary(Of Integer, List(Of Integer)))
+references:
+- uid: ThomasonAlgorithm.Core.Algorithm
+  commentId: N:ThomasonAlgorithm.Core.Algorithm
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Algorithm
+  nameWithType: ThomasonAlgorithm.Core.Algorithm
+  fullName: ThomasonAlgorithm.Core.Algorithm
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Algorithm
+    name: Algorithm
+    href: ThomasonAlgorithm.Core.Algorithm.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Algorithm
+    name: Algorithm
+    href: ThomasonAlgorithm.Core.Algorithm.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html
+  name: CubicGraphWithCycle
+  nameWithType: CubicGraphWithCycle
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps*
+  commentId: Overload:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps
+  href: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_
+  name: FindSecondHamiltonianCycleAndReturnSteps
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ThomasonAlgorithm.Core.Graphs
+  commentId: N:ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Graphs
+  nameWithType: ThomasonAlgorithm.Core.Graphs
+  fullName: ThomasonAlgorithm.Core.Graphs
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+- uid: System.Collections.Generic.HashSet`1
+  commentId: T:System.Collections.Generic.HashSet`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<T>
+  nameWithType: HashSet<T>
+  fullName: System.Collections.Generic.HashSet<T>
+  nameWithType.vb: HashSet(Of T)
+  fullName.vb: System.Collections.Generic.HashSet(Of T)
+  name.vb: HashSet(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices*
+  commentId: Overload:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices
+  href: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___
+  name: GetHamiltonianCycleSequencedVertices
+  nameWithType: LollipopAlgorithm.GetHamiltonianCycleSequencedVertices
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices
+- uid: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, List<int>>
+  nameWithType: Dictionary<int, List<int>>
+  fullName: System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<int>>
+  nameWithType.vb: Dictionary(Of Integer, List(Of Integer))
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, System.Collections.Generic.List(Of Integer))
+  name.vb: Dictionary(Of Integer, List(Of Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.HashSet{System.Int32}
+  commentId: T:System.Collections.Generic.HashSet{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.HashSet`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  name: HashSet<int>
+  nameWithType: HashSet<int>
+  fullName: System.Collections.Generic.HashSet<int>
+  nameWithType.vb: HashSet(Of Integer)
+  fullName.vb: System.Collections.Generic.HashSet(Of Integer)
+  name.vb: HashSet(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.HashSet`1
+    name: HashSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.hashset-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

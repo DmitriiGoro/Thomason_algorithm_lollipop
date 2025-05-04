@@ -1,0 +1,33 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": ["ThomasonAlgorithm.Core.csproj"],
+          "src": "/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core"
+        }
+      ],
+      "dest": "api",
+      "properties": {
+        "TargetFramework": "net8.0"
+      }
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml"]
+      },
+      {
+        "files": ["index.md", "toc.yml", "articles/**.md"]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "Thomason Algorithm Documentation",
+      "_appFooter": "© 2025 MIPT",
+      "_enableSearch": true
+    },
+    "template": ["default"]
+  }
+}

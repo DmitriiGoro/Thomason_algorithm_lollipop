@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class RandomCubicGraphGenerator | Thomason Algorithm Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class RandomCubicGraphGenerator | Thomason Algorithm Documentation ">
+    
+    <meta name="description" content="A utility class for generating random cubic (3-regular) graphs with a specified number of vertices. The generated graph ensures that each vertex has exactly 3 neighbors, adhering to the properties of a cubic graph. Additionally, this class provides methods for generating cubic graphs with various constraints on chord lengths.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator">
+
+
+
+  <h1 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator" class="text-break">Class RandomCubicGraphGenerator</h1>
+  <div class="markdown level0 summary"><p>A utility class for generating random cubic (3-regular) graphs with a specified number of vertices.
+The generated graph ensures that each vertex has exactly 3 neighbors, adhering to the properties of a cubic graph.
+Additionally, this class provides methods for generating cubic graphs with various constraints on chord lengths.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">RandomCubicGraphGenerator</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ThomasonAlgorithm.html">ThomasonAlgorithm</a>.<a class="xref" href="ThomasonAlgorithm.Core.html">Core</a>.<a class="xref" href="ThomasonAlgorithm.Core.GraphGenerators.html">GraphGenerators</a></h6>
+  <h6><strong>Assembly</strong>: ThomasonAlgorithm.Core.dll</h6>
+  <h5 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class RandomCubicGraphGenerator</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphFromExactChordsSet_System_Int32_System_Int32_System_Int32_System_Collections_Generic_Dictionary_System_Int32_System_Int32__System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphFromExactChordsSet(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs/#L83">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphFromExactChordsSet_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphFromExactChordsSet*"></a>
+  <h4 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphFromExactChordsSet_System_Int32_System_Int32_System_Int32_System_Collections_Generic_Dictionary_System_Int32_System_Int32__System_Int32_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphFromExactChordsSet(System.Int32,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Int32},System.Int32)">GenerateGraphFromExactChordsSet(int, int, int, Dictionary&lt;int, int&gt;, int)</h4>
+  <div class="markdown level1 summary"><p>Generates a cubic graph (3-regular graph) with a precise number of chords for each specified chord length.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CubicGraph? GenerateGraphFromExactChordsSet(int n, int kLow, int kUp, Dictionary&lt;int, int&gt; chordsLengthDictionary, int maxAttempts = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The number of vertices in the graph. Must be an even number ≥ 4.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kLow</span></td>
+        <td><p>The minimum allowed chord length.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kUp</span></td>
+        <td><p>The maximum allowed chord length.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="parametername">chordsLengthDictionary</span></td>
+        <td><p>A dictionary mapping chord lengths to the exact number of chords of that length that must appear in the graph.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxAttempts</span></td>
+        <td><p>The maximum number of attempts to generate a valid graph. Default is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
+        <td><p>A cubic graph that matches the exact chord length distribution if one is found within the allowed attempts;
+otherwise, returns <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphLimitedChords_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphLimitedChords(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs/#L26">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphLimitedChords_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphLimitedChords*"></a>
+  <h4 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphLimitedChords_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphLimitedChords(System.Int32,System.Int32,System.Int32,System.Int32)">GenerateGraphLimitedChords(int, int, int, int)</h4>
+  <div class="markdown level1 summary"><p>Generates a cubic graph (3-regular graph) where chord lengths are restricted to be within the inclusive range [kLow, kUp].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CubicGraph? GenerateGraphLimitedChords(int n, int kLow, int kUp, int maxAttempts = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The number of vertices in the graph. Must be an even number ≥ 4.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kLow</span></td>
+        <td><p>The minimum allowed chord length (inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kUp</span></td>
+        <td><p>The maximum allowed chord length (inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxAttempts</span></td>
+        <td><p>Maximum number of attempts to generate a valid graph. Default is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
+        <td><p>A cubic graph where all chords have lengths within the range [<code class="paramref">kLow</code>, <code class="paramref">kUp</code>],
+or <code>null</code> if generation fails within the given number of attempts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithGapInChordLengths_System_Int32_System_Int32_System_Int32_ThomasonAlgorithm_Core_Models_Gap_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths(System.Int32%2CSystem.Int32%2CSystem.Int32%2CThomasonAlgorithm.Core.Models.Gap%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs/#L63">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithGapInChordLengths_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths*"></a>
+  <h4 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithGapInChordLengths_System_Int32_System_Int32_System_Int32_ThomasonAlgorithm_Core_Models_Gap_System_Int32_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths(System.Int32,System.Int32,System.Int32,ThomasonAlgorithm.Core.Models.Gap,System.Int32)">GenerateGraphWithGapInChordLengths(int, int, int, Gap, int)</h4>
+  <div class="markdown level1 summary"><p>Generates a cubic graph (3-regular graph) where chord lengths are within the specified range
+<code class="paramref">kLow</code> to <code class="paramref">kUp</code>, but exclude a specific gap range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CubicGraph? GenerateGraphWithGapInChordLengths(int n, int kLow, int kUp, Gap gap, int maxAttempts = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The number of vertices in the graph. Must be an even number ≥ 4.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kLow</span></td>
+        <td><p>The minimum allowed chord length.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kUp</span></td>
+        <td><p>The maximum allowed chord length.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Models.Gap.html">Gap</a></td>
+        <td><span class="parametername">gap</span></td>
+        <td><p>A <a class="xref" href="ThomasonAlgorithm.Core.Models.Gap.html">Gap</a> struct specifying the range of chord lengths to exclude from the graph.
+For example, if the gap is [5–7], then chords of lengths 5, 6, and 7 will be excluded.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxAttempts</span></td>
+        <td><p>Maximum number of attempts to generate a valid graph. Default is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
+        <td><p>A cubic graph that avoids the specified gap in chord lengths, or <code>null</code> if no valid graph is found
+within the allowed number of attempts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithOddLengthChords_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithOddLengthChords(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs/#L41">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithOddLengthChords_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithOddLengthChords*"></a>
+  <h4 id="ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator_GenerateGraphWithOddLengthChords_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.GenerateGraphWithOddLengthChords(System.Int32,System.Int32,System.Int32,System.Int32)">GenerateGraphWithOddLengthChords(int, int, int, int)</h4>
+  <div class="markdown level1 summary"><p>Generates a cubic graph (3-regular graph) where only chords of odd lengths within the given bounds are allowed.
+The resulting graph is guaranteed to be bipartite due to the restriction on odd-length chords.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CubicGraph? GenerateGraphWithOddLengthChords(int n, int kLow, int kUp, int maxAttempts = 100)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">n</span></td>
+        <td><p>The number of vertices in the graph. Must be an even number ≥ 4.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kLow</span></td>
+        <td><p>The minimum chord length (inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">kUp</span></td>
+        <td><p>The maximum chord length (inclusive).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxAttempts</span></td>
+        <td><p>Maximum number of attempts to generate a valid graph. Default is 100.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
+        <td><p>A bipartite cubic graph containing only odd-length chords in the range [<code class="paramref">kLow</code>, <code class="paramref">kUp</code>],
+or <code>null</code> if generation fails within the given number of attempts.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_GraphGenerators_RandomCubicGraphGenerator.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      © 2025 MIPT
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

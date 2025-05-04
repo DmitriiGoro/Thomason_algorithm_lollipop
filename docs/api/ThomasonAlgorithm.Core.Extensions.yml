@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Extensions
+  commentId: N:ThomasonAlgorithm.Core.Extensions
+  id: ThomasonAlgorithm.Core.Extensions
+  children:
+  - ThomasonAlgorithm.Core.Extensions.ListExtensions
+  langs:
+  - csharp
+  - vb
+  name: ThomasonAlgorithm.Core.Extensions
+  nameWithType: ThomasonAlgorithm.Core.Extensions
+  fullName: ThomasonAlgorithm.Core.Extensions
+  type: Namespace
+  assemblies:
+  - ThomasonAlgorithm.Core
+references:
+- uid: ThomasonAlgorithm.Core.Extensions.ListExtensions
+  commentId: T:ThomasonAlgorithm.Core.Extensions.ListExtensions
+  href: ThomasonAlgorithm.Core.Extensions.ListExtensions.html
+  name: ListExtensions
+  nameWithType: ListExtensions
+  fullName: ThomasonAlgorithm.Core.Extensions.ListExtensions
