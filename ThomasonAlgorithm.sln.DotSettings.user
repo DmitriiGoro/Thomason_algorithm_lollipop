@@ -6,6 +6,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ce53f7d6_002Dbd44_002D4ee9_002D91e8_002D4fcc5ca53578/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test_CheckKnownStepsNumber" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;xUnit::F0183F97-F820-4AB6-9C7F-B4FD1F7DF020::net8.0::ThomasonAlgorithm.Tests.LollipopAlgorithmTests.Test_CheckKnownStepsNumber&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::F0183F97-F820-4AB6-9C7F-B4FD1F7DF020::net8.0::ThomasonAlgorithm.Tests.UnitTests.ComputeChordLengthsFromAdjacencyMatrix.ComputeChordLengths&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
 	

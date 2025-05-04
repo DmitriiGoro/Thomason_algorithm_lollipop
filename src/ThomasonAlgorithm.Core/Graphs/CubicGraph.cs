@@ -4,7 +4,7 @@ namespace ThomasonAlgorithm.Core.Graphs;
 /// Represents a cubic (3-regular) graph, where each vertex has exactly 3 neighbors.
 /// This class manages the graph structure, chord lengths, and Hamiltonian cycle.
 /// </summary>
-internal class CubicGraph : IGraph
+public class CubicGraph : IGraph
 {
     public readonly int[,] AdjacencyMatrix;
     
@@ -58,6 +58,8 @@ internal class CubicGraph : IGraph
     /// </exception>
     /// <remarks>
     /// This constructor ensures that the input graph is cubic at the time of initialization. 
+    /// It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+    /// found in the graph.
     /// </remarks>
     public CubicGraph(int[,] adjacencyMatrix)
     {
@@ -65,6 +67,7 @@ internal class CubicGraph : IGraph
             throw new ArgumentOutOfRangeException(nameof(adjacencyMatrix), "Adjacency matrix is not cubic.");
         
         AdjacencyMatrix = adjacencyMatrix;
+        ComputeChordLengths();
     }
 
     /// <summary>
@@ -201,4 +204,34 @@ internal class CubicGraph : IGraph
         if (vertex < 0 || vertex >= VertexCount)
             throw new ArgumentOutOfRangeException(nameof(vertex), "Wrong vertex index.");
     }
+    
+    private void ComputeChordLengths()
+    {
+        var n = AdjacencyMatrix.GetLength(0);
+
+        for (var i = 0; i < n; i++)
+        {
+            for (var j = i + 1; j < n; j++)
+            {
+                if (AdjacencyMatrix[i, j] == 1)
+                {
+                    var chordLength = Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));
+                
+                    if (chordLength <= 1) // предполагаем, что хорды начинаются с длины 2
+                        continue;
+
+                    if (!ChordsLengths.TryAdd(chordLength, 1))
+                    {
+                        ChordsLengths[chordLength]++;
+                    }
+
+                    if (chordLength > MaxChordLength)
+                    {
+                        MaxChordLength = chordLength;
+                    }
+                }
+            }
+        }
+    }
+
 }
