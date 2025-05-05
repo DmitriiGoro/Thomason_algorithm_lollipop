@@ -80,6 +80,55 @@ public class Graph
     }
     
     /// <summary>
+    /// Initializes a new instance of the <see cref="Graph"/> class using the provided adjacency matrix.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// This constructor creates an unweighted, undirected graph based on the provided adjacency matrix.
+    /// The matrix is cloned to prevent external modifications and ensure immutability after initialization.
+    /// </para>
+    /// <para>
+    /// The adjacency matrix must satisfy the following conditions:
+    /// <list type="bullet">
+    ///     <item><description>Must be non-null</description></item>
+    ///     <item><description>Must be square (n × n)</description></item>
+    ///     <item><description>Must be binary (contain only 0 or 1)</description></item>
+    ///     <item><description>Must be symmetric (matrix[i,j] == matrix[j,i])</description></item>
+    ///     <item><description>Must have zero diagonal (no self-loops, matrix[i,i] == 0)</description></item>
+    /// </list>
+    /// </para>
+    /// </remarks>
+    /// <param name="adjacencyMatrix">
+    /// A square, binary, symmetric matrix representing the adjacency structure of the graph.
+    /// Elements are 0 (no edge) or 1 (edge exists).
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    /// Thrown when <paramref name="adjacencyMatrix"/> is <c>null</c>.
+    /// </exception>
+    /// <exception cref="ArgumentException">
+    /// Thrown when <paramref name="adjacencyMatrix"/> is not square, not binary, not symmetric,
+    /// or contains non-zero diagonal elements.
+    /// </exception>
+    /// <example>
+    /// Create a graph from a 3-vertex adjacency matrix:
+    /// <code>
+    /// int[,] matrix = new int[,]
+    /// {
+    ///     {0, 1, 0},
+    ///     {1, 0, 1},
+    ///     {0, 1, 0}
+    /// };
+    /// var graph = new Graph(matrix);
+    /// </code>
+    /// </example>
+    public Graph(int[,] adjacencyMatrix)
+    {
+        ValidateAdjacencyMatrix(adjacencyMatrix);
+        
+        _adjacencyMatrix = (int[,])adjacencyMatrix.Clone();
+    }
+    
+    /// <summary>
     /// Adds an edge between two vertices
     /// </summary>
     /// <param name="from">The starting vertex of the edge.</param>
@@ -210,5 +259,48 @@ public class Graph
     /// </code>
     /// </example>
     public bool IsCubic() 
-        => IsRegular(3); 
+        => IsRegular(3);
+
+    private void ValidateAdjacencyMatrix(int[,] adjacencyMatrix)
+    {
+        if (adjacencyMatrix == null)
+            throw new ArgumentNullException(nameof(adjacencyMatrix));
+
+        int rows = adjacencyMatrix.GetLength(0);
+        int cols = adjacencyMatrix.GetLength(1);
+
+        // Check if matrix is square
+        if (rows != cols)
+            throw new ArgumentException(
+                $"Adjacency matrix must be square. Got {rows}×{cols}.",
+                nameof(adjacencyMatrix));
+
+        // Check for binary values, symmetry, and zero diagonal
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < rows; j++)
+            {
+                int value = adjacencyMatrix[i, j];
+
+                // Check for binary values (0 or 1)
+                if (value != 0 && value != 1)
+                    throw new ArgumentException(
+                        $"Adjacency matrix must contain only 0 or 1. Found {value} at position [{i},{j}].",
+                        nameof(adjacencyMatrix));
+
+                // Check for zero diagonal (no self-loops)
+                if (i == j && value != 0)
+                    throw new ArgumentException(
+                        $"Adjacency matrix must have zero diagonal (no self-loops). Found {value} at position [{i},{i}].",
+                        nameof(adjacencyMatrix));
+
+                // Check for symmetry (undirected graph)
+                if (adjacencyMatrix[i, j] != adjacencyMatrix[j, i])
+                    throw new ArgumentException(
+                        $"Adjacency matrix must be symmetric. Found matrix[{i},{j}]={adjacencyMatrix[i, j]} " +
+                        $"but matrix[{j},{i}]={adjacencyMatrix[j, i]}.",
+                        nameof(adjacencyMatrix));
+            }
+        }
+    }
 }

@@ -45,14 +45,14 @@ namespace ThomasonAlgorithm.Tests
         public class GenerateGraphWithGapInChordLengthsTests
         {
             [Theory]
-            [InlineData(20, 2, 10, 5, 7)] // Gap [5–7], valid lengths: 2–4 and 8–10
-            [InlineData(30, 3, 9, 4, 6)] // Gap [4–6], valid lengths: 3 and 7–9
+            [InlineData(200, 2, 30, 5, 7)] // Gap [5–7], valid lengths: 2–4 and 8–10
+            [InlineData(300, 3, 25, 4, 6)] // Gap [4–6], valid lengths: 3 and 7–9
             public void Test_GenerateGraphWithGapInChordLengths_ExcludesGap(
                 int n, int kLow, int kUp, int gapStart, int gapEnd)
             {
                 var gap = new Gap(gapStart, gapEnd);
 
-                var graph = RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths(n, kLow, kUp, gap);
+                var graph = RandomCubicGraphGenerator.GenerateGraphWithGapInChordLengths(n, kLow, kUp, gap, 1);
 
                 Assert.NotNull(graph);
                 Assert.True(graph.IsCubic());

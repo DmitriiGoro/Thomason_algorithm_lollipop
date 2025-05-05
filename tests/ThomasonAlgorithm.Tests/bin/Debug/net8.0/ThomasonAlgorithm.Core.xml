@@ -24,7 +24,7 @@
             from the one provided in the <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> instance,
             and returns the number of steps taken by the algorithm.
             </summary>
-            <param name="cubicGraph">
+            <param name="cubicGraphWithCycle">
             An object that encapsulates a cubic graph and one of its Hamiltonian cycles.
             </param>
             <returns>
@@ -34,6 +34,186 @@
             The provided Hamiltonian cycle will be modified in-place to represent the second Hamiltonian cycle.
             Make sure to pass a deep copy if the original cycle should be preserved.
             </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">
+            <summary>
+            Finds the second Hamiltonian cycle in a cubic graph that already includes an initial Hamiltonian cycle,
+            and collects visualization steps for the transformation using Thomason’s algorithm.
+            </summary>
+            <param name="cubicGraphWithCycle">
+            A <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> instance containing both the cubic graph and its initial Hamiltonian cycle.
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32[0:,0:])">
+            <summary>
+            Constructs a cubic graph from the given adjacency matrix, computes an initial Hamiltonian cycle,
+            and finds the second Hamiltonian cycle using Thomason’s algorithm, producing visualization steps.
+            </summary>
+            <param name="adjacencyMatrix">
+            A square 2D array representing the adjacency matrix of a cubic graph (each row contains exactly 3 ones).
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)">
+            <summary>
+            Parses a cubic graph from a compact string representation of neighbor lists,
+            constructs an initial Hamiltonian cycle, and applies Thomason’s algorithm
+            to find a second Hamiltonian cycle while collecting visualization steps.
+            </summary>
+            <param name="stringOfNeighbors">
+            A string where each vertex’s neighbors are given as comma-separated integers,
+            and each vertex entry is separated by an underscore '_'.<br/>
+            For example: <c>"1,2,3_0,2,4_0,1,5_..."</c> represents a graph where vertex 0 is connected to 1, 2, 3,
+            vertex 1 is connected to 0, 2, 4, and so on.
+            </param>
+            <remarks>
+            Internally uses <see cref="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetMatrixFromNeighborsString(System.String)"/> to convert the string into an adjacency matrix.
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">
+            <summary>
+            Generates interactive visualization files for the lollipop algorithm's execution on a cubic graph.
+            </summary>
+            <remarks>
+            <para>
+            This method creates a complete visualization package consisting of:
+            </para>
+            <list type="bullet">
+                <item><description>A <c>VisualizeSteps</c> directory created at the root of the calling project</description></item>
+                <item><description><c>index.html</c> - Self-contained visualization viewer with interactive controls</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace with graph state at each step</description></item>
+            </list>
+            <para>
+            The visualization allows examining:
+            </para>
+            <list type="bullet">
+                <item><description>The complete Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Intermediate graph states during cycle extension</description></item>
+                <item><description>Edge transformations during the lollipop operation</description></item>
+            </list>
+            </remarks>
+            <param name="cubicGraphWithCycle">
+            The input cubic graph with Hamiltonian cycle to visualize. 
+            Requires:
+            <list type="bullet">
+                <item><description>Valid <see cref="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle"/> containing at least 3 vertices</description></item>
+                <item><description>Consistent <see cref="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph"/> adjacency matrix matching the cycle</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="cubicGraphWithCycle"/> or its essential components are null
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the graph and cycle fail validation checks
+            </exception>
+            <example>
+            Basic usage:
+            <code>
+            var graph = CubicGraphWithCycle.FromAdjacencyMatrix(matrix, cycle);
+            LollipopVisualizer.CreateLollipopVisualization(graph);
+            // Opens visualization at: [ProjectRoot]/VisualizeSteps/index.html
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32[0:,0:])">
+            <summary>
+            Generates interactive visualization of the lollipop algorithm from an adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            Creates a complete visualization package in the calling project's root directory under <c>VisualizeSteps/</c> containing:
+            </para>
+            <list type="bullet">
+                <item><description><c>index.html</c> - Interactive visualization viewer</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace</description></item>
+            </list>
+            <para>
+            The visualization demonstrates:
+            </para>
+            <list type="bullet">
+                <item><description>Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Graph transformations during lollipop operations</description></item>
+                <item><description>Edge substitutions and cycle extensions</description></item>
+            </list>
+            </remarks>
+            <param name="adjacencyMatrix">
+            The adjacency matrix representing a cubic graph. Requirements:
+            <list type="bullet">
+                <item><description>3-regular graph matrix (each vertex has degree 3)</description></item>
+                <item><description>Square matrix with consistent connectivity</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Thrown when adjacencyMatrix is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown when matrix doesn't represent a valid cubic graph</exception>
+            <example>
+            <code>
+            int[,] matrix = new int[,] { {0,1,1,1}, {1,0,1,1}, {1,1,0,1}, {1,1,1,0} };
+            LollipopVisualizer.CreateLollipopVisualization(matrix);
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)">
+            <summary>
+            Generates interactive visualization of the lollipop algorithm from a compressed neighbor list string.
+            </summary>
+            <remarks>
+            <para>
+            Creates a complete visualization package in the calling project's root directory under <c>VisualizeSteps/</c> containing:
+            </para>
+            <list type="bullet">
+                <item><description><c>index.html</c> - Interactive visualization viewer</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace</description></item>
+            </list>
+            <para>
+            <strong>Input String Format:</strong>
+            </para>
+            <list type="bullet">
+                <item><description>Vertex neighbors are separated by underscores (<c>_</c>)</description></item>
+                <item><description>Each vertex entry contains exactly 3 comma-separated neighbor indices</description></item>
+                <item><description>Vertex numbering starts at 0</description></item>
+                <item><description>Example: <c>0,1,2_1,0,3_2,0,3_3,1,2</c> for a 4-vertex cubic graph</description></item>
+            </list>
+            <para>
+            The visualization demonstrates:
+            </para>
+            <list type="bullet">
+                <item><description>Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Graph transformations during lollipop operations</description></item>
+                <item><description>Edge substitutions and cycle extensions</description></item>
+            </list>
+            </remarks>
+            <param name="stringOfNeighbors">
+            Compressed string representation of graph connectivity with:
+            <list type="bullet">
+                <item><description>Underscore-delimited vertex entries</description></item>
+                <item><description>Exactly 3 comma-separated neighbors per vertex</description></item>
+                <item><description>Zero-based vertex numbering</description></item>
+                <item><description>Symmetric relationships (if A lists B, B must list A)</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Thrown when input string is null</exception>
+            <exception cref="T:System.FormatException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>String doesn't match expected pattern</description></item>
+                <item><description>Vertex has incorrect number of neighbors</description></item>
+                <item><description>Contains non-numeric values</description></item>
+            </list>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>Neighbor list doesn't form a valid cubic graph</description></item>
+                <item><description>Graph is not 3-regular</description></item>
+                <item><description>Asymmetric relationships detected</description></item>
+            </list>
+            </exception>
+            <example>
+            For a cube graph:
+            <code>
+            string cubeNeighbors = "0,1,4_1,0,2,5_2,1,3,6_3,2,7_4,0,5,7_5,1,4,6_6,2,5,7_7,3,4,6";
+            LollipopVisualizer.CreateLollipopVisualization(cubeNeighbors);
+            </code>
+            </example>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.ReconstructCycleAndReturnStepCount(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
             <summary>
@@ -56,6 +236,31 @@
             The method mutates the provided <paramref name="hamiltonianCycle"/> by breaking and reconnecting edges
             in accordance with Thomason's lollipop algorithm until a second Hamiltonian cycle is formed.
             The cycle is expected to be valid and consistent with the graph structure at the start of execution.
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.ReconstructCycleAndReturnSteps(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Performs a step-by-step reconstruction of a Hamiltonian cycle using a Thomason algorithm
+            and returns a list of steps for visualization, including added and removed edges.
+            </summary>
+            <param name="hamiltonianCycle">
+            A dictionary representing the initial Hamiltonian cycle. Each key is a vertex, and its value is a list of two neighboring vertices in the cycle.
+            Note: During the algorithm execution, some values may be temporarily set to -1 to represent removed edges.
+            </param>
+            <param name="graph">
+            The cubic graph in which the Hamiltonian cycle is reconstructed. Used to determine adjacency information.
+            </param>
+            <returns>
+            A list of <see cref="T:ThomasonAlgorithm.Core.Models.LollipopStep"/> representing each step of the cycle reconstruction process.
+            Each step includes:
+            - The current set of edges in the Hamiltonian cycle (<c>CurrentCycleEdges</c>),
+            - The removed edge (<c>RemovedEdge</c>),
+            - The added edge (<c>AddedEdge</c>).
+            The final step contains only the closing edge of the cycle.
+            </returns>
+            <remarks>
+            This method mutates the <paramref name="hamiltonianCycle"/> during execution.
+            It is recommended to pass a deep copy of the original cycle to avoid modifying the original data structure.
             </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetVertexNeighbors(System.Int32,ThomasonAlgorithm.Core.Graphs.CubicGraph)">
@@ -123,6 +328,97 @@
             where each vertex is mapped to its list of neighbors in the cycle.</param>
             <returns>A <see cref="T:System.Collections.Generic.HashSet`1"/> containing the vertices of the Hamiltonian cycle
             in the order they appear in the cycle starting from 0.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetMatrixFromNeighborsString(System.String)">
+            <summary>
+            Converts a compressed neighbor string representation into an adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            Expected string format: "0,1,2_1,0,3_2,0,3_3,1,2" where:
+            </para>
+            <list type="bullet">
+                <item><description>Underscores (_) separate vertex entries</description></item>
+                <item><description>Commas separate neighbor indices within each vertex</description></item>
+                <item><description>Each vertex must list exactly 3 neighbors (for cubic graphs)</description></item>
+                <item><description>Vertex numbering starts at 0</description></item>
+            </list>
+            </remarks>
+            <param name="neighborsString">The compressed neighbor string to parse</param>
+            <returns>A square adjacency matrix where matrix[i,j] = 1 indicates an edge between vertices i and j</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when neighborsString is null or empty</exception>
+            <exception cref="T:System.FormatException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>String contains invalid numeric formats</description></item>
+                <item><description>Vertex entry has incorrect number of neighbors (not exactly 3)</description></item>
+            </list>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>Vertex index is out of bounds (negative or ≥ vertex count)</description></item>
+                <item><description>Graph contains self-loops (vertex listing itself as neighbor)</description></item>
+                <item><description>Graph is not symmetric (if i lists j, j must list i)</description></item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.RunVisualization(System.Collections.Generic.List{ThomasonAlgorithm.Core.Models.LollipopStep},System.Int32[0:,0:])">
+            <summary>
+            Generates and displays visualization of the lollipop algorithm steps.
+            </summary>
+            <remarks>
+            - Creates visualization files (HTML + JSON) in VisualizeSteps directory
+            - Launches local server to display the visualization
+            - Uses embedded HTML template and serialized algorithm data
+            </remarks>
+            <param name="steps">Algorithm execution steps to visualize</param>
+            <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+            <exception cref="T:System.IO.FileNotFoundException">If embedded HTML template is missing</exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.RunServer(System.String)">
+            <summary>
+            Starts a local HTTP server to serve visualization files and opens the index.html in browser.
+            </summary>
+            <remarks>
+            - Hosts files from specified directory at http://localhost:11111/
+            - Automatically opens index.html in default browser
+            - Runs until Enter is pressed
+            - Requires admin rights for port registration (first run)
+            </remarks>
+            <param name="visualizeDir">Directory containing visualization files</param>
+            <exception cref="T:System.Net.HttpListenerException">When lacking permissions for port binding</exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateVisualizationInProjectRoot(System.Collections.Generic.List{ThomasonAlgorithm.Core.Models.LollipopStep},System.Int32[0:,0:])">
+            <summary>
+            Creates visualization files (HTML and JSON) in the calling project's root directory.
+            </summary>
+            <remarks>
+            Generates:
+            1. index.html (from embedded resources)
+            2. steps.json (serialized algorithm steps and graph data)
+            in a "VisualizationSteps" subdirectory.
+            </remarks>
+            <param name="steps">Algorithm execution steps to visualize</param>
+            <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+            <exception cref="T:System.IO.FileNotFoundException">When embedded HTML resource is missing</exception>
+        </member>
+        <member name="T:ThomasonAlgorithm.Core.Extensions.ListExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Collections.Generic.List`1"/> collections.
+            </summary>
+            <remarks>
+            This class contains utility methods that extend the functionality of generic lists,
+            particularly for graph algorithm operations and neighbor searching scenarios.
+            </remarks>
+            <example>
+            Basic usage:
+            <code>
+            var neighbors = new List&lt;int> { 1, 2, 3 };
+            var result = neighbors.FirstPossibleNeighborOrNull(x => x > 1);
+            // Returns 2
+            </code>
+            </example>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List{System.Int32},System.Func{System.Int32,System.Boolean})">
             <summary>
@@ -249,7 +545,7 @@
             <returns>A dictionary where the key is a vertex, and the value is a 
             HashSet of neighboring vertices that satisfy the chord length condition.</returns>
         </member>
-        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.Graph)">
             <summary>
             Tries to find a perfect matching in the given graph using the provided possible neighbors for each vertex.
             A perfect matching is a set of edges such that every vertex is matched with exactly one other vertex.
@@ -266,7 +562,7 @@
             If a perfect matching cannot be found for all vertices, the method will return null.
             </remarks>
         </member>
-        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Int32[])">
+        <member name="M:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator.FindPerfectMatching(System.Int32,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.HashSet{System.Int32}},ThomasonAlgorithm.Core.Graphs.Graph,System.Int32[])">
             <summary>
             Tries to find a perfect matching in the graph, where the number of edges with specific chord lengths 
             corresponds exactly to the provided `neededChords` array. Each entry in `neededChords` specifies 
@@ -292,9 +588,45 @@
             This class manages the graph structure, chord lengths, and Hamiltonian cycle.
             </summary>
         </member>
-        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount">
+        <member name="F:ThomasonAlgorithm.Core.Graphs.CubicGraph._adjacencyMatrix">
             <summary>
-            Gets the total number of vertices in the graph.
+            Gets the adjacency matrix of the cubic graph.
+            </summary>
+            <remarks>
+            <para>
+            This matrix has the following invariants:
+            </para>
+            <list type="bullet">
+                <item><description>Exactly three non-zero entries per row/column (3-regular)</description></item>
+                <item><description>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</description></item>
+                <item><description>Zero diagonal (no self-loops)</description></item>
+            </list>
+            <para>
+            This property hides the base <see cref="P:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix"/> to enforce cubic graph constraints.
+            </para>
+            </remarks>
+            <value>
+            A square 2D integer array representing vertex connections where:
+            <list type="bullet">
+                <item><description>1 indicates an edge between vertices</description></item>
+                <item><description>0 indicates no connection</description></item>
+            </list>
+            </value>
+            <example>
+            Example for a 4-vertex cube graph:
+            <code>
+            [
+                [0, 1, 1, 1],
+                [1, 0, 1, 1],
+                [1, 1, 0, 1],
+                [1, 1, 1, 0]
+            ]
+            </code>
+            </example>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix">
+            <summary>
+            Gets a copy of the adjacency matrix to prevent external modifications.
             </summary>
         </member>
         <member name="F:ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength">
@@ -311,20 +643,6 @@
             <summary>
             Stores the Hamiltonian cycle of the graph, represented as a dictionary of vertices and their neighbors in the cycle.
             </summary>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraph"/> class with an empty adjacency matrix of the specified size.
-            </summary>
-            <param name="size">The number of vertices in the graph (the size of the square adjacency matrix).</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">
-            Thrown when <paramref name="size"/> is less than 4.
-            </exception>
-            <remarks>
-            This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic 
-            construction of edges. It does not enforce the cubic property upon creation. 
-            The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).
-            </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])">
             <summary>
@@ -349,53 +667,6 @@
             <param name="to">The ending vertex of the edge.</param>
             <exception cref="T:System.InvalidOperationException">Thrown if an edge already exists or the degree of a vertex exceeds 3.</exception>
         </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)">
-            <summary>
-            Removes an edge between two vertices.
-            </summary>
-            <param name="from">The starting vertex of the edge.</param>
-            <param name="to">The ending vertex of the edge.</param>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)">
-            <summary>
-            Gets the degree of a vertex (the number of edges connected to it).
-            </summary>
-            <param name="vertex">The vertex whose degree is to be calculated.</param>
-            <returns>The degree of the specified vertex.</returns>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)">
-            <summary>
-            Gets the list of neighbors (vertices connected by edges) for a specified vertex.
-            </summary>
-            <param name="vertex">The vertex for which neighbors are to be retrieved.</param>
-            <returns>A list of neighboring vertices.</returns>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)">
-            <summary>
-            Checks whether an edge exists between two vertices.
-            </summary>
-            <param name="from">The starting vertex of the edge.</param>
-            <param name="to">The ending vertex of the edge.</param>
-            <returns>True if an edge exists between the two vertices; otherwise, false.</returns>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic">
-            <summary>
-            Checks if the graph is cubic, meaning each vertex has exactly 3 neighbors.
-            </summary>
-            <returns>True if the graph is cubic; otherwise, false.</returns>
-        </member>
-        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)">
-            <summary>
-            Adds a chord length to the collection, increasing its count. 
-            If the chord length doesn't exist in the collection, it will be added with an initial count of 1.
-            Additionally, the method updates the maximum chord length if the new chord length exceeds the current maximum.
-            </summary>
-            <param name="chordLength">The length of the chord to be added.</param>
-            <remarks>
-            This method maintains a collection of chord lengths, where each chord length is mapped to its frequency (how many times it has been added).
-            It also keeps track of the maximum chord length encountered during the process.
-            </remarks>
-        </member>
         <member name="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle">
             <summary>
             Represents a cubic graph with an associated Hamiltonian cycle. 
@@ -405,6 +676,352 @@
             This class ensures that a Hamiltonian cycle is explicitly associated with a specific cubic graph,
             providing better consistency and clarity when passing this data between methods or components.
             </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Initializes a new instance of <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> with a specified Hamiltonian cycle.
+            </summary>
+            <remarks>
+            <para>
+            Use this constructor when you have a precomputed Hamiltonian cycle for the graph.
+            The cycle will be used as-is without validation.
+            </para>
+            <para>
+            The cycle must:
+            </para>
+            <list type="bullet">
+                <item><description>Contain all vertices of the graph exactly once</description></item>
+                <item><description>Form a single connected loop</description></item>
+                <item><description>Maintain cubic graph properties</description></item>
+            </list>
+            </remarks>
+            <param name="graph">The cubic graph to associate with the cycle.</param>
+            <param name="cycle">
+            A dictionary representing the Hamiltonian cycle where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices</description></item>
+                <item><description>Values are lists of exactly 2 connected vertices</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when either <paramref name="graph"/> or <paramref name="cycle"/> is null.
+            </exception>
+            <example>
+            <code>
+            var graph = new CubicGraph(adjacencyMatrix);
+            var precomputedCycle = new Dictionary&lt;int, List&lt;int>>() { ... };
+            var graphWithCycle = new CubicGraphWithCycle(graph, precomputedCycle);
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Initializes a new instance of <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> with a generated Hamiltonian cycle.
+            </summary>
+            <remarks>
+            <para>
+            Automatically generates a trivial Hamiltonian cycle using <see cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/>.
+            The generated cycle connects vertices in sequential order (0→1→2...→n-1→0).
+            </para>
+            <para>
+            For non-trivial cycles, use the constructor that accepts a precomputed cycle.
+            </para>
+            </remarks>
+            <param name="graph">The cubic graph for which to generate a Hamiltonian cycle.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="graph"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when the graph is not cubic (any vertex doesn't have degree 3).
+            </exception>
+            <example>
+            <code>
+            var graph = new CubicGraph(adjacencyMatrix);
+            var graphWithCycle = new CubicGraphWithCycle(graph); // Generates default cycle
+            </code>
+            </example>
+            <seealso cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph">
+            <summary>
+            Gets the underlying cubic graph associated with this instance.
+            </summary>
+            <remarks>
+            The graph maintains these properties:
+            <list type="bullet">
+                <item><description>3-regular (each vertex has degree 3)</description></item>
+                <item><description>Undirected (edges are bidirectional)</description></item>
+                <item><description>No self-loops</description></item>
+            </list>
+            </remarks>
+            <value>
+            A <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraph"/> object representing the graph structure.
+            </value>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle">
+            <summary>
+            Gets the Hamiltonian cycle associated with the graph.
+            </summary>
+            <remarks>
+            The cycle is represented as an adjacency dictionary where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices (0-based)</description></item>
+                <item><description>Values are lists containing exactly 2 connected vertices</description></item>
+            </list>
+            This ensures the cycle forms a single loop through all vertices.
+            </remarks>
+            <value>
+            A dictionary mapping each vertex to its two adjacent vertices in the cycle.
+            </value>
+            <example>
+            For a 4-vertex cycle: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Creates a Hamiltonian cycle for a cubic graph where vertices are connected in sequential order.
+            </summary>
+            <remarks>
+            <para>
+            This method generates a basic Hamiltonian cycle that connects all vertices in the graph 
+            in a simple sequential pattern: 0 → 1 → 2 → ... → n-1 → 0.
+            </para>
+            <para>
+            The resulting cycle has these properties:
+            </para>
+            <list type="bullet">
+                <item><description>Forms a single loop passing through all vertices exactly once</description></item>
+                <item><description>Connects first and last vertices (0 and n-1) to complete the cycle</description></item>
+                <item><description>Each vertex has exactly 2 connections in the cycle (as required for Hamiltonian cycles)</description></item>
+            </list>
+            <para>
+            <strong>Note:</strong> This creates a trivial cycle and may not represent the most optimal 
+            or interesting Hamiltonian cycle for analysis purposes.
+            </para>
+            </remarks>
+            <param name="graph">The cubic graph to process. Must satisfy <see cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.IsGraphCubic(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/> check.</param>
+            <returns>
+            A dictionary representing the Hamiltonian cycle where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices (0 to n-1)</description></item>
+                <item><description>Values are lists containing exactly 2 connected vertices</description></item>
+            </list>
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when the input graph is not cubic (any vertex doesn't have degree 3)
+            </exception>
+            <example>
+            For a 4-vertex cubic graph:
+            <code>
+            var graph = new CubicGraph(new int[,] { /* 4x4 adjacency matrix */ });
+            var cycle = CreateCubicGraphHamiltonianCycle(graph);
+            // Returns: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }
+            </code>
+            </example>
+        </member>
+        <member name="T:ThomasonAlgorithm.Core.Graphs.Graph">
+            <summary>
+            Represents an unweighted, undirected graph data structure using an adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            This class provides a foundation for graph operations using a square matrix
+            to represent vertex connections in an unweighted, undirected graph.
+            The matrix is immutable after construction.
+            </para>
+            <para>
+            Key characteristics:
+            </para>
+            <list type="bullet">
+                <item><description>Unweighted edges (values are 0 or 1)</description></item>
+                <item><description>Undirected (matrix is always symmetric)</description></item>
+                <item><description>No self-loops (diagonal elements are always 0)</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="F:ThomasonAlgorithm.Core.Graphs.Graph._adjacencyMatrix">
+            <summary>
+            The adjacency matrix representing connections between vertices in an unweighted, undirected graph.
+            </summary>
+            <remarks>
+            <para>
+            Matrix characteristics:
+            </para>
+            <list type="bullet">
+                <item><description>0 indicates no edge between vertices</description></item>
+                <item><description>1 indicates an existing edge (unweighted)</description></item>
+                <item><description>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</description></item>
+                <item><description>Zero diagonal (matrix[i,i] == 0, no self-loops)</description></item>
+            </list>
+            <para>
+            This field is readonly - the matrix reference cannot be reassigned, though individual 
+            elements can be modified through controlled methods like <see cref="M:ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)"/>.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix">
+            <summary>
+            Gets a copy of the adjacency matrix to prevent external modifications.
+            </summary>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount">
+            <summary>
+            Gets the total number of vertices in the graph.
+            </summary>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32)">
+            <summary>
+            Initializes a new unweighted, undirected graph with the specified number of vertices.
+            </summary>
+            <remarks>
+            Creates an empty adjacency matrix where:
+            <list type="bullet">
+                <item><description>All elements are initialized to 0 (no edges)</description></item>
+                <item><description>Matrix dimensions are size × size</description></item>
+                <item><description>Will remain symmetric (undirected) when edges are added</description></item>
+            </list>
+            </remarks>
+            <param name="size">
+            The number of vertices in the graph. 
+            Must be a positive integer greater than 0.
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when <paramref name="size"/> is less than 1.
+            </exception>
+            <example>
+            Create a 5-vertex graph:
+            <code>
+            var graph = new Graph(5); // Creates 5x5 matrix initialized with zeros
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32[0:,0:])">
+            <summary>
+            Initializes a new instance of the <see cref="T:ThomasonAlgorithm.Core.Graphs.Graph"/> class using the provided adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            This constructor creates an unweighted, undirected graph based on the provided adjacency matrix.
+            The matrix is cloned to prevent external modifications and ensure immutability after initialization.
+            </para>
+            <para>
+            The adjacency matrix must satisfy the following conditions:
+            <list type="bullet">
+                <item><description>Must be non-null</description></item>
+                <item><description>Must be square (n × n)</description></item>
+                <item><description>Must be binary (contain only 0 or 1)</description></item>
+                <item><description>Must be symmetric (matrix[i,j] == matrix[j,i])</description></item>
+                <item><description>Must have zero diagonal (no self-loops, matrix[i,i] == 0)</description></item>
+            </list>
+            </para>
+            </remarks>
+            <param name="adjacencyMatrix">
+            A square, binary, symmetric matrix representing the adjacency structure of the graph.
+            Elements are 0 (no edge) or 1 (edge exists).
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="adjacencyMatrix"/> is <c>null</c>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when <paramref name="adjacencyMatrix"/> is not square, not binary, not symmetric,
+            or contains non-zero diagonal elements.
+            </exception>
+            <example>
+            Create a graph from a 3-vertex adjacency matrix:
+            <code>
+            int[,] matrix = new int[,]
+            {
+                {0, 1, 0},
+                {1, 0, 1},
+                {0, 1, 0}
+            };
+            var graph = new Graph(matrix);
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)">
+            <summary>
+            Adds an edge between two vertices
+            </summary>
+            <param name="from">The starting vertex of the edge.</param>
+            <param name="to">The ending vertex of the edge.</param>
+            <exception cref="T:System.InvalidOperationException">Thrown if an edge already exists.</exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)">
+            <summary>
+            Checks whether an edge exists between two vertices.
+            </summary>
+            <param name="from">The starting vertex of the edge.</param>
+            <param name="to">The ending vertex of the edge.</param>
+            <returns>True if an edge exists between the two vertices; otherwise, false.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)">
+            <summary>
+            Removes an edge between two vertices.
+            </summary>
+            <param name="from">The starting vertex of the edge.</param>
+            <param name="to">The ending vertex of the edge.</param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)">
+            <summary>
+            Gets the degree of a vertex (the number of edges connected to it).
+            </summary>
+            <param name="vertex">The vertex whose degree is to be calculated.</param>
+            <returns>The degree of the specified vertex.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)">
+            <summary>
+            Gets the list of neighbors (vertices connected by edges) for a specified vertex.
+            </summary>
+            <param name="vertex">The vertex for which neighbors are to be retrieved.</param>
+            <returns>A list of neighboring vertices.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)">
+            <summary>
+            Determines whether the graph is regular with the specified degree for all vertices.
+            </summary>
+            <remarks>
+            A graph is called <paramref name="regularity"/>-regular if every vertex has exactly 
+            <paramref name="regularity"/> edges. Common cases include:
+            <list type="bullet">
+                <item><description>3-regular (cubic) graphs</description></item>
+                <item><description>2-regular (cycle graphs)</description></item>
+                <item><description>1-regular (perfect matching graphs)</description></item>
+            </list>
+            </remarks>
+            <param name="regularity">The expected degree for all vertices in the graph.</param>
+            <returns>
+            <c>true</c> if every vertex in the graph has degree equal to <paramref name="regularity"/>;
+            otherwise, <c>false</c>.
+            </returns>
+            <example>
+            Check if a graph is cubic (3-regular):
+            <code>
+            if (graph.IsRegular(3)) 
+            {
+                Console.WriteLine("The graph is cubic");
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.Graph.IsCubic">
+            <summary>
+            Determines whether the graph is cubic (3-regular).
+            </summary>
+            <remarks>
+            A cubic graph is a 3-regular graph where every vertex has exactly three edges.
+            This is equivalent to calling <see cref="M:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)"/> with parameter 3.
+            </remarks>
+            <returns>
+            <c>true</c> if the graph is cubic (all vertices have degree 3); otherwise, <c>false</c>.
+            </returns>
+            <example>
+            Basic usage:
+            <code>
+            if (graph.IsCubic()) 
+            {
+                Console.WriteLine("The graph is cubic");
+            }
+            </code>
+            </example>
         </member>
         <member name="T:ThomasonAlgorithm.Core.Models.Gap">
             <summary>
@@ -427,6 +1044,55 @@
         </member>
         <member name="P:ThomasonAlgorithm.Core.Models.Gap.RightBound">
             <summary>The inclusive upper bound of the gap range.</summary>
+        </member>
+        <member name="T:ThomasonAlgorithm.Core.Models.LollipopStep">
+            <summary>
+            Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+            </summary>
+            <param name="CurrentCycleEdges">
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </param>
+            <param name="AddedEdge">
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </param>
+            <param name="RemovedEdge">
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+            </summary>
+            <param name="CurrentCycleEdges">
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </param>
+            <param name="AddedEdge">
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </param>
+            <param name="RemovedEdge">
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </param>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges">
+            <summary>
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </summary>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge">
+            <summary>
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </summary>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge">
+            <summary>
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </summary>
         </member>
     </members>
 </doc>

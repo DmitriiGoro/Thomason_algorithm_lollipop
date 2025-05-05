@@ -40,7 +40,12 @@ public class CubicGraph : Graph
     /// ]
     /// </code>
     /// </example>
-    public new readonly int[,] AdjacencyMatrix;
+    private readonly int[,] _adjacencyMatrix;
+    
+    /// <summary>
+    /// Gets a copy of the adjacency matrix to prevent external modifications.
+    /// </summary>
+    public new int[,] AdjacencyMatrix => (int[,])_adjacencyMatrix.Clone();
     
     /// <summary>
     /// Gets or sets the maximum chord length found in the graph.
@@ -70,12 +75,12 @@ public class CubicGraph : Graph
     /// It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
     /// found in the graph.
     /// </remarks>
-    public CubicGraph(int[,] adjacencyMatrix) : base(adjacencyMatrix.Length)
+    public CubicGraph(int[,] adjacencyMatrix) : base(adjacencyMatrix)
     {
         if (!IsCubic(adjacencyMatrix))
             throw new ArgumentOutOfRangeException(nameof(adjacencyMatrix), "Adjacency matrix is not cubic.");
         
-        AdjacencyMatrix = (int[,])adjacencyMatrix.Clone(); 
+        _adjacencyMatrix = (int[,])adjacencyMatrix.Clone(); 
         ComputeChordLengths();
     }
 
@@ -112,13 +117,13 @@ public class CubicGraph : Graph
     
     private void ComputeChordLengths()
     {
-        var n = AdjacencyMatrix.GetLength(0);
+        var n = _adjacencyMatrix.GetLength(0);
 
         for (var i = 0; i < n; i++)
         {
             for (var j = i + 1; j < n; j++)
             {
-                if (AdjacencyMatrix[i, j] != 1) 
+                if (_adjacencyMatrix[i, j] != 1) 
                     continue;
                 
                 var chordLength = Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));

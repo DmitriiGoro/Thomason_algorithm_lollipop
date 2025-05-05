@@ -1,3 +1,4 @@
+using System.Reflection;
 using ThomasonAlgorithm.Core.Algorithm;
 using ThomasonAlgorithm.Core.GraphGenerators;
 using ThomasonAlgorithm.Core.Graphs;
@@ -14,20 +15,20 @@ public class LollipopAlgorithmTests
                 var adjacencyMatrix = GetMatrixFromNeighborsString(adjacencyList);
                 var graph = new CubicGraph(adjacencyMatrix);
                 var graphAndCycle = new CubicGraphWithCycle(graph);
-
+        
                 Assert.NotNull(graph);
                 Assert.True(graph.IsCubic());
-
+        
                 var steps = LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(graphAndCycle);
-
+        
                 Assert.Equal(expectedStepsNumber, steps);
         }
         
         [Theory]
         [MemberData(nameof(RandomCubicGraphs))]
-        public void Test_CheckLollipop(CubicGraph graph)
+        public void Test_CheckLollipop(CubicGraph? graph)
         {
-                var cubicGraphWithCycle = new CubicGraphWithCycle(graph);
+                var cubicGraphWithCycle = new CubicGraphWithCycle(graph!);
                 var stepsNumber = LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(cubicGraphWithCycle);
                 
                 Assert.True(stepsNumber > 1);
