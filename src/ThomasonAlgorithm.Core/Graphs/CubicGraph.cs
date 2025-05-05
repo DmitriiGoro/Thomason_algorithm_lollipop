@@ -4,7 +4,7 @@ namespace ThomasonAlgorithm.Core.Graphs;
 /// Represents a cubic (3-regular) graph, where each vertex has exactly 3 neighbors.
 /// This class manages the graph structure, chord lengths, and Hamiltonian cycle.
 /// </summary>
-public class CubicGraph : IGraph
+public class CubicGraph
 {
     public readonly int[,] AdjacencyMatrix;
     
@@ -217,7 +217,7 @@ public class CubicGraph : IGraph
                 {
                     var chordLength = Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));
                 
-                    if (chordLength <= 1) // предполагаем, что хорды начинаются с длины 2
+                    if (chordLength <= 1)
                         continue;
 
                     if (!ChordsLengths.TryAdd(chordLength, 1))

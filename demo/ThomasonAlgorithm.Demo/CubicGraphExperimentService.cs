@@ -1,10 +1,13 @@
+using System.Diagnostics;
 using System.Text;
+using System.Text.Json;
 using EFCore.BulkExtensions;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ThomasonAlgorithm.Core.Algorithm;
 using ThomasonAlgorithm.Core.GraphGenerators;
 using ThomasonAlgorithm.Core.Graphs;
+using ThomasonAlgorithm.Core.Models;
 using ThomasonAlgorithm.Demo.Models;
 
 namespace ThomasonAlgorithm.Demo;
@@ -106,5 +109,41 @@ public class CubicGraphExperimentService
         {
             await dbContext.BulkInsertAsync(allExperiments);
         }
+    }
+
+    public void VisualizeLollipopSteps(string graphString)
+    {
+        var adjacencyMatrix = GetMatrixFromNeighborsString(graphString);
+        
+        var cubicGraph = new CubicGraph(adjacencyMatrix);
+        var cubicGraphWithCycle = new CubicGraphWithCycle(cubicGraph);
+        
+        LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(cubicGraphWithCycle);
+    }
+    
+    public void CreateLollipopStepsVisualization(string graphString)
+    {
+        var adjacencyMatrix = GetMatrixFromNeighborsString(graphString);
+        
+        var cubicGraph = new CubicGraph(adjacencyMatrix);
+        var cubicGraphWithCycle = new CubicGraphWithCycle(cubicGraph);
+        
+        LollipopAlgorithm.CreateLollipopVisualization(cubicGraphWithCycle);
+    }
+    
+    private int[,] GetMatrixFromNeighborsString(string neighborsString)
+    {
+        var neighbors = neighborsString.Split('_');
+        var matrix = new int[neighbors.Length, neighbors.Length];
+
+        for (var i = 0; i < neighbors.Length; i++)
+        {
+            foreach (var neib in neighbors[i].Split(','))
+            {
+                matrix[i, int.Parse(neib)] = 1;
+            }
+        }
+
+        return matrix;
     }
 }

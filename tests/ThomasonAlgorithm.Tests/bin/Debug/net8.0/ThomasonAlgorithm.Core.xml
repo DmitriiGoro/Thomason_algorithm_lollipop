@@ -337,6 +337,8 @@
             </exception>
             <remarks>
             This constructor ensures that the input graph is cubic at the time of initialization. 
+            It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+            found in the graph.
             </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)">

@@ -24,7 +24,7 @@
             from the one provided in the <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> instance,
             and returns the number of steps taken by the algorithm.
             </summary>
-            <param name="cubicGraph">
+            <param name="cubicGraphWithCycle">
             An object that encapsulates a cubic graph and one of its Hamiltonian cycles.
             </param>
             <returns>
@@ -34,6 +34,186 @@
             The provided Hamiltonian cycle will be modified in-place to represent the second Hamiltonian cycle.
             Make sure to pass a deep copy if the original cycle should be preserved.
             </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">
+            <summary>
+            Finds the second Hamiltonian cycle in a cubic graph that already includes an initial Hamiltonian cycle,
+            and collects visualization steps for the transformation using Thomason’s algorithm.
+            </summary>
+            <param name="cubicGraphWithCycle">
+            A <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> instance containing both the cubic graph and its initial Hamiltonian cycle.
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32[0:,0:])">
+            <summary>
+            Constructs a cubic graph from the given adjacency matrix, computes an initial Hamiltonian cycle,
+            and finds the second Hamiltonian cycle using Thomason’s algorithm, producing visualization steps.
+            </summary>
+            <param name="adjacencyMatrix">
+            A square 2D array representing the adjacency matrix of a cubic graph (each row contains exactly 3 ones).
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)">
+            <summary>
+            Parses a cubic graph from a compact string representation of neighbor lists,
+            constructs an initial Hamiltonian cycle, and applies Thomason’s algorithm
+            to find a second Hamiltonian cycle while collecting visualization steps.
+            </summary>
+            <param name="listOfNeighbors">
+            A string where each vertex’s neighbors are given as comma-separated integers,
+            and each vertex entry is separated by an underscore '_'.<br/>
+            For example: <c>"1,2,3_0,2,4_0,1,5_..."</c> represents a graph where vertex 0 is connected to 1, 2, 3,
+            vertex 1 is connected to 0, 2, 4, and so on.
+            </param>
+            <remarks>
+            Internally uses <see cref="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetMatrixFromNeighborsString(System.String)"/> to convert the string into an adjacency matrix.
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">
+            <summary>
+            Generates interactive visualization files for the lollipop algorithm's execution on a cubic graph.
+            </summary>
+            <remarks>
+            <para>
+            This method creates a complete visualization package consisting of:
+            </para>
+            <list type="bullet">
+                <item><description>A <c>VisualizeSteps</c> directory created at the root of the calling project</description></item>
+                <item><description><c>index.html</c> - Self-contained visualization viewer with interactive controls</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace with graph state at each step</description></item>
+            </list>
+            <para>
+            The visualization allows examining:
+            </para>
+            <list type="bullet">
+                <item><description>The complete Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Intermediate graph states during cycle extension</description></item>
+                <item><description>Edge transformations during the lollipop operation</description></item>
+            </list>
+            </remarks>
+            <param name="cubicGraph">
+            The input cubic graph with Hamiltonian cycle to visualize. 
+            Requires:
+            <list type="bullet">
+                <item><description>Valid <see cref="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle"/> containing at least 3 vertices</description></item>
+                <item><description>Consistent <see cref="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph"/> adjacency matrix matching the cycle</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when <paramref name="cubicGraph"/> or its essential components are null
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the graph and cycle fail validation checks
+            </exception>
+            <example>
+            Basic usage:
+            <code>
+            var graph = CubicGraphWithCycle.FromAdjacencyMatrix(matrix, cycle);
+            LollipopVisualizer.CreateLollipopVisualization(graph);
+            // Opens visualization at: [ProjectRoot]/VisualizeSteps/index.html
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32[0:,0:])">
+            <summary>
+            Generates interactive visualization of the lollipop algorithm from an adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            Creates a complete visualization package in the calling project's root directory under <c>VisualizeSteps/</c> containing:
+            </para>
+            <list type="bullet">
+                <item><description><c>index.html</c> - Interactive visualization viewer</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace</description></item>
+            </list>
+            <para>
+            The visualization demonstrates:
+            </para>
+            <list type="bullet">
+                <item><description>Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Graph transformations during lollipop operations</description></item>
+                <item><description>Edge substitutions and cycle extensions</description></item>
+            </list>
+            </remarks>
+            <param name="adjacencyMatrix">
+            The adjacency matrix representing a cubic graph. Requirements:
+            <list type="bullet">
+                <item><description>3-regular graph matrix (each vertex has degree 3)</description></item>
+                <item><description>Square matrix with consistent connectivity</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Thrown when adjacencyMatrix is null</exception>
+            <exception cref="T:System.ArgumentException">Thrown when matrix doesn't represent a valid cubic graph</exception>
+            <example>
+            <code>
+            int[,] matrix = new int[,] { {0,1,1,1}, {1,0,1,1}, {1,1,0,1}, {1,1,1,0} };
+            LollipopVisualizer.CreateLollipopVisualization(matrix);
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)">
+            <summary>
+            Generates interactive visualization of the lollipop algorithm from a compressed neighbor list string.
+            </summary>
+            <remarks>
+            <para>
+            Creates a complete visualization package in the calling project's root directory under <c>VisualizeSteps/</c> containing:
+            </para>
+            <list type="bullet">
+                <item><description><c>index.html</c> - Interactive visualization viewer</description></item>
+                <item><description><c>steps.json</c> - Complete algorithm execution trace</description></item>
+            </list>
+            <para>
+            <strong>Input String Format:</strong>
+            </para>
+            <list type="bullet">
+                <item><description>Vertex neighbors are separated by underscores (<c>_</c>)</description></item>
+                <item><description>Each vertex entry contains exactly 3 comma-separated neighbor indices</description></item>
+                <item><description>Vertex numbering starts at 0</description></item>
+                <item><description>Example: <c>0,1,2_1,0,3_2,0,3_3,1,2</c> for a 4-vertex cubic graph</description></item>
+            </list>
+            <para>
+            The visualization demonstrates:
+            </para>
+            <list type="bullet">
+                <item><description>Hamiltonian cycle reconstruction process</description></item>
+                <item><description>Graph transformations during lollipop operations</description></item>
+                <item><description>Edge substitutions and cycle extensions</description></item>
+            </list>
+            </remarks>
+            <param name="stringOfNeighbors">
+            Compressed string representation of graph connectivity with:
+            <list type="bullet">
+                <item><description>Underscore-delimited vertex entries</description></item>
+                <item><description>Exactly 3 comma-separated neighbors per vertex</description></item>
+                <item><description>Zero-based vertex numbering</description></item>
+                <item><description>Symmetric relationships (if A lists B, B must list A)</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">Thrown when input string is null</exception>
+            <exception cref="T:System.FormatException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>String doesn't match expected pattern</description></item>
+                <item><description>Vertex has incorrect number of neighbors</description></item>
+                <item><description>Contains non-numeric values</description></item>
+            </list>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>Neighbor list doesn't form a valid cubic graph</description></item>
+                <item><description>Graph is not 3-regular</description></item>
+                <item><description>Asymmetric relationships detected</description></item>
+            </list>
+            </exception>
+            <example>
+            For a cube graph:
+            <code>
+            string cubeNeighbors = "0,1,4_1,0,2,5_2,1,3,6_3,2,7_4,0,5,7_5,1,4,6_6,2,5,7_7,3,4,6";
+            LollipopVisualizer.CreateLollipopVisualization(cubeNeighbors);
+            </code>
+            </example>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.ReconstructCycleAndReturnStepCount(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
             <summary>
@@ -56,6 +236,31 @@
             The method mutates the provided <paramref name="hamiltonianCycle"/> by breaking and reconnecting edges
             in accordance with Thomason's lollipop algorithm until a second Hamiltonian cycle is formed.
             The cycle is expected to be valid and consistent with the graph structure at the start of execution.
+            </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.ReconstructCycleAndReturnSteps(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}},ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Performs a step-by-step reconstruction of a Hamiltonian cycle using a Thomason algorithm
+            and returns a list of steps for visualization, including added and removed edges.
+            </summary>
+            <param name="hamiltonianCycle">
+            A dictionary representing the initial Hamiltonian cycle. Each key is a vertex, and its value is a list of two neighboring vertices in the cycle.
+            Note: During the algorithm execution, some values may be temporarily set to -1 to represent removed edges.
+            </param>
+            <param name="graph">
+            The cubic graph in which the Hamiltonian cycle is reconstructed. Used to determine adjacency information.
+            </param>
+            <returns>
+            A list of <see cref="T:ThomasonAlgorithm.Core.Models.LollipopStep"/> representing each step of the cycle reconstruction process.
+            Each step includes:
+            - The current set of edges in the Hamiltonian cycle (<c>CurrentCycleEdges</c>),
+            - The removed edge (<c>RemovedEdge</c>),
+            - The added edge (<c>AddedEdge</c>).
+            The final step contains only the closing edge of the cycle.
+            </returns>
+            <remarks>
+            This method mutates the <paramref name="hamiltonianCycle"/> during execution.
+            It is recommended to pass a deep copy of the original cycle to avoid modifying the original data structure.
             </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetVertexNeighbors(System.Int32,ThomasonAlgorithm.Core.Graphs.CubicGraph)">
@@ -123,6 +328,53 @@
             where each vertex is mapped to its list of neighbors in the cycle.</param>
             <returns>A <see cref="T:System.Collections.Generic.HashSet`1"/> containing the vertices of the Hamiltonian cycle
             in the order they appear in the cycle starting from 0.</returns>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetMatrixFromNeighborsString(System.String)">
+            <summary>
+            Converts a compressed neighbor string representation into an adjacency matrix.
+            </summary>
+            <remarks>
+            <para>
+            Expected string format: "0,1,2_1,0,3_2,0,3_3,1,2" where:
+            </para>
+            <list type="bullet">
+                <item><description>Underscores (_) separate vertex entries</description></item>
+                <item><description>Commas separate neighbor indices within each vertex</description></item>
+                <item><description>Each vertex must list exactly 3 neighbors (for cubic graphs)</description></item>
+                <item><description>Vertex numbering starts at 0</description></item>
+            </list>
+            </remarks>
+            <param name="neighborsString">The compressed neighbor string to parse</param>
+            <returns>A square adjacency matrix where matrix[i,j] = 1 indicates an edge between vertices i and j</returns>
+            <exception cref="T:System.ArgumentNullException">Thrown when neighborsString is null or empty</exception>
+            <exception cref="T:System.FormatException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>String contains invalid numeric formats</description></item>
+                <item><description>Vertex entry has incorrect number of neighbors (not exactly 3)</description></item>
+            </list>
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            Thrown when:
+            <list type="bullet">
+                <item><description>Vertex index is out of bounds (negative or ≥ vertex count)</description></item>
+                <item><description>Graph contains self-loops (vertex listing itself as neighbor)</description></item>
+                <item><description>Graph is not symmetric (if i lists j, j must list i)</description></item>
+            </list>
+            </exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List{System.Int32},System.Func{System.Int32,System.Boolean})">
+            <summary>
+            Returns the first element in the list that satisfies the specified predicate, or <c>null</c> if no such element exists.
+            </summary>
+            <param name="source">The list of integers to search through.</param>
+            <param name="predicate">The predicate function used to test each element.</param>
+            <returns>
+            The first element that matches the predicate, or <c>null</c> if no matching element is found.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if <paramref name="source"/> or <paramref name="predicate"/> is <c>null</c>.
+            </exception>
         </member>
         <member name="T:ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator">
             <summary>
@@ -324,6 +576,8 @@
             </exception>
             <remarks>
             This constructor ensures that the input graph is cubic at the time of initialization. 
+            It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+            found in the graph.
             </remarks>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)">
@@ -391,6 +645,48 @@
             providing better consistency and clarity when passing this data between methods or components.
             </remarks>
         </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Creates a Hamiltonian cycle for a cubic graph where vertices are connected in sequential order.
+            </summary>
+            <remarks>
+            <para>
+            This method generates a basic Hamiltonian cycle that connects all vertices in the graph 
+            in a simple sequential pattern: 0 → 1 → 2 → ... → n-1 → 0.
+            </para>
+            <para>
+            The resulting cycle has these properties:
+            </para>
+            <list type="bullet">
+                <item><description>Forms a single loop passing through all vertices exactly once</description></item>
+                <item><description>Connects first and last vertices (0 and n-1) to complete the cycle</description></item>
+                <item><description>Each vertex has exactly 2 connections in the cycle (as required for Hamiltonian cycles)</description></item>
+            </list>
+            <para>
+            <strong>Note:</strong> This creates a trivial cycle and may not represent the most optimal 
+            or interesting Hamiltonian cycle for analysis purposes.
+            </para>
+            </remarks>
+            <param name="graph">The cubic graph to process. Must satisfy <see cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.IsGraphCubic(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/> check.</param>
+            <returns>
+            A dictionary representing the Hamiltonian cycle where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices (0 to n-1)</description></item>
+                <item><description>Values are lists containing exactly 2 connected vertices</description></item>
+            </list>
+            </returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when the input graph is not cubic (any vertex doesn't have degree 3)
+            </exception>
+            <example>
+            For a 4-vertex cubic graph:
+            <code>
+            var graph = new CubicGraph(new int[,] { /* 4x4 adjacency matrix */ });
+            var cycle = CreateCubicGraphHamiltonianCycle(graph);
+            // Returns: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }
+            </code>
+            </example>
+        </member>
         <member name="T:ThomasonAlgorithm.Core.Models.Gap">
             <summary>
             Represents a range (gap) of integer values with a specified lower and upper bound.
@@ -412,6 +708,55 @@
         </member>
         <member name="P:ThomasonAlgorithm.Core.Models.Gap.RightBound">
             <summary>The inclusive upper bound of the gap range.</summary>
+        </member>
+        <member name="T:ThomasonAlgorithm.Core.Models.LollipopStep">
+            <summary>
+            Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+            </summary>
+            <param name="CurrentCycleEdges">
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </param>
+            <param name="AddedEdge">
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </param>
+            <param name="RemovedEdge">
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </param>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+            </summary>
+            <param name="CurrentCycleEdges">
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </param>
+            <param name="AddedEdge">
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </param>
+            <param name="RemovedEdge">
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </param>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges">
+            <summary>
+            A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+            </summary>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge">
+            <summary>
+            The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was added in this step.
+            </summary>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge">
+            <summary>
+            The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+            Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+            </summary>
         </member>
     </members>
 </doc>

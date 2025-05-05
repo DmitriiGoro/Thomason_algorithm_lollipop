@@ -10,4 +10,8 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\ThomasonAlgorithm.Core.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="VisualizeSteps\index.html" />
+  </ItemGroup>
+
 </Project>
