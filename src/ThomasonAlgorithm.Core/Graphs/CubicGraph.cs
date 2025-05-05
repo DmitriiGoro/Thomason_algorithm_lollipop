@@ -6,6 +6,32 @@ namespace ThomasonAlgorithm.Core.Graphs;
 /// </summary>
 public class CubicGraph
 {
+    /// <summary>
+    /// The adjacency matrix representation of the cubic graph.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// This matrix has the following properties:
+    /// </para>
+    /// <list type="bullet">
+    ///     <item><description>Square matrix (n×n where n is the vertex count)</description></item>
+    ///     <item><description>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</description></item>
+    ///     <item><description>Binary values (0 indicates no edge, 1 indicates an edge)</description></item>
+    ///     <item><description>Zero diagonal (matrix[i,i] == 0, no self-loops)</description></item>
+    ///     <item><description>Exactly three 1's per row/column (cubic/3-regular graph property)</description></item>
+    /// </list>
+    /// <para>
+    /// Example for a 4-vertex cube graph:
+    /// </para>
+    /// <code>
+    /// [
+    ///     [0, 1, 1, 1],
+    ///     [1, 0, 1, 1],
+    ///     [1, 1, 0, 1],
+    ///     [1, 1, 1, 0]
+    /// ]
+    /// </code>
+    /// </remarks>
     public readonly int[,] AdjacencyMatrix;
     
     /// <summary>
@@ -165,6 +191,12 @@ public class CubicGraph
     
     private bool IsCubic(int[,] adjacencyMatrix)
     {
+        if (adjacencyMatrix.GetLength(0) != adjacencyMatrix.GetLength(1))
+            throw new ArgumentException(
+                $"Invalid adjacency matrix dimensions. Expected square matrix (n×n), " +
+                $"got {adjacencyMatrix.GetLength(0)}×{adjacencyMatrix.GetLength(1)}. " +
+                $"Adjacency matrices for graphs must satisfy M[i,j] = M[j,i] ∀ i,j ∈ V(G)");
+        
         for (var row = 0; row < adjacencyMatrix.GetLength(0); row++)
         {
             var deg = Enumerable.Range(0, adjacencyMatrix.GetLength(1))

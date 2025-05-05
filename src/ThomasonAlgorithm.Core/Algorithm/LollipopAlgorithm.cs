@@ -79,7 +79,7 @@ public static class LollipopAlgorithm
     /// constructs an initial Hamiltonian cycle, and applies Thomason’s algorithm
     /// to find a second Hamiltonian cycle while collecting visualization steps.
     /// </summary>
-    /// <param name="listOfNeighbors">
+    /// <param name="stringOfNeighbors">
     /// A string where each vertex’s neighbors are given as comma-separated integers,
     /// and each vertex entry is separated by an underscore '_'.<br/>
     /// For example: <c>"1,2,3_0,2,4_0,1,5_..."</c> represents a graph where vertex 0 is connected to 1, 2, 3,
@@ -118,7 +118,7 @@ public static class LollipopAlgorithm
     ///     <item><description>Edge transformations during the lollipop operation</description></item>
     /// </list>
     /// </remarks>
-    /// <param name="cubicGraph">
+    /// <param name="cubicGraphWithCycle">
     /// The input cubic graph with Hamiltonian cycle to visualize. 
     /// Requires:
     /// <list type="bullet">
@@ -127,7 +127,7 @@ public static class LollipopAlgorithm
     /// </list>
     /// </param>
     /// <exception cref="ArgumentNullException">
-    /// Thrown when <paramref name="cubicGraph"/> or its essential components are null
+    /// Thrown when <paramref name="cubicGraphWithCycle"/> or its essential components are null
     /// </exception>
     /// <exception cref="InvalidOperationException">
     /// Thrown when the graph and cycle fail validation checks
@@ -358,7 +358,6 @@ public static class LollipopAlgorithm
     {
         var steps = new List<LollipopStep>();
         var startVertex = 0;
-        var algorithmSteps = 0;
 
         var neighborToUnlink = hamiltonianCycle[startVertex][0];
         hamiltonianCycle[startVertex][0] = -1;
@@ -378,7 +377,6 @@ public static class LollipopAlgorithm
             var idx2 = hamiltonianCycle[nextNeighborToUnlink].IndexOf(nextVertex);
             hamiltonianCycle[nextNeighborToUnlink][idx2] = -1;
 
-            ++algorithmSteps;
 
             steps.Add(new LollipopStep
             (
@@ -393,7 +391,6 @@ public static class LollipopAlgorithm
 
         var emptyIndex = hamiltonianCycle[startVertex].IndexOf(-1);
         hamiltonianCycle[startVertex][emptyIndex] = neighborToUnlink;
-        ++algorithmSteps;
 
         steps.Add(new LollipopStep
         (
@@ -615,6 +612,17 @@ public static class LollipopAlgorithm
         return matrix;
     }
 
+    /// <summary>
+    /// Generates and displays visualization of the lollipop algorithm steps.
+    /// </summary>
+    /// <remarks>
+    /// - Creates visualization files (HTML + JSON) in VisualizeSteps directory
+    /// - Launches local server to display the visualization
+    /// - Uses embedded HTML template and serialized algorithm data
+    /// </remarks>
+    /// <param name="steps">Algorithm execution steps to visualize</param>
+    /// <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+    /// <exception cref="FileNotFoundException">If embedded HTML template is missing</exception>
     private static void RunVisualization(List<LollipopStep> steps, int[,] adjacencyMatrix)
     {
         var allEdges = GetAllEdges(adjacencyMatrix)
@@ -677,6 +685,17 @@ public static class LollipopAlgorithm
         return edges;
     }
 
+    /// <summary>
+    /// Starts a local HTTP server to serve visualization files and opens the index.html in browser.
+    /// </summary>
+    /// <remarks>
+    /// - Hosts files from specified directory at http://localhost:11111/
+    /// - Automatically opens index.html in default browser
+    /// - Runs until Enter is pressed
+    /// - Requires admin rights for port registration (first run)
+    /// </remarks>
+    /// <param name="visualizeDir">Directory containing visualization files</param>
+    /// <exception cref="HttpListenerException">When lacking permissions for port binding</exception>
     private static void RunServer(string visualizeDir)
     {
         var listener = new HttpListener();
@@ -754,6 +773,18 @@ public static class LollipopAlgorithm
         }
     }
     
+    /// <summary>
+    /// Creates visualization files (HTML and JSON) in the calling project's root directory.
+    /// </summary>
+    /// <remarks>
+    /// Generates:
+    /// 1. index.html (from embedded resources)
+    /// 2. steps.json (serialized algorithm steps and graph data)
+    /// in a "VisualizationSteps" subdirectory.
+    /// </remarks>
+    /// <param name="steps">Algorithm execution steps to visualize</param>
+    /// <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+    /// <exception cref="FileNotFoundException">When embedded HTML resource is missing</exception>
     private static void CreateVisualizationInProjectRoot(List<LollipopStep> steps, int[,] adjacencyMatrix)
     {
         var projectRoot = GetCallingProjectRootDirectory();
@@ -796,7 +827,7 @@ public static class LollipopAlgorithm
             WriteIndented = true,
         }));
         
-        Console.WriteLine($"Файлы визуализации созданы в: {visualizeDir}");
+        Console.WriteLine($"Files are created in: {visualizeDir}");
     }
 
     private static string GetCallingProjectRootDirectory()

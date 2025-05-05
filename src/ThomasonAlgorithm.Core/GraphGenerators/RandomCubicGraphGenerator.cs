@@ -205,14 +205,14 @@ public static class RandomCubicGraphGenerator
     {
         var possibleNeighbors = new Dictionary<int, HashSet<int>>();
         
-        for (int i = 0; i < n; i++)
+        for (var i = 0; i < n; i++)
         {
             possibleNeighbors.Add(i, new HashSet<int>());
         }
 
-        for (int i = 0; i < n; i++)
+        for (var i = 0; i < n; i++)
         {
-            for (int j = i + 2; j < n; j++)
+            for (var j = i + 2; j < n; j++)
             {
                 if (j == (i - 1 + n) % n)
                     continue; // сосед по циклу (конец сегмента)
