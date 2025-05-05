@@ -184,7 +184,7 @@ public static class LollipopAlgorithm
     {
         var cubicGraph = new CubicGraph(adjacencyMatrix);
         var cubicGraphWithCycle = new CubicGraphWithCycle(cubicGraph);
-        var steps = ReconstructCycleAndReturnSteps(cubicGraph.HamiltonianCycle, cubicGraphWithCycle.Graph);
+        var steps = ReconstructCycleAndReturnSteps(cubicGraphWithCycle.HamiltonianCycle, cubicGraphWithCycle.Graph);
         CreateVisualizationInProjectRoot(steps, cubicGraphWithCycle.Graph.AdjacencyMatrix);
     }
     
@@ -255,7 +255,7 @@ public static class LollipopAlgorithm
         var adjacencyMatrix = GetMatrixFromNeighborsString(stringOfNeighbors);
         var cubicGraph = new CubicGraph(adjacencyMatrix);
         var cubicGraphWithCycle = new CubicGraphWithCycle(cubicGraph);
-        var steps = ReconstructCycleAndReturnSteps(cubicGraph.HamiltonianCycle, cubicGraphWithCycle.Graph);
+        var steps = ReconstructCycleAndReturnSteps(cubicGraphWithCycle.HamiltonianCycle, cubicGraphWithCycle.Graph);
         CreateVisualizationInProjectRoot(steps, cubicGraphWithCycle.Graph.AdjacencyMatrix);
     }
     

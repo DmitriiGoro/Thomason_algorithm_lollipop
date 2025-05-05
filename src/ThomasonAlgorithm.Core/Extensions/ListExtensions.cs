@@ -1,5 +1,20 @@
 namespace ThomasonAlgorithm.Core.Extensions;
 
+/// <summary>
+/// Provides extension methods for <see cref="List{T}"/> collections.
+/// </summary>
+/// <remarks>
+/// This class contains utility methods that extend the functionality of generic lists,
+/// particularly for graph algorithm operations and neighbor searching scenarios.
+/// </remarks>
+/// <example>
+/// Basic usage:
+/// <code>
+/// var neighbors = new List&lt;int> { 1, 2, 3 };
+/// var result = neighbors.FirstPossibleNeighborOrNull(x => x > 1);
+/// // Returns 2
+/// </code>
+/// </example>
 public static class ListExtensions
 {
     /// <summary>

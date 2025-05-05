@@ -52,7 +52,7 @@ public class CubicGraph
     /// <summary>
     /// Stores the Hamiltonian cycle of the graph, represented as a dictionary of vertices and their neighbors in the cycle.
     /// </summary>
-    public Dictionary<int, List<int>> HamiltonianCycle { get; set; }
+    public Dictionary<int, List<int>>? HamiltonianCycle { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="CubicGraph"/> class with an empty adjacency matrix of the specified size.

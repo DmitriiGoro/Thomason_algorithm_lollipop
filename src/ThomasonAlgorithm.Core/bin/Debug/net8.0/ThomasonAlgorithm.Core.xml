@@ -59,7 +59,7 @@
             constructs an initial Hamiltonian cycle, and applies Thomason’s algorithm
             to find a second Hamiltonian cycle while collecting visualization steps.
             </summary>
-            <param name="listOfNeighbors">
+            <param name="stringOfNeighbors">
             A string where each vertex’s neighbors are given as comma-separated integers,
             and each vertex entry is separated by an underscore '_'.<br/>
             For example: <c>"1,2,3_0,2,4_0,1,5_..."</c> represents a graph where vertex 0 is connected to 1, 2, 3,
@@ -91,7 +91,7 @@
                 <item><description>Edge transformations during the lollipop operation</description></item>
             </list>
             </remarks>
-            <param name="cubicGraph">
+            <param name="cubicGraphWithCycle">
             The input cubic graph with Hamiltonian cycle to visualize. 
             Requires:
             <list type="bullet">
@@ -100,7 +100,7 @@
             </list>
             </param>
             <exception cref="T:System.ArgumentNullException">
-            Thrown when <paramref name="cubicGraph"/> or its essential components are null
+            Thrown when <paramref name="cubicGraphWithCycle"/> or its essential components are null
             </exception>
             <exception cref="T:System.InvalidOperationException">
             Thrown when the graph and cycle fail validation checks
@@ -363,6 +363,63 @@
             </list>
             </exception>
         </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.RunVisualization(System.Collections.Generic.List{ThomasonAlgorithm.Core.Models.LollipopStep},System.Int32[0:,0:])">
+            <summary>
+            Generates and displays visualization of the lollipop algorithm steps.
+            </summary>
+            <remarks>
+            - Creates visualization files (HTML + JSON) in VisualizeSteps directory
+            - Launches local server to display the visualization
+            - Uses embedded HTML template and serialized algorithm data
+            </remarks>
+            <param name="steps">Algorithm execution steps to visualize</param>
+            <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+            <exception cref="T:System.IO.FileNotFoundException">If embedded HTML template is missing</exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.RunServer(System.String)">
+            <summary>
+            Starts a local HTTP server to serve visualization files and opens the index.html in browser.
+            </summary>
+            <remarks>
+            - Hosts files from specified directory at http://localhost:11111/
+            - Automatically opens index.html in default browser
+            - Runs until Enter is pressed
+            - Requires admin rights for port registration (first run)
+            </remarks>
+            <param name="visualizeDir">Directory containing visualization files</param>
+            <exception cref="T:System.Net.HttpListenerException">When lacking permissions for port binding</exception>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateVisualizationInProjectRoot(System.Collections.Generic.List{ThomasonAlgorithm.Core.Models.LollipopStep},System.Int32[0:,0:])">
+            <summary>
+            Creates visualization files (HTML and JSON) in the calling project's root directory.
+            </summary>
+            <remarks>
+            Generates:
+            1. index.html (from embedded resources)
+            2. steps.json (serialized algorithm steps and graph data)
+            in a "VisualizationSteps" subdirectory.
+            </remarks>
+            <param name="steps">Algorithm execution steps to visualize</param>
+            <param name="adjacencyMatrix">Graph adjacency matrix for visualization</param>
+            <exception cref="T:System.IO.FileNotFoundException">When embedded HTML resource is missing</exception>
+        </member>
+        <member name="T:ThomasonAlgorithm.Core.Extensions.ListExtensions">
+            <summary>
+            Provides extension methods for <see cref="T:System.Collections.Generic.List`1"/> collections.
+            </summary>
+            <remarks>
+            This class contains utility methods that extend the functionality of generic lists,
+            particularly for graph algorithm operations and neighbor searching scenarios.
+            </remarks>
+            <example>
+            Basic usage:
+            <code>
+            var neighbors = new List&lt;int> { 1, 2, 3 };
+            var result = neighbors.FirstPossibleNeighborOrNull(x => x > 1);
+            // Returns 2
+            </code>
+            </example>
+        </member>
         <member name="M:ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List{System.Int32},System.Func{System.Int32,System.Boolean})">
             <summary>
             Returns the first element in the list that satisfies the specified predicate, or <c>null</c> if no such element exists.
@@ -531,6 +588,34 @@
             This class manages the graph structure, chord lengths, and Hamiltonian cycle.
             </summary>
         </member>
+        <member name="F:ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix">
+            <summary>
+            The adjacency matrix representation of the cubic graph.
+            </summary>
+            <remarks>
+            <para>
+            This matrix has the following properties:
+            </para>
+            <list type="bullet">
+                <item><description>Square matrix (n×n where n is the vertex count)</description></item>
+                <item><description>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</description></item>
+                <item><description>Binary values (0 indicates no edge, 1 indicates an edge)</description></item>
+                <item><description>Zero diagonal (matrix[i,i] == 0, no self-loops)</description></item>
+                <item><description>Exactly three 1's per row/column (cubic/3-regular graph property)</description></item>
+            </list>
+            <para>
+            Example for a 4-vertex cube graph:
+            </para>
+            <code>
+            [
+                [0, 1, 1, 1],
+                [1, 0, 1, 1],
+                [1, 1, 0, 1],
+                [1, 1, 1, 0]
+            ]
+            </code>
+            </remarks>
+        </member>
         <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount">
             <summary>
             Gets the total number of vertices in the graph.
@@ -644,6 +729,104 @@
             This class ensures that a Hamiltonian cycle is explicitly associated with a specific cubic graph,
             providing better consistency and clarity when passing this data between methods or components.
             </remarks>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Initializes a new instance of <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> with a specified Hamiltonian cycle.
+            </summary>
+            <remarks>
+            <para>
+            Use this constructor when you have a precomputed Hamiltonian cycle for the graph.
+            The cycle will be used as-is without validation.
+            </para>
+            <para>
+            The cycle must:
+            </para>
+            <list type="bullet">
+                <item><description>Contain all vertices of the graph exactly once</description></item>
+                <item><description>Form a single connected loop</description></item>
+                <item><description>Maintain cubic graph properties</description></item>
+            </list>
+            </remarks>
+            <param name="graph">The cubic graph to associate with the cycle.</param>
+            <param name="cycle">
+            A dictionary representing the Hamiltonian cycle where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices</description></item>
+                <item><description>Values are lists of exactly 2 connected vertices</description></item>
+            </list>
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown when either <paramref name="graph"/> or <paramref name="cycle"/> is null.
+            </exception>
+            <example>
+            <code>
+            var graph = new CubicGraph(adjacencyMatrix);
+            var precomputedCycle = new Dictionary&lt;int, List&lt;int>>() { ... };
+            var graphWithCycle = new CubicGraphWithCycle(graph, precomputedCycle);
+            </code>
+            </example>
+        </member>
+        <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)">
+            <summary>
+            Initializes a new instance of <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle"/> with a generated Hamiltonian cycle.
+            </summary>
+            <remarks>
+            <para>
+            Automatically generates a trivial Hamiltonian cycle using <see cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/>.
+            The generated cycle connects vertices in sequential order (0→1→2...→n-1→0).
+            </para>
+            <para>
+            For non-trivial cycles, use the constructor that accepts a precomputed cycle.
+            </para>
+            </remarks>
+            <param name="graph">The cubic graph for which to generate a Hamiltonian cycle.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="graph"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            Thrown when the graph is not cubic (any vertex doesn't have degree 3).
+            </exception>
+            <example>
+            <code>
+            var graph = new CubicGraph(adjacencyMatrix);
+            var graphWithCycle = new CubicGraphWithCycle(graph); // Generates default cycle
+            </code>
+            </example>
+            <seealso cref="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)"/>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph">
+            <summary>
+            Gets the underlying cubic graph associated with this instance.
+            </summary>
+            <remarks>
+            The graph maintains these properties:
+            <list type="bullet">
+                <item><description>3-regular (each vertex has degree 3)</description></item>
+                <item><description>Undirected (edges are bidirectional)</description></item>
+                <item><description>No self-loops</description></item>
+            </list>
+            </remarks>
+            <value>
+            A <see cref="T:ThomasonAlgorithm.Core.Graphs.CubicGraph"/> object representing the graph structure.
+            </value>
+        </member>
+        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle">
+            <summary>
+            Gets the Hamiltonian cycle associated with the graph.
+            </summary>
+            <remarks>
+            The cycle is represented as an adjacency dictionary where:
+            <list type="bullet">
+                <item><description>Keys are vertex indices (0-based)</description></item>
+                <item><description>Values are lists containing exactly 2 connected vertices</description></item>
+            </list>
+            This ensures the cycle forms a single loop through all vertices.
+            </remarks>
+            <value>
+            A dictionary mapping each vertex to its two adjacent vertices in the cycle.
+            </value>
+            <example>
+            For a 4-vertex cycle: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }
+            </example>
         </member>
         <member name="M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)">
             <summary>
