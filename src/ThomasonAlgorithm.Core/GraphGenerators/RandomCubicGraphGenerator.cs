@@ -115,7 +115,7 @@ public static class RandomCubicGraphGenerator
             {
                 ApplyMatchingToGraph(graph, matching);
                 if (graph.IsCubic())
-                    return graph;
+                    return new CubicGraph(graph.AdjacencyMatrix);
             }
         }
 
@@ -165,7 +165,7 @@ public static class RandomCubicGraphGenerator
             {
                 ApplyMatchingToGraph(graph, matching);
                 if (graph.IsCubic())
-                    return graph;
+                    return new CubicGraph(graph.AdjacencyMatrix);
             }
         }
         return null;
@@ -180,9 +180,9 @@ public static class RandomCubicGraphGenerator
             throw new ArgumentException("Wrong K value");
     }
 
-    private static CubicGraph CreateInitialCycleGraph(int n)
+    private static Graph CreateInitialCycleGraph(int n)
     {
-        var graph = new CubicGraph(n);
+        var graph = new Graph(n);
         for (var i = 0; i < n; i++)
         {
             var j = (i + 1) % n;
@@ -231,7 +231,7 @@ public static class RandomCubicGraphGenerator
     
     private static int GetChordLength(int i, int j, int n) => Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));
 
-    private static void ApplyMatchingToGraph(CubicGraph graph, List<(int, int)> matching)
+    private static void ApplyMatchingToGraph(Graph graph, List<(int, int)> matching)
     {
         foreach (var (u, v) in matching)
         {
@@ -254,7 +254,7 @@ public static class RandomCubicGraphGenerator
     /// and that the number of edges in the matching matches the total number of vertices in the graph.
     /// If a perfect matching cannot be found for all vertices, the method will return null.
     /// </remarks>
-    private static List<(int, int)>? FindPerfectMatching(int n, Dictionary<int, HashSet<int>> possibleNeighbors, CubicGraph graph)
+    private static List<(int, int)>? FindPerfectMatching(int n, Dictionary<int, HashSet<int>> possibleNeighbors, Graph graph)
     {
         var needed = GetNumberNeededEdges(n, graph);
         var totalNeeded = needed.Sum();
@@ -288,7 +288,6 @@ public static class RandomCubicGraphGenerator
                     usedInMatching[selectedNeighbor] = true;
 
                     var chordLength = GetChordLength(i, selectedNeighbor, n);
-                    graph.AddChordLength(chordLength);
                 }
             }
 
@@ -321,7 +320,7 @@ public static class RandomCubicGraphGenerator
     private static List<(int, int)>? FindPerfectMatching(
         int n,
         Dictionary<int, HashSet<int>> possibleNeighbors,
-        CubicGraph graph,
+        Graph graph,
         int[] neededChords)
     {
         var needed = GetNumberNeededEdges(n, graph);
@@ -348,7 +347,7 @@ public static class RandomCubicGraphGenerator
                 var randomIndex = Rand.Next(possibleNeighborsList.Count);
                 var selectedNeighbor = possibleNeighborsList[randomIndex];
                 checkedNeighbors.Add(selectedNeighbor);
-                var chordLength = GetChordLength(i, selectedNeighbor, n); // ВНИМАТЕЛЬНО ПРОТЕСТИРУЙ ЭТО
+                var chordLength = GetChordLength(i, selectedNeighbor, n);
 
                 if (!usedInMatching[selectedNeighbor] && neededChords[chordLength] != 0)
                 {
@@ -356,8 +355,6 @@ public static class RandomCubicGraphGenerator
                     usedInMatching[i] = true;
                     usedInMatching[selectedNeighbor] = true;
                     neededChords[chordLength]--;
-
-                    graph.AddChordLength(chordLength);
                 }
             }
 
@@ -369,7 +366,7 @@ public static class RandomCubicGraphGenerator
         return result;
     }
 
-    private static int[] GetNumberNeededEdges(int n, CubicGraph graph)
+    private static int[] GetNumberNeededEdges(int n, Graph graph)
     {
         var needed = new int[n];
         for (var i = 0; i < n; i++)

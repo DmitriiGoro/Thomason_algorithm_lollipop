@@ -4,25 +4,33 @@ namespace ThomasonAlgorithm.Core.Graphs;
 /// Represents a cubic (3-regular) graph, where each vertex has exactly 3 neighbors.
 /// This class manages the graph structure, chord lengths, and Hamiltonian cycle.
 /// </summary>
-public class CubicGraph
+public class CubicGraph : Graph
 {
     /// <summary>
-    /// The adjacency matrix representation of the cubic graph.
+    /// Gets the adjacency matrix of the cubic graph.
     /// </summary>
     /// <remarks>
     /// <para>
-    /// This matrix has the following properties:
+    /// This matrix has the following invariants:
     /// </para>
     /// <list type="bullet">
-    ///     <item><description>Square matrix (n×n where n is the vertex count)</description></item>
+    ///     <item><description>Exactly three non-zero entries per row/column (3-regular)</description></item>
     ///     <item><description>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</description></item>
-    ///     <item><description>Binary values (0 indicates no edge, 1 indicates an edge)</description></item>
-    ///     <item><description>Zero diagonal (matrix[i,i] == 0, no self-loops)</description></item>
-    ///     <item><description>Exactly three 1's per row/column (cubic/3-regular graph property)</description></item>
+    ///     <item><description>Zero diagonal (no self-loops)</description></item>
     /// </list>
     /// <para>
-    /// Example for a 4-vertex cube graph:
+    /// This property hides the base <see cref="Graph.AdjacencyMatrix"/> to enforce cubic graph constraints.
     /// </para>
+    /// </remarks>
+    /// <value>
+    /// A square 2D integer array representing vertex connections where:
+    /// <list type="bullet">
+    ///     <item><description>1 indicates an edge between vertices</description></item>
+    ///     <item><description>0 indicates no connection</description></item>
+    /// </list>
+    /// </value>
+    /// <example>
+    /// Example for a 4-vertex cube graph:
     /// <code>
     /// [
     ///     [0, 1, 1, 1],
@@ -31,13 +39,8 @@ public class CubicGraph
     ///     [1, 1, 1, 0]
     /// ]
     /// </code>
-    /// </remarks>
-    public readonly int[,] AdjacencyMatrix;
-    
-    /// <summary>
-    /// Gets the total number of vertices in the graph.
-    /// </summary>
-    public int VertexCount => AdjacencyMatrix.GetLength(0);
+    /// </example>
+    public new readonly int[,] AdjacencyMatrix;
     
     /// <summary>
     /// Gets or sets the maximum chord length found in the graph.
@@ -55,26 +58,6 @@ public class CubicGraph
     public Dictionary<int, List<int>>? HamiltonianCycle { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="CubicGraph"/> class with an empty adjacency matrix of the specified size.
-    /// </summary>
-    /// <param name="size">The number of vertices in the graph (the size of the square adjacency matrix).</param>
-    /// <exception cref="ArgumentOutOfRangeException">
-    /// Thrown when <paramref name="size"/> is less than 4.
-    /// </exception>
-    /// <remarks>
-    /// This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic 
-    /// construction of edges. It does not enforce the cubic property upon creation. 
-    /// The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).
-    /// </remarks>
-    public CubicGraph(int size)
-    {
-        if (size < 4)
-            throw new ArgumentOutOfRangeException(nameof(size), "Graph must have at least 4 vertices.");
-        
-        AdjacencyMatrix = new int[size, size];
-    }
-    
-    /// <summary>
     /// Initializes a new instance of the <see cref="CubicGraph"/> class using the provided adjacency matrix.
     /// </summary>
     /// <param name="adjacencyMatrix">A square matrix representing the adjacency structure of the graph.</param>
@@ -87,12 +70,12 @@ public class CubicGraph
     /// It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
     /// found in the graph.
     /// </remarks>
-    public CubicGraph(int[,] adjacencyMatrix)
+    public CubicGraph(int[,] adjacencyMatrix) : base(adjacencyMatrix.Length)
     {
         if (!IsCubic(adjacencyMatrix))
             throw new ArgumentOutOfRangeException(nameof(adjacencyMatrix), "Adjacency matrix is not cubic.");
         
-        AdjacencyMatrix = adjacencyMatrix;
+        AdjacencyMatrix = (int[,])adjacencyMatrix.Clone(); 
         ComputeChordLengths();
     }
 
@@ -102,91 +85,11 @@ public class CubicGraph
     /// <param name="from">The starting vertex of the edge.</param>
     /// <param name="to">The ending vertex of the edge.</param>
     /// <exception cref="InvalidOperationException">Thrown if an edge already exists or the degree of a vertex exceeds 3.</exception>
-    public void AddEdge(int from, int to)
+    public new void AddEdge(int from, int to)
     {
-        ValidateVertex(from);
-        ValidateVertex(to);
-
-        if (HasEdge(from, to))
-            throw new InvalidOperationException("The edge is already in the graph.");
-
         if (GetVertexDegree(from) >= 3 || GetVertexDegree(to) >= 3)
             throw new InvalidOperationException("Vertex degree cannot be greater than 3.");
-
-        AdjacencyMatrix[from, to] = 1;
-        AdjacencyMatrix[to, from] = 1;
-    }
-
-    /// <summary>
-    /// Removes an edge between two vertices.
-    /// </summary>
-    /// <param name="from">The starting vertex of the edge.</param>
-    /// <param name="to">The ending vertex of the edge.</param>
-    public void RemoveEdge(int from, int to)
-    {
-        ValidateVertex(from);
-        ValidateVertex(to);
-
-        AdjacencyMatrix[from, to] = 0;
-        AdjacencyMatrix[to, from] = 0;
-    }
-
-    /// <summary>
-    /// Gets the degree of a vertex (the number of edges connected to it).
-    /// </summary>
-    /// <param name="vertex">The vertex whose degree is to be calculated.</param>
-    /// <returns>The degree of the specified vertex.</returns>
-    public int GetVertexDegree(int vertex)
-    {
-        ValidateVertex(vertex);
-        var degree = 0;
-        for (var i = 0; i < VertexCount; i++)
-            degree += AdjacencyMatrix[vertex, i];
-        return degree;
-    }
-    
-    /// <summary>
-    /// Gets the list of neighbors (vertices connected by edges) for a specified vertex.
-    /// </summary>
-    /// <param name="vertex">The vertex for which neighbors are to be retrieved.</param>
-    /// <returns>A list of neighboring vertices.</returns>
-    public List<int> GetNeighbors(int vertex)
-    {
-        ValidateVertex(vertex);
-        var neighbors = new List<int>();
-        for (int i = 0; i < VertexCount; i++)
-        {
-            if (AdjacencyMatrix[vertex, i] == 1)
-                neighbors.Add(i);
-        }
-        return neighbors;
-    }
-
-    /// <summary>
-    /// Checks whether an edge exists between two vertices.
-    /// </summary>
-    /// <param name="from">The starting vertex of the edge.</param>
-    /// <param name="to">The ending vertex of the edge.</param>
-    /// <returns>True if an edge exists between the two vertices; otherwise, false.</returns>
-    public bool HasEdge(int from, int to)
-    {
-        ValidateVertex(from);
-        ValidateVertex(to);
-        return AdjacencyMatrix[from, to] == 1;
-    }
-    
-    /// <summary>
-    /// Checks if the graph is cubic, meaning each vertex has exactly 3 neighbors.
-    /// </summary>
-    /// <returns>True if the graph is cubic; otherwise, false.</returns>
-    public bool IsCubic()
-    {
-        for (int i = 0; i < VertexCount; i++)
-        {
-            if (GetVertexDegree(i) != 3)
-                return false;
-        }
-        return true;
+        base.AddEdge(from, to);
     }
     
     private bool IsCubic(int[,] adjacencyMatrix)
@@ -194,8 +97,7 @@ public class CubicGraph
         if (adjacencyMatrix.GetLength(0) != adjacencyMatrix.GetLength(1))
             throw new ArgumentException(
                 $"Invalid adjacency matrix dimensions. Expected square matrix (n×n), " +
-                $"got {adjacencyMatrix.GetLength(0)}×{adjacencyMatrix.GetLength(1)}. " +
-                $"Adjacency matrices for graphs must satisfy M[i,j] = M[j,i] ∀ i,j ∈ V(G)");
+                $"got {adjacencyMatrix.GetLength(0)}×{adjacencyMatrix.GetLength(1)}.");
         
         for (var row = 0; row < adjacencyMatrix.GetLength(0); row++)
         {
@@ -208,35 +110,6 @@ public class CubicGraph
         return true;
     }
     
-    /// <summary>
-    /// Adds a chord length to the collection, increasing its count. 
-    /// If the chord length doesn't exist in the collection, it will be added with an initial count of 1.
-    /// Additionally, the method updates the maximum chord length if the new chord length exceeds the current maximum.
-    /// </summary>
-    /// <param name="chordLength">The length of the chord to be added.</param>
-    /// <remarks>
-    /// This method maintains a collection of chord lengths, where each chord length is mapped to its frequency (how many times it has been added).
-    /// It also keeps track of the maximum chord length encountered during the process.
-    /// </remarks>
-    public void AddChordLength(int chordLength)
-    {
-        if (!ChordsLengths.ContainsKey(chordLength))
-        {
-            ChordsLengths.Add(chordLength, 0);
-        }
-        
-        ChordsLengths[chordLength]++;
-        
-        if (chordLength > MaxChordLength)
-            MaxChordLength = chordLength;
-    }
-
-    private void ValidateVertex(int vertex)
-    {
-        if (vertex < 0 || vertex >= VertexCount)
-            throw new ArgumentOutOfRangeException(nameof(vertex), "Wrong vertex index.");
-    }
-    
     private void ComputeChordLengths()
     {
         var n = AdjacencyMatrix.GetLength(0);
@@ -245,22 +118,22 @@ public class CubicGraph
         {
             for (var j = i + 1; j < n; j++)
             {
-                if (AdjacencyMatrix[i, j] == 1)
-                {
-                    var chordLength = Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));
+                if (AdjacencyMatrix[i, j] != 1) 
+                    continue;
                 
-                    if (chordLength <= 1)
-                        continue;
+                var chordLength = Math.Min(Math.Abs(i - j), n - Math.Abs(i - j));
+                
+                if (chordLength <= 1)
+                    continue;
 
-                    if (!ChordsLengths.TryAdd(chordLength, 1))
-                    {
-                        ChordsLengths[chordLength]++;
-                    }
+                if (!ChordsLengths.TryAdd(chordLength, 1))
+                {
+                    ChordsLengths[chordLength]++;
+                }
 
-                    if (chordLength > MaxChordLength)
-                    {
-                        MaxChordLength = chordLength;
-                    }
+                if (chordLength > MaxChordLength)
+                {
+                    MaxChordLength = chordLength;
                 }
             }
         }
