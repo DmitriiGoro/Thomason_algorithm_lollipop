@@ -1,7 +1,7 @@
 # Cubic Graph Experiment Demo
 **See also**:
-- [Getting Started](getting-started.md) - базовые настройки
-- [API Reference](./api/toc.html) - детали классов
+- [Getting Started](getting-started.md)
+- [API Reference](./api/toc.html)
 
 # Cubic Graph Experiment Demo
 
