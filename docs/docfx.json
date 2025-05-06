@@ -33,7 +33,8 @@
     "globalMetadata": {
       "_appTitle": "Thomason Algorithm Documentation",
       "_appFooter": "© 2025 MIPT",
-      "_enableSearch": true
+      "_enableSearch": true,
+      "_basePath": "Thomason_algorithm_lollipop"
     },
     "template": ["default"]
   }
