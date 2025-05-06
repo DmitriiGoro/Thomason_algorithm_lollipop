@@ -43,11 +43,6 @@ public class CubicGraph : Graph
     private readonly int[,] _adjacencyMatrix;
     
     /// <summary>
-    /// Gets a copy of the adjacency matrix to prevent external modifications.
-    /// </summary>
-    public new int[,] AdjacencyMatrix => (int[,])_adjacencyMatrix.Clone();
-    
-    /// <summary>
     /// Gets or sets the maximum chord length found in the graph.
     /// </summary>
     public int MaxChordLength = -1;
@@ -79,8 +74,8 @@ public class CubicGraph : Graph
     {
         if (!IsCubic(adjacencyMatrix))
             throw new ArgumentOutOfRangeException(nameof(adjacencyMatrix), "Adjacency matrix is not cubic.");
-        
-        _adjacencyMatrix = (int[,])adjacencyMatrix.Clone(); 
+
+        _adjacencyMatrix = adjacencyMatrix;
         ComputeChordLengths();
     }
 

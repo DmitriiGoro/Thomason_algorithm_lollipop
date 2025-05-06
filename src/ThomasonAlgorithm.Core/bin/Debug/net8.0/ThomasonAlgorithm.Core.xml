@@ -602,7 +602,7 @@
                 <item><description>Zero diagonal (no self-loops)</description></item>
             </list>
             <para>
-            This property hides the base <see cref="P:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix"/> to enforce cubic graph constraints.
+            This property hides the base <see cref="F:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix"/> to enforce cubic graph constraints.
             </para>
             </remarks>
             <value>
@@ -623,11 +623,6 @@
             ]
             </code>
             </example>
-        </member>
-        <member name="P:ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix">
-            <summary>
-            Gets a copy of the adjacency matrix to prevent external modifications.
-            </summary>
         </member>
         <member name="F:ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength">
             <summary>
@@ -837,7 +832,7 @@
             </list>
             </remarks>
         </member>
-        <member name="F:ThomasonAlgorithm.Core.Graphs.Graph._adjacencyMatrix">
+        <member name="F:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix">
             <summary>
             The adjacency matrix representing connections between vertices in an unweighted, undirected graph.
             </summary>
@@ -856,11 +851,6 @@
             elements can be modified through controlled methods like <see cref="M:ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)"/>.
             </para>
             </remarks>
-        </member>
-        <member name="P:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix">
-            <summary>
-            Gets a copy of the adjacency matrix to prevent external modifications.
-            </summary>
         </member>
         <member name="P:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount">
             <summary>

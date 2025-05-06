@@ -38,12 +38,7 @@ public class Graph
     /// elements can be modified through controlled methods like <see cref="AddEdge"/>.
     /// </para>
     /// </remarks>
-    private readonly int[,] _adjacencyMatrix;
-
-    /// <summary>
-    /// Gets a copy of the adjacency matrix to prevent external modifications.
-    /// </summary>
-    public int[,] AdjacencyMatrix => (int[,])_adjacencyMatrix.Clone();
+    public readonly int[,] AdjacencyMatrix;
 
     /// <summary>
     /// Gets the total number of vertices in the graph.
@@ -76,7 +71,7 @@ public class Graph
     /// </example>
     public Graph(int size)
     {
-        _adjacencyMatrix = new int[size, size];
+        AdjacencyMatrix = new int[size, size];
     }
     
     /// <summary>
@@ -125,7 +120,7 @@ public class Graph
     {
         ValidateAdjacencyMatrix(adjacencyMatrix);
         
-        _adjacencyMatrix = (int[,])adjacencyMatrix.Clone();
+        AdjacencyMatrix = (int[,])adjacencyMatrix.Clone();;
     }
     
     /// <summary>
@@ -142,8 +137,8 @@ public class Graph
         if (HasEdge(from, to))
             throw new InvalidOperationException("The edge is already in the graph.");
 
-        _adjacencyMatrix[from, to] = 1;
-        _adjacencyMatrix[to, from] = 1;
+        AdjacencyMatrix[from, to] = 1;
+        AdjacencyMatrix[to, from] = 1;
     }
     
     private void ValidateVertex(int vertex)
