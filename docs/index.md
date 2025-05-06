@@ -27,6 +27,6 @@ This library is well-suited for research and educational purposes related to Ham
 
 ## Navigation
 - [Getting Started](articles/getting-started.md)
-- [API Reference](/api/ThomasonAlgorithm.Core.Algorithm.html)
+- [API Reference](_site/api/ThomasonAlgorithm.Core.Algorithm.html)
 - [Cubic Graph Experiment Demo](articles/experiment-demo.md)
 - [Lollipop visualization example](articles/lollipop-visualization-demo.md)
