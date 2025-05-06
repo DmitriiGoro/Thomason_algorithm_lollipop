@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Graph | Thomason Algorithm Documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Graph | Thomason Algorithm Documentation ">
+    
+    <meta name="description" content="Represents an unweighted, undirected graph data structure using an adjacency matrix.">
+      <link rel="shortcut icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ThomasonAlgorithm.Core.Graphs.Graph">
+
+
+
+  <h1 id="ThomasonAlgorithm_Core_Graphs_Graph" data-uid="ThomasonAlgorithm.Core.Graphs.Graph" class="text-break">Class Graph</h1>
+  <div class="markdown level0 summary"><p>Represents an unweighted, undirected graph data structure using an adjacency matrix.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Graph</span></div>
+      <div class="level2"><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ThomasonAlgorithm.html">ThomasonAlgorithm</a>.<a class="xref" href="ThomasonAlgorithm.Core.html">Core</a>.<a class="xref" href="ThomasonAlgorithm.Core.Graphs.html">Graphs</a></h6>
+  <h6><strong>Assembly</strong>: ThomasonAlgorithm.Core.dll</h6>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Graph</code></pre>
+  </div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>
+This class provides a foundation for graph operations using a square matrix
+to represent vertex connections in an unweighted, undirected graph.
+The matrix is immutable after construction.
+</p>
+<p>
+Key characteristics:
+</p>
+<ul><li>Unweighted edges (values are 0 or 1)</li><li>Undirected (matrix is always symmetric)</li><li>No self-loops (diagonal elements are always 0)</li></ul>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.%23ctor(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L72">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.#ctor*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32)">Graph(int)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new unweighted, undirected graph with the specified number of vertices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Graph(int size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The number of vertices in the graph.
+Must be a positive integer greater than 0.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Creates an empty adjacency matrix where:</p>
+<ul><li>All elements are initialized to 0 (no edges)</li><li>Matrix dimensions are size × size</li><li>Will remain symmetric (undirected) when edges are added</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32__examples">Examples</h5>
+  <p>Create a 5-vertex graph:</p>
+<pre><code class="lang-csharp">var graph = new Graph(5); // Creates 5x5 matrix initialized with zeros</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when <code class="paramref">size</code> is less than 1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_0__0___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.%23ctor(System.Int32%5B0%3A%2C0%3A%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L119">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.#ctor*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_0__0___" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32[0:,0:])">Graph(int[,])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html">Graph</a> class using the provided adjacency matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Graph(int[,] adjacencyMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</td>
+        <td><span class="parametername">adjacencyMatrix</span></td>
+        <td><p>A square, binary, symmetric matrix representing the adjacency structure of the graph.
+Elements are 0 (no edge) or 1 (edge exists).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_0__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This constructor creates an unweighted, undirected graph based on the provided adjacency matrix.
+The matrix is cloned to prevent external modifications and ensure immutability after initialization.
+</p>
+<p>
+The adjacency matrix must satisfy the following conditions:
+<ul><li>Must be non-null</li><li>Must be square (n × n)</li><li>Must be binary (contain only 0 or 1)</li><li>Must be symmetric (matrix[i,j] == matrix[j,i])</li><li>Must have zero diagonal (no self-loops, matrix[i,i] == 0)</li></ul>
+
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_0__0____examples">Examples</h5>
+  <p>Create a graph from a 3-vertex adjacency matrix:</p>
+<pre><code class="lang-csharp">int[,] matrix = new int[,]
+{
+    {0, 1, 0},
+    {1, 0, 1},
+    {0, 1, 0}
+};
+var graph = new Graph(matrix);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code class="paramref">adjacencyMatrix</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when <code class="paramref">adjacencyMatrix</code> is not square, not binary, not symmetric,
+or contains non-zero diagonal elements.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L41">View Source</a>
+  </span>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix">AdjacencyMatrix</h4>
+  <div class="markdown level1 summary"><p>The adjacency matrix representing connections between vertices in an unweighted, undirected graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int[,] AdjacencyMatrix</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Matrix characteristics:
+</p>
+<ul><li>0 indicates no edge between vertices</li><li>1 indicates an existing edge (unweighted)</li><li>Symmetric (matrix[i,j] == matrix[j,i] for undirected graphs)</li><li>Zero diagonal (matrix[i,i] == 0, no self-loops)</li></ul>
+<p>
+This field is readonly - the matrix reference cannot be reassigned, though individual 
+elements can be modified through controlled methods like <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_System_Int32_System_Int32_">AddEdge(int, int)</a>.
+</p>
+</div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_VertexCount.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.VertexCount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L46">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_VertexCount_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.VertexCount*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_VertexCount" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.VertexCount">VertexCount</h4>
+  <div class="markdown level1 summary"><p>Gets the total number of vertices in the graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int VertexCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L132">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.AddEdge*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)">AddEdge(int, int)</h4>
+  <div class="markdown level1 summary"><p>Adds an edge between two vertices</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEdge(int from, int to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>The starting vertex of the edge.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>The ending vertex of the edge.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown if an edge already exists.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L196">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)">GetNeighbors(int)</h4>
+  <div class="markdown level1 summary"><p>Gets the list of neighbors (vertices connected by edges) for a specified vertex.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;int&gt; GetNeighbors(int vertex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">vertex</span></td>
+        <td><p>The vertex for which neighbors are to be retrieved.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><p>A list of neighboring vertices.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L182">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)">GetVertexDegree(int)</h4>
+  <div class="markdown level1 summary"><p>Gets the degree of a vertex (the number of edges connected to it).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetVertexDegree(int vertex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">vertex</span></td>
+        <td><p>The vertex whose degree is to be calculated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The degree of the specified vertex.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L156">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.HasEdge*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)">HasEdge(int, int)</h4>
+  <div class="markdown level1 summary"><p>Checks whether an edge exists between two vertices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasEdge(int from, int to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>The starting vertex of the edge.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>The ending vertex of the edge.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if an edge exists between the two vertices; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_IsCubic.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.IsCubic%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L256">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_IsCubic_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.IsCubic*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_IsCubic" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.IsCubic">IsCubic()</h4>
+  <div class="markdown level1 summary"><p>Determines whether the graph is cubic (3-regular).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCubic()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if the graph is cubic (all vertices have degree 3); otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_IsCubic_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A cubic graph is a 3-regular graph where every vertex has exactly three edges.
+This is equivalent to calling <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_">IsRegular(int)</a> with parameter 3.</p>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_IsCubic_examples">Examples</h5>
+  <p>Basic usage:</p>
+<pre><code class="lang-csharp">if (graph.IsCubic()) 
+{
+    Console.WriteLine("The graph is cubic");
+}</code></pre>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L234">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.IsRegular*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)">IsRegular(int)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the graph is regular with the specified degree for all vertices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRegular(int regularity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">regularity</span></td>
+        <td><p>The expected degree for all vertices in the graph.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p><code>true</code> if every vertex in the graph has degree equal to <code class="paramref">regularity</code>;
+otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A graph is called <code class="paramref">regularity</code>-regular if every vertex has exactly
+<code class="paramref">regularity</code> edges. Common cases include:</p>
+<ul><li>3-regular (cubic) graphs</li><li>2-regular (cycle graphs)</li><li>1-regular (perfect matching graphs)</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32__examples">Examples</h5>
+  <p>Check if a graph is cubic (3-regular):</p>
+<pre><code class="lang-csharp">if (graph.IsRegular(3)) 
+{
+    Console.WriteLine("The graph is cubic");
+}</code></pre>
+
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L168">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)">RemoveEdge(int, int)</h4>
+  <div class="markdown level1 summary"><p>Removes an edge between two vertices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEdge(int from, int to)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">from</span></td>
+        <td><p>The starting vertex of the edge.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">to</span></td>
+        <td><p>The ending vertex of the edge.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_Graph.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.Graph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/Graph.cs/#L21" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      © 2025 MIPT
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
