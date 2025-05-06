@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Models
+  commentId: N:ThomasonAlgorithm.Core.Models
+  id: ThomasonAlgorithm.Core.Models
+  children:
+  - ThomasonAlgorithm.Core.Models.Gap
+  - ThomasonAlgorithm.Core.Models.LollipopStep
+  langs:
+  - csharp
+  - vb
+  name: ThomasonAlgorithm.Core.Models
+  nameWithType: ThomasonAlgorithm.Core.Models
+  fullName: ThomasonAlgorithm.Core.Models
+  type: Namespace
+  assemblies:
+  - ThomasonAlgorithm.Core
+references:
+- uid: ThomasonAlgorithm.Core.Models.Gap
+  commentId: T:ThomasonAlgorithm.Core.Models.Gap
+  parent: ThomasonAlgorithm.Core.Models
+  href: ThomasonAlgorithm.Core.Models.Gap.html
+  name: Gap
+  nameWithType: Gap
+  fullName: ThomasonAlgorithm.Core.Models.Gap
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep
+  commentId: T:ThomasonAlgorithm.Core.Models.LollipopStep
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html
+  name: LollipopStep
+  nameWithType: LollipopStep
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep
+- uid: ThomasonAlgorithm.Core.Models
+  commentId: N:ThomasonAlgorithm.Core.Models
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Models
+  nameWithType: ThomasonAlgorithm.Core.Models
+  fullName: ThomasonAlgorithm.Core.Models
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Models
+    name: Models
+    href: ThomasonAlgorithm.Core.Models.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Models
+    name: Models
+    href: ThomasonAlgorithm.Core.Models.html

@@ -1,0 +1,10 @@
+- name: Home
+  href: index.md
+- name: Getting Started
+  href: articles/getting-started.md
+- name: API Reference
+  href: /api/toc.html
+- name: Cubic Graph Experiment
+  href: articles/experiment-demo.md
+- name: Lollipop visualization 
+  href: articles/lollipop-visualization-demo.md

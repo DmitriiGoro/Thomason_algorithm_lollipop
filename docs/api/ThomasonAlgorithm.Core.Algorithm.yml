@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Algorithm
+  commentId: N:ThomasonAlgorithm.Core.Algorithm
+  id: ThomasonAlgorithm.Core.Algorithm
+  children:
+  - ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  langs:
+  - csharp
+  - vb
+  name: ThomasonAlgorithm.Core.Algorithm
+  nameWithType: ThomasonAlgorithm.Core.Algorithm
+  fullName: ThomasonAlgorithm.Core.Algorithm
+  type: Namespace
+  assemblies:
+  - ThomasonAlgorithm.Core
+references:
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  commentId: T:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+  href: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html
+  name: LollipopAlgorithm
+  nameWithType: LollipopAlgorithm
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm

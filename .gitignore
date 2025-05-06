@@ -1,0 +1,12 @@
+.config
+.idea
+ThomasonAlgorithm.sln.DotSettings.user
+
+# .NET build artifacts
+**/bin/
+**/obj/
+*.exe
+*.dll
+*.pdb
+*.config
+*.cache

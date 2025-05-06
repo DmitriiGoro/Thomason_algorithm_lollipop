@@ -1,0 +1,980 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraph
+  id: CubicGraph
+  parent: ThomasonAlgorithm.Core.Graphs
+  children:
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+  - ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
+  langs:
+  - csharp
+  - vb
+  name: CubicGraph
+  nameWithType: CubicGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  type: Class
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: CubicGraph
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 6
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: >-
+    Represents a cubic (3-regular) graph, where each vertex has exactly 3 neighbors.
+
+    This class manages the graph structure, chord lengths, and Hamiltonian cycle.
+  example: []
+  syntax:
+    content: 'public class CubicGraph : Graph'
+    content.vb: Public Class CubicGraph Inherits Graph
+  inheritance:
+  - System.Object
+  - ThomasonAlgorithm.Core.Graphs.Graph
+  inheritedMembers:
+  - ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  - ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  - ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
+  commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
+  id: MaxChordLength
+  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  langs:
+  - csharp
+  - vb
+  name: MaxChordLength
+  nameWithType: CubicGraph.MaxChordLength
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
+  type: Field
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: MaxChordLength
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 47
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Gets or sets the maximum chord length found in the graph.
+  example: []
+  syntax:
+    content: public int MaxChordLength
+    return:
+      type: System.Int32
+    content.vb: Public MaxChordLength As Integer
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
+  commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
+  id: ChordsLengths
+  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  langs:
+  - csharp
+  - vb
+  name: ChordsLengths
+  nameWithType: CubicGraph.ChordsLengths
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
+  type: Field
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: ChordsLengths
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 52
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Dictionary holding the chord lengths and the number of times each chord length occurs.
+  example: []
+  syntax:
+    content: public readonly Dictionary<int, int> ChordsLengths
+    return:
+      type: System.Collections.Generic.Dictionary{System.Int32,System.Int32}
+    content.vb: Public ReadOnly ChordsLengths As Dictionary(Of Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+  commentId: P:ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+  id: HamiltonianCycle
+  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  langs:
+  - csharp
+  - vb
+  name: HamiltonianCycle
+  nameWithType: CubicGraph.HamiltonianCycle
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+  type: Property
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: HamiltonianCycle
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 57
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Stores the Hamiltonian cycle of the graph, represented as a dictionary of vertices and their neighbors in the cycle.
+  example: []
+  syntax:
+    content: public Dictionary<int, List<int>>? HamiltonianCycle { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+    content.vb: Public Property HamiltonianCycle As Dictionary(Of Integer, List(Of Integer))
+  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle*
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
+  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
+  id: '#ctor(System.Int32[0:,0:])'
+  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  langs:
+  - csharp
+  - vb
+  name: CubicGraph(int[,])
+  nameWithType: CubicGraph.CubicGraph(int[,])
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.CubicGraph(int[,])
+  type: Constructor
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: .ctor
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 72
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Initializes a new instance of the <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraph" data-throw-if-not-resolved="false"></xref> class using the provided adjacency matrix.
+  remarks: >-
+    This constructor ensures that the input graph is cubic at the time of initialization. 
+
+    It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+
+    found in the graph.
+  example: []
+  syntax:
+    content: public CubicGraph(int[,] adjacencyMatrix)
+    parameters:
+    - id: adjacencyMatrix
+      type: System.Int32[,]
+      description: A square matrix representing the adjacency structure of the graph.
+    content.vb: Public Sub New(adjacencyMatrix As Integer(,))
+  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: >-
+      Thrown if the provided adjacency matrix does not correspond to a valid cubic graph,
+
+      i.e., each vertex must have exactly three edges.
+  nameWithType.vb: CubicGraph.New(Integer(,))
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New(Integer(,))
+  name.vb: New(Integer(,))
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)
+  id: AddEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  langs:
+  - csharp
+  - vb
+  name: AddEdge(int, int)
+  nameWithType: CubicGraph.AddEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: AddEdge
+    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
+    startLine: 87
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Adds an edge between two vertices, ensuring the graph remains cubic (3-regular).
+  example: []
+  syntax:
+    content: public void AddEdge(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+      description: The starting vertex of the edge.
+    - id: to
+      type: System.Int32
+      description: The ending vertex of the edge.
+    content.vb: Public Sub AddEdge(from As Integer, [to] As Integer)
+  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown if an edge already exists or the degree of a vertex exceeds 3.
+  nameWithType.vb: CubicGraph.AddEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(Integer, Integer)
+  name.vb: AddEdge(Integer, Integer)
+references:
+- uid: ThomasonAlgorithm.Core.Graphs
+  commentId: N:ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Graphs
+  nameWithType: ThomasonAlgorithm.Core.Graphs
+  fullName: ThomasonAlgorithm.Core.Graphs
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: ThomasonAlgorithm.Core.Graphs.Graph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.Graph
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html
+  name: Graph
+  nameWithType: Graph
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  commentId: F:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix
+  name: AdjacencyMatrix
+  nameWithType: Graph.AdjacencyMatrix
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  commentId: P:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_VertexCount
+  name: VertexCount
+  nameWithType: Graph.VertexCount
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  name: HasEdge(int, int)
+  nameWithType: Graph.HasEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(int, int)
+  nameWithType.vb: Graph.HasEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(Integer, Integer)
+  name.vb: HasEdge(Integer, Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+    name: HasEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+    name: HasEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  name: RemoveEdge(int, int)
+  nameWithType: Graph.RemoveEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(int, int)
+  nameWithType.vb: Graph.RemoveEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(Integer, Integer)
+  name.vb: RemoveEdge(Integer, Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+    name: RemoveEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+    name: RemoveEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  name: GetVertexDegree(int)
+  nameWithType: Graph.GetVertexDegree(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(int)
+  nameWithType.vb: Graph.GetVertexDegree(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(Integer)
+  name.vb: GetVertexDegree(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+    name: GetVertexDegree
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+    name: GetVertexDegree
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  name: GetNeighbors(int)
+  nameWithType: Graph.GetNeighbors(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(int)
+  nameWithType.vb: Graph.GetNeighbors(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(Integer)
+  name.vb: GetNeighbors(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+    name: GetNeighbors
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+    name: GetNeighbors
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  name: IsRegular(int)
+  nameWithType: Graph.IsRegular(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(int)
+  nameWithType.vb: Graph.IsRegular(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(Integer)
+  name.vb: IsRegular(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+    name: IsRegular
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+    name: IsRegular
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  name: IsCubic()
+  nameWithType: Graph.IsCubic()
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic()
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+    name: IsCubic
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+    name: IsCubic
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Collections.Generic.Dictionary{System.Int32,System.Int32}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, int>
+  nameWithType: Dictionary<int, int>
+  fullName: System.Collections.Generic.Dictionary<int, int>
+  nameWithType.vb: Dictionary(Of Integer, Integer)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, Integer)
+  name.vb: Dictionary(Of Integer, Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle
+  name: HamiltonianCycle
+  nameWithType: CubicGraph.HamiltonianCycle
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
+- uid: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, List<int>>
+  nameWithType: Dictionary<int, List<int>>
+  fullName: System.Collections.Generic.Dictionary<int, System.Collections.Generic.List<int>>
+  nameWithType.vb: Dictionary(Of Integer, List(Of Integer))
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, System.Collections.Generic.List(Of Integer))
+  name.vb: Dictionary(Of Integer, List(Of Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraph
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html
+  name: CubicGraph
+  nameWithType: CubicGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0
+  name: CubicGraph
+  nameWithType: CubicGraph.CubicGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.CubicGraph
+  nameWithType.vb: CubicGraph.New
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New
+  name.vb: New
+- uid: System.Int32[,]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[,]
+  nameWithType: int[,]
+  fullName: int[,]
+  nameWithType.vb: Integer(,)
+  fullName.vb: Integer(,)
+  name.vb: Integer(,)
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ','
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: ','
+  - name: )
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_System_Int32_System_Int32_
+  name: AddEdge
+  nameWithType: CubicGraph.AddEdge
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge

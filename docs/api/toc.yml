@@ -1,0 +1,47 @@
+### YamlMime:TableOfContent
+items:
+- uid: ThomasonAlgorithm.Core.Algorithm
+  name: ThomasonAlgorithm.Core.Algorithm
+  type: Namespace
+  items:
+  - uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
+    name: LollipopAlgorithm
+    type: Class
+- uid: ThomasonAlgorithm.Core.Extensions
+  name: ThomasonAlgorithm.Core.Extensions
+  type: Namespace
+  items:
+  - uid: ThomasonAlgorithm.Core.Extensions.ListExtensions
+    name: ListExtensions
+    type: Class
+- uid: ThomasonAlgorithm.Core.GraphGenerators
+  name: ThomasonAlgorithm.Core.GraphGenerators
+  type: Namespace
+  items:
+  - uid: ThomasonAlgorithm.Core.GraphGenerators.RandomCubicGraphGenerator
+    name: RandomCubicGraphGenerator
+    type: Class
+- uid: ThomasonAlgorithm.Core.Graphs
+  name: ThomasonAlgorithm.Core.Graphs
+  type: Namespace
+  items:
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+    name: CubicGraph
+    type: Class
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+    name: CubicGraphWithCycle
+    type: Class
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph
+    name: Graph
+    type: Class
+- uid: ThomasonAlgorithm.Core.Models
+  name: ThomasonAlgorithm.Core.Models
+  type: Namespace
+  items:
+  - uid: ThomasonAlgorithm.Core.Models.Gap
+    name: Gap
+    type: Class
+  - uid: ThomasonAlgorithm.Core.Models.LollipopStep
+    name: LollipopStep
+    type: Class
+memberLayout: SamePage

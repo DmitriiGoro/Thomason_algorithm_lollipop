@@ -1,0 +1,431 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.IGraph
+  id: IGraph
+  parent: ThomasonAlgorithm.Core.Graphs
+  children:
+  - ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+  langs:
+  - csharp
+  - vb
+  name: IGraph
+  nameWithType: IGraph
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph
+  type: Interface
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: IGraph
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 2
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: public interface IGraph
+    content.vb: Public Interface IGraph
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+  commentId: P:ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+  id: VertexCount
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: VertexCount
+  nameWithType: IGraph.VertexCount
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+  type: Property
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: VertexCount
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 4
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: int VertexCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property VertexCount As Integer
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount*
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
+  id: AddEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: AddEdge(int, int)
+  nameWithType: IGraph.AddEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: AddEdge
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 6
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: void AddEdge(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    content.vb: Sub AddEdge(from As Integer, [to] As Integer)
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge*
+  nameWithType.vb: IGraph.AddEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(Integer, Integer)
+  name.vb: AddEdge(Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
+  id: RemoveEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: RemoveEdge(int, int)
+  nameWithType: IGraph.RemoveEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: RemoveEdge
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 7
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: void RemoveEdge(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    content.vb: Sub RemoveEdge(from As Integer, [to] As Integer)
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge*
+  nameWithType.vb: IGraph.RemoveEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(Integer, Integer)
+  name.vb: RemoveEdge(Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
+  id: GetVertexDegree(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: GetVertexDegree(int)
+  nameWithType: IGraph.GetVertexDegree(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: GetVertexDegree
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 9
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: int GetVertexDegree(int vertex)
+    parameters:
+    - id: vertex
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Function GetVertexDegree(vertex As Integer) As Integer
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree*
+  nameWithType.vb: IGraph.GetVertexDegree(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(Integer)
+  name.vb: GetVertexDegree(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
+  id: GetNeighbors(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: GetNeighbors(int)
+  nameWithType: IGraph.GetNeighbors(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: GetNeighbors
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 10
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: List<int> GetNeighbors(int vertex)
+    parameters:
+    - id: vertex
+      type: System.Int32
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Function GetNeighbors(vertex As Integer) As List(Of Integer)
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors*
+  nameWithType.vb: IGraph.GetNeighbors(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(Integer)
+  name.vb: GetNeighbors(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
+  id: HasEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.IGraph
+  langs:
+  - csharp
+  - vb
+  name: HasEdge(int, int)
+  nameWithType: IGraph.HasEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(int, int)
+  type: Method
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+      branch: first-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: HasEdge
+    path: ../src/ThomasonAlgorithm.Core/Graphs/IGraph.cs
+    startLine: 12
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Graphs
+  syntax:
+    content: bool HasEdge(int from, int to)
+    parameters:
+    - id: from
+      type: System.Int32
+    - id: to
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Function HasEdge(from As Integer, [to] As Integer) As Boolean
+  overload: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge*
+  nameWithType.vb: IGraph.HasEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(Integer, Integer)
+  name.vb: HasEdge(Integer, Integer)
+references:
+- uid: ThomasonAlgorithm.Core.Graphs
+  commentId: N:ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Graphs
+  nameWithType: ThomasonAlgorithm.Core.Graphs
+  fullName: ThomasonAlgorithm.Core.Graphs
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Graphs
+    name: Graphs
+    href: ThomasonAlgorithm.Core.Graphs.html
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_VertexCount
+  name: VertexCount
+  nameWithType: IGraph.VertexCount
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_AddEdge_System_Int32_System_Int32_
+  name: AddEdge
+  nameWithType: IGraph.AddEdge
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_RemoveEdge_System_Int32_System_Int32_
+  name: RemoveEdge
+  nameWithType: IGraph.RemoveEdge
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetVertexDegree_System_Int32_
+  name: GetVertexDegree
+  nameWithType: IGraph.GetVertexDegree
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetNeighbors_System_Int32_
+  name: GetNeighbors
+  nameWithType: IGraph.GetNeighbors
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge
+  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_HasEdge_System_Int32_System_Int32_
+  name: HasEdge
+  nameWithType: IGraph.HasEdge
+  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
