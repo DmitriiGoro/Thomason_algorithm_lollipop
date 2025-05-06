@@ -40,7 +40,7 @@
         "files": ["index.md", "toc.yml", "articles/**.md", "articles/**/toc.yml"]
       }
     ],
-    "dest": "_site",
+    "dest": "../docs",
     "globalMetadata": {
       "_appTitle": "Thomason Algorithm Documentation",
       "_appFooter": "© 2025 MIPT",
