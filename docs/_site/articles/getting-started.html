@@ -10,7 +10,7 @@
       <meta name="title" content="Getting Started | Thomason Algorithm Documentation ">
     
     
-      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="shortcut icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
       <link rel="stylesheet" href="../styles/main.css">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+                <img id="logo" class="svg" src="../images/logo.png" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -72,9 +72,21 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
-<h2 id="installation">Installation</h2>
-<p>Add the library to your project via NuGet:</p>
-<pre><code class="lang-bash">dotnet add package ThomasonAlgorithm.Core
+<h3 id="1-fork-the-repository">1. Fork the repository:</h3>
+<p><a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop">Visit GitHub repository</a></p>
+<p>Click &quot;Fork&quot; in top-right corner</p>
+<h3 id="2-clone-your-fork">2. Clone your fork:</h3>
+<pre><code class="lang-bash"> git clone &lt;url to your fork&gt; \
+ cd ThomasonAlgorithm
+</code></pre>
+<h3 id="3-build-the-project">3. Build the project:</h3>
+<pre><code class="lang-bash"> dotnet build src/ThomasonAlgorithm.Core --configuration Release
+</code></pre>
+<h3 id="4-reference-locally">4. Reference locally:</h3>
+<ul>
+<li>For testing in your projects:</li>
+</ul>
+<pre><code class="lang-bash"> dotnet add reference ThomasonAlgorithm/src/ThomasonAlgorithm.Core/ThomasonAlgorithm.Core.csproj
 </code></pre>
 
 </article>
