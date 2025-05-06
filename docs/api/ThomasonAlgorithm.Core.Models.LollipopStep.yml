@@ -1,0 +1,697 @@
+### YamlMime:ManagedReference
+items:
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep
+  commentId: T:ThomasonAlgorithm.Core.Models.LollipopStep
+  id: LollipopStep
+  parent: ThomasonAlgorithm.Core.Models
+  children:
+  - ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})
+  - ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  - ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  - ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  langs:
+  - csharp
+  - vb
+  name: LollipopStep
+  nameWithType: LollipopStep
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep
+  type: Class
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: LollipopStep
+    path: ../src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+    startLine: 16
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Models
+  summary: Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+  example: []
+  syntax:
+    content: 'public record LollipopStep : IEquatable<LollipopStep>'
+    content.vb: Public Class LollipopStep Implements IEquatable(Of LollipopStep)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{ThomasonAlgorithm.Core.Models.LollipopStep}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})
+  commentId: M:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})
+  id: '#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})'
+  parent: ThomasonAlgorithm.Core.Models.LollipopStep
+  langs:
+  - csharp
+  - vb
+  name: LollipopStep(List<List<int>>, List<int>?, List<int>?)
+  nameWithType: LollipopStep.LollipopStep(List<List<int>>, List<int>?, List<int>?)
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.LollipopStep(System.Collections.Generic.List<System.Collections.Generic.List<int>>, System.Collections.Generic.List<int>?, System.Collections.Generic.List<int>?)
+  type: Constructor
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: .ctor
+    path: ../src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+    startLine: 16
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Models
+  summary: Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.
+  example: []
+  syntax:
+    content: public LollipopStep(List<List<int>> CurrentCycleEdges, List<int>? AddedEdge, List<int>? RemovedEdge)
+    parameters:
+    - id: CurrentCycleEdges
+      type: System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}
+      description: A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+    - id: AddedEdge
+      type: System.Collections.Generic.List{System.Int32}
+      description: >-
+        The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+
+        Null if no edge was added in this step.
+    - id: RemovedEdge
+      type: System.Collections.Generic.List{System.Int32}
+      description: >-
+        The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+
+        Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+    content.vb: Public Sub New(CurrentCycleEdges As List(Of List(Of Integer)), AddedEdge As List(Of Integer), RemovedEdge As List(Of Integer))
+  overload: ThomasonAlgorithm.Core.Models.LollipopStep.#ctor*
+  nameWithType.vb: LollipopStep.New(List(Of List(Of Integer)), List(Of Integer), List(Of Integer))
+  fullName.vb: ThomasonAlgorithm.Core.Models.LollipopStep.New(System.Collections.Generic.List(Of System.Collections.Generic.List(Of Integer)), System.Collections.Generic.List(Of Integer), System.Collections.Generic.List(Of Integer))
+  name.vb: New(List(Of List(Of Integer)), List(Of Integer), List(Of Integer))
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  id: CurrentCycleEdges
+  parent: ThomasonAlgorithm.Core.Models.LollipopStep
+  langs:
+  - csharp
+  - vb
+  name: CurrentCycleEdges
+  nameWithType: LollipopStep.CurrentCycleEdges
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  type: Property
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: CurrentCycleEdges
+    path: ../src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+    startLine: 16
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Models
+  summary: A list of edges (each as a pair of vertex indices) that form the current Hamiltonian cycle or path at this step.
+  example: []
+  syntax:
+    content: public List<List<int>> CurrentCycleEdges { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}
+    content.vb: Public Property CurrentCycleEdges As List(Of List(Of Integer))
+  overload: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges*
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  id: AddedEdge
+  parent: ThomasonAlgorithm.Core.Models.LollipopStep
+  langs:
+  - csharp
+  - vb
+  name: AddedEdge
+  nameWithType: LollipopStep.AddedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  type: Property
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: AddedEdge
+    path: ../src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+    startLine: 16
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Models
+  summary: >-
+    The edge that was added to the cycle in this step, if any. Represented as a list of two vertex indices.
+
+    Null if no edge was added in this step.
+  example: []
+  syntax:
+    content: public List<int>? AddedEdge { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Property AddedEdge As List(Of Integer)
+  overload: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge*
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  id: RemovedEdge
+  parent: ThomasonAlgorithm.Core.Models.LollipopStep
+  langs:
+  - csharp
+  - vb
+  name: RemovedEdge
+  nameWithType: LollipopStep.RemovedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  type: Property
+  source:
+    remote:
+      path: src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+      branch: second-release
+      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
+    id: RemovedEdge
+    path: ../src/ThomasonAlgorithm.Core/Models/LollipopStep.cs
+    startLine: 16
+  assemblies:
+  - ThomasonAlgorithm.Core
+  namespace: ThomasonAlgorithm.Core.Models
+  summary: >-
+    The edge that was removed from the cycle in this step, if any. Represented as a list of two vertex indices.
+
+    Null if no edge was removed in this step (e.g., the final step that completes the cycle).
+  example: []
+  syntax:
+    content: public List<int>? RemovedEdge { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{System.Int32}
+    content.vb: Public Property RemovedEdge As List(Of Integer)
+  overload: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge*
+references:
+- uid: ThomasonAlgorithm.Core.Models
+  commentId: N:ThomasonAlgorithm.Core.Models
+  href: ThomasonAlgorithm.html
+  name: ThomasonAlgorithm.Core.Models
+  nameWithType: ThomasonAlgorithm.Core.Models
+  fullName: ThomasonAlgorithm.Core.Models
+  spec.csharp:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Models
+    name: Models
+    href: ThomasonAlgorithm.Core.Models.html
+  spec.vb:
+  - uid: ThomasonAlgorithm
+    name: ThomasonAlgorithm
+    href: ThomasonAlgorithm.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core
+    name: Core
+    href: ThomasonAlgorithm.Core.html
+  - name: .
+  - uid: ThomasonAlgorithm.Core.Models
+    name: Models
+    href: ThomasonAlgorithm.Core.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{ThomasonAlgorithm.Core.Models.LollipopStep}
+  commentId: T:System.IEquatable{ThomasonAlgorithm.Core.Models.LollipopStep}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<LollipopStep>
+  nameWithType: IEquatable<LollipopStep>
+  fullName: System.IEquatable<ThomasonAlgorithm.Core.Models.LollipopStep>
+  nameWithType.vb: IEquatable(Of LollipopStep)
+  fullName.vb: System.IEquatable(Of ThomasonAlgorithm.Core.Models.LollipopStep)
+  name.vb: IEquatable(Of LollipopStep)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: ThomasonAlgorithm.Core.Models.LollipopStep
+    name: LollipopStep
+    href: ThomasonAlgorithm.Core.Models.LollipopStep.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ThomasonAlgorithm.Core.Models.LollipopStep
+    name: LollipopStep
+    href: ThomasonAlgorithm.Core.Models.LollipopStep.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.#ctor*
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep__ctor_System_Collections_Generic_List_System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_System_Int32__System_Collections_Generic_List_System_Int32__
+  name: LollipopStep
+  nameWithType: LollipopStep.LollipopStep
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.LollipopStep
+  nameWithType.vb: LollipopStep.New
+  fullName.vb: ThomasonAlgorithm.Core.Models.LollipopStep.New
+  name.vb: New
+- uid: System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}
+  commentId: T:System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<List<int>>
+  nameWithType: List<List<int>>
+  fullName: System.Collections.Generic.List<System.Collections.Generic.List<int>>
+  nameWithType.vb: List(Of List(Of Integer))
+  fullName.vb: System.Collections.Generic.List(Of System.Collections.Generic.List(Of Integer))
+  name.vb: List(Of List(Of Integer))
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List{System.Int32}
+  commentId: T:System.Collections.Generic.List{System.Int32}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<int>
+  nameWithType: List<int>
+  fullName: System.Collections.Generic.List<int>
+  nameWithType.vb: List(Of Integer)
+  fullName.vb: System.Collections.Generic.List(Of Integer)
+  name.vb: List(Of Integer)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges*
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_CurrentCycleEdges
+  name: CurrentCycleEdges
+  nameWithType: LollipopStep.CurrentCycleEdges
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_AddedEdge
+  name: AddedEdge
+  nameWithType: LollipopStep.AddedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge*
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_RemovedEdge
+  name: RemovedEdge
+  nameWithType: LollipopStep.RemovedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge

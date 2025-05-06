@@ -14,6 +14,13 @@
     }
   ],
   "build": {
+    "resource": [
+      {
+        "files": ["**/*.png", "**/*.svg"],
+        "src": "images",
+        "dest": "images"
+      }
+    ],
     "content": [
       {
         "files": ["api/**.yml"]

@@ -3,7 +3,13 @@
 Welcome to the documentation for **ThomasonAlgorithm.Core**, a .NET library for analyzing cubic graphs using Thomason's algorithm.
 
 ## Overview
-ThomasonAlgorithm.Core is a .NET library focused on the generation and analysis of cubic graphs—graphs where each vertex has degree 3. At its core, the library provides tools for experimenting with Thomason's algorithm, particularly for discovering second Hamiltonian cycles using techniques like the Lollipop Algorithm.
+ThomasonAlgorithm.Core is a .NET library designed for the analysis of Hamiltonian cubic graphs (3-regular graphs containing at least one Hamiltonian cycle) with a focus on Thomason's algorithmic approaches. The library specializes in graphs where:
+
+The primary Hamiltonian cycle follows a sequential path:
+0 → 1 → 2 → ... → n-1 → 0
+(where n is the number of vertices).
+
+Cubic constraints are enforced: every vertex has exactly three edges.
 
 Key features include:
 
@@ -21,4 +27,6 @@ This library is well-suited for research and educational purposes related to Ham
 
 ## Navigation
 - [Getting Started](articles/getting-started.md)
-- [API Reference](/api/toc.html)
+- [API Reference](/api/ThomasonAlgorithm.Core.Algorithm.html)
+- [Cubic Graph Experiment Demo](articles/experiment-demo.md)
+- [Lollipop visualization example](articles/lollipop-visualization-demo.md)

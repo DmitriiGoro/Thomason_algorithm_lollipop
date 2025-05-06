@@ -31,14 +31,17 @@ items:
   - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
     name: CubicGraphWithCycle
     type: Class
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph
-    name: IGraph
-    type: Interface
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph
+    name: Graph
+    type: Class
 - uid: ThomasonAlgorithm.Core.Models
   name: ThomasonAlgorithm.Core.Models
   type: Namespace
   items:
   - uid: ThomasonAlgorithm.Core.Models.Gap
     name: Gap
+    type: Class
+  - uid: ThomasonAlgorithm.Core.Models.LollipopStep
+    name: LollipopStep
     type: Class
 memberLayout: SamePage

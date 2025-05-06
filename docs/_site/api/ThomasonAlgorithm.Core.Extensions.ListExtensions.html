@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class ListExtensions | Thomason Algorithm Documentation ">
     
-    
+    <meta name="description" content="Provides extension methods for  collections.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="ThomasonAlgorithm_Core_Extensions_ListExtensions" data-uid="ThomasonAlgorithm.Core.Extensions.ListExtensions" class="text-break">Class ListExtensions</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides extension methods for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a> collections.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -118,14 +119,24 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static class ListExtensions</code></pre>
   </div>
+  <h5 id="ThomasonAlgorithm_Core_Extensions_ListExtensions_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class contains utility methods that extend the functionality of generic lists,
+particularly for graph algorithm operations and neighbor searching scenarios.</p>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Extensions_ListExtensions_examples"><strong>Examples</strong></h5>
+  <p>Basic usage:</p>
+<pre><code class="lang-csharp">var neighbors = new List&lt;int&gt; { 1, 2, 3 };
+var result = neighbors.FirstPossibleNeighborOrNull(x =&gt; x &gt; 1);
+// Returns 2</code></pre>
+
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Extensions_ListExtensions_FirstPossibleNeighborOrNull_System_Collections_Generic_List_System_Int32__System_Func_System_Int32_System_Boolean__.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List%7BSystem.Int32%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Boolean%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Extensions_ListExtensions_FirstPossibleNeighborOrNull_System_Collections_Generic_List_System_Int32__System_Func_System_Int32_System_Boolean__.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List%7BSystem.Int32%7D%2CSystem.Func%7BSystem.Int32%2CSystem.Boolean%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs/#L16">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs/#L31">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Extensions_ListExtensions_FirstPossibleNeighborOrNull_" data-uid="ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull*"></a>
   <h4 id="ThomasonAlgorithm_Core_Extensions_ListExtensions_FirstPossibleNeighborOrNull_System_Collections_Generic_List_System_Int32__System_Func_System_Int32_System_Boolean__" data-uid="ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List{System.Int32},System.Func{System.Int32,System.Boolean})">FirstPossibleNeighborOrNull(List&lt;int&gt;, Func&lt;int, bool&gt;)</h4>
@@ -201,10 +212,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Extensions_ListExtensions.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Extensions.ListExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Extensions_ListExtensions.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Extensions.ListExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs/#L3" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

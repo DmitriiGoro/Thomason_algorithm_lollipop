@@ -88,14 +88,35 @@ This class manages the graph structure, chord lengths, and Hamiltonian cycle.</p
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">CubicGraph</span></div>
-  </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="ThomasonAlgorithm.Core.Graphs.IGraph.html">IGraph</a></div>
+    <div class="level1"><a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html">Graph</a></div>
+    <div class="level2"><span class="xref">CubicGraph</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix">Graph.AdjacencyMatrix</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_VertexCount">Graph.VertexCount</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_">Graph.HasEdge(int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_">Graph.RemoveEdge(int, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_">Graph.GetVertexDegree(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_">Graph.GetNeighbors(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_">Graph.IsRegular(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic">Graph.IsCubic()</a>
+    </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -122,71 +143,16 @@ This class manages the graph structure, chord lengths, and Hamiltonian cycle.</p
   <h6><strong>Assembly</strong>: ThomasonAlgorithm.Core.dll</h6>
   <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CubicGraph : IGraph</code></pre>
+    <pre><code class="lang-csharp hljs">public class CubicGraph : Graph</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.%23ctor(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0__0___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.%23ctor(System.Int32%5B0%3A%2C0%3A%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L43">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)">CubicGraph(int)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a> class with an empty adjacency matrix of the specified size.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CubicGraph(int size)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">size</span></td>
-        <td><p>The number of vertices in the graph (the size of the square adjacency matrix).</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic
-construction of edges. It does not enforce the cubic property upon creation.
-The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).</p>
-</div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
-        <td><p>Thrown when <code class="paramref">size</code> is less than 4.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0__0___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.%23ctor(System.Int32%5B0%3A%2C0%3A%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L62">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L73">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0__0___" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])">CubicGraph(int[,])</h4>
@@ -216,7 +182,9 @@ The resulting graph must be later modified to ensure that each vertex has degree
     </tbody>
   </table>
   <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0__0____remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This constructor ensures that the input graph is cubic at the time of initialization.</p>
+  <div class="markdown level1 remarks"><p>This constructor ensures that the input graph is cubic at the time of initialization.
+It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+found in the graph.</p>
 </div>
   <h5 class="exceptions">Exceptions</h5>
   <table class="table table-bordered table-condensed">
@@ -239,39 +207,10 @@ i.e., each vertex must have exactly three edges.</p>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_AdjacencyMatrix.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_ChordsLengths.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L9">View Source</a>
-  </span>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AdjacencyMatrix" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix">AdjacencyMatrix</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public readonly int[,] AdjacencyMatrix</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_ChordsLengths.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L24">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L53">View Source</a>
   </span>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_ChordsLengths" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths">ChordsLengths</h4>
   <div class="markdown level1 summary"><p>Dictionary holding the chord lengths and the number of times each chord length occurs.</p>
@@ -298,10 +237,10 @@ i.e., each vertex must have exactly three edges.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_MaxChordLength.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_MaxChordLength.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L19">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L48">View Source</a>
   </span>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_MaxChordLength" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength">MaxChordLength</h4>
   <div class="markdown level1 summary"><p>Gets or sets the maximum chord length found in the graph.</p>
@@ -330,10 +269,10 @@ i.e., each vertex must have exactly three edges.</p>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L29">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L58">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle">HamiltonianCycle</h4>
@@ -342,7 +281,7 @@ i.e., each vertex must have exactly three edges.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;int, List&lt;int&gt;&gt; HamiltonianCycle { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;int, List&lt;int&gt;&gt;? HamiltonianCycle { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -359,85 +298,14 @@ i.e., each vertex must have exactly three edges.</p>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L14">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount">VertexCount</h4>
-  <div class="markdown level1 summary"><p>Gets the total number of vertices in the graph.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int VertexCount { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L186">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)">AddChordLength(int)</h4>
-  <div class="markdown level1 summary"><p>Adds a chord length to the collection, increasing its count.
-If the chord length doesn't exist in the collection, it will be added with an initial count of 1.
-Additionally, the method updates the maximum chord length if the new chord length exceeds the current maximum.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void AddChordLength(int chordLength)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">chordLength</span></td>
-        <td><p>The length of the chord to be added.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_System_Int32__remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>This method maintains a collection of chord lengths, where each chord length is mapped to its frequency (how many times it has been added).
-It also keeps track of the maximum chord length encountered during the process.</p>
-</div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L76">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L88">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)">AddEdge(int, int)</h4>
@@ -488,238 +356,6 @@ It also keeps track of the maximum chord length encountered during the process.<
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L124">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)">GetNeighbors(int)</h4>
-  <div class="markdown level1 summary"><p>Gets the list of neighbors (vertices connected by edges) for a specified vertex.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;int&gt; GetNeighbors(int vertex)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">vertex</span></td>
-        <td><p>The vertex for which neighbors are to be retrieved.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td><p>A list of neighboring vertices.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L110">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)">GetVertexDegree(int)</h4>
-  <div class="markdown level1 summary"><p>Gets the degree of a vertex (the number of edges connected to it).</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int GetVertexDegree(int vertex)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">vertex</span></td>
-        <td><p>The vertex whose degree is to be calculated.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The degree of the specified vertex.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L142">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)">HasEdge(int, int)</h4>
-  <div class="markdown level1 summary"><p>Checks whether an edge exists between two vertices.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool HasEdge(int from, int to)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">from</span></td>
-        <td><p>The starting vertex of the edge.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">to</span></td>
-        <td><p>The ending vertex of the edge.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if an edge exists between the two vertices; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L153">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic">IsCubic()</h4>
-  <div class="markdown level1 summary"><p>Checks if the graph is cubic, meaning each vertex has exactly 3 neighbors.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsCubic()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>True if the graph is cubic; otherwise, false.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L96">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_System_Int32_System_Int32_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)">RemoveEdge(int, int)</h4>
-  <div class="markdown level1 summary"><p>Removes an edge between two vertices.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void RemoveEdge(int from, int to)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">from</span></td>
-        <td><p>The starting vertex of the edge.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">to</span></td>
-        <td><p>The ending vertex of the edge.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="ThomasonAlgorithm.Core.Graphs.IGraph.html">IGraph</a>
-  </div>
 
 </article>
           </div>
@@ -729,10 +365,10 @@ It also keeps track of the maximum chord length encountered during the process.<
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraph.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs/#L7" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

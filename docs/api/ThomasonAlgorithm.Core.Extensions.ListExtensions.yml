@@ -16,14 +16,28 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: ListExtensions
     path: ../src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs
-    startLine: 2
+    startLine: 17
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Extensions
+  summary: Provides extension methods for <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> collections.
+  remarks: >-
+    This class contains utility methods that extend the functionality of generic lists,
+
+    particularly for graph algorithm operations and neighbor searching scenarios.
+  example:
+  - >-
+    Basic usage:
+
+    <pre><code class="lang-csharp">var neighbors = new List&lt;int&gt; { 1, 2, 3 };
+
+    var result = neighbors.FirstPossibleNeighborOrNull(x =&gt; x &gt; 1);
+
+    // Returns 2</code></pre>
   syntax:
     content: public static class ListExtensions
     content.vb: Public Module ListExtensions
@@ -52,11 +66,11 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: FirstPossibleNeighborOrNull
     path: ../src/ThomasonAlgorithm.Core/Extensions/ListExtensions.cs
-    startLine: 15
+    startLine: 30
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Extensions
@@ -84,6 +98,34 @@ items:
   fullName.vb: ThomasonAlgorithm.Core.Extensions.ListExtensions.FirstPossibleNeighborOrNull(System.Collections.Generic.List(Of Integer), System.Func(Of Integer, Boolean))
   name.vb: FirstPossibleNeighborOrNull(List(Of Integer), Func(Of Integer, Boolean))
 references:
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: ThomasonAlgorithm.Core.Extensions
   commentId: N:ThomasonAlgorithm.Core.Extensions
   href: ThomasonAlgorithm.html
@@ -469,34 +511,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.int32
   - name: '?'
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true

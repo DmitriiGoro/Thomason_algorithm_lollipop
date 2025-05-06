@@ -13,6 +13,37 @@ references:
   commentId: T:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
   fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm
   nameWithType: LollipopAlgorithm
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32[0:,0:])
+  name: CreateLollipopVisualization(int[,])
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_Int32_0__0___
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32[0:,0:])
+  name.vb: CreateLollipopVisualization(Integer(,))
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(int[,])
+  fullName.vb: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(Integer(,))
+  nameWithType: LollipopAlgorithm.CreateLollipopVisualization(int[,])
+  nameWithType.vb: LollipopAlgorithm.CreateLollipopVisualization(Integer(,))
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)
+  name: CreateLollipopVisualization(string)
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_String_
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)
+  name.vb: CreateLollipopVisualization(String)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(string)
+  fullName.vb: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(String)
+  nameWithType: LollipopAlgorithm.CreateLollipopVisualization(string)
+  nameWithType.vb: LollipopAlgorithm.CreateLollipopVisualization(String)
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  name: CreateLollipopVisualization(CubicGraphWithCycle)
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  nameWithType: LollipopAlgorithm.CreateLollipopVisualization(CubicGraphWithCycle)
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization*
+  name: CreateLollipopVisualization
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_
+  commentId: Overload:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization
+  nameWithType: LollipopAlgorithm.CreateLollipopVisualization
 - uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
   name: FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle)
   href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_
@@ -26,6 +57,37 @@ references:
   isSpec: "True"
   fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps
   nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32[0:,0:])
+  name: FindSecondHamiltonianCycleAndVisualize(int[,])
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_Int32_0__0___
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32[0:,0:])
+  name.vb: FindSecondHamiltonianCycleAndVisualize(Integer(,))
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(int[,])
+  fullName.vb: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(Integer(,))
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(int[,])
+  nameWithType.vb: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(Integer(,))
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)
+  name: FindSecondHamiltonianCycleAndVisualize(string)
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_String_
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)
+  name.vb: FindSecondHamiltonianCycleAndVisualize(String)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(string)
+  fullName.vb: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(String)
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(string)
+  nameWithType.vb: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(String)
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  name: FindSecondHamiltonianCycleAndVisualize(CubicGraphWithCycle)
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_
+  commentId: M:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(CubicGraphWithCycle)
+- uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize*
+  name: FindSecondHamiltonianCycleAndVisualize
+  href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_
+  commentId: Overload:ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize
+  nameWithType: LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize
 - uid: ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
   name: GetHamiltonianCycleSequencedVertices(Dictionary<int, List<int>>)
   href: api/ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.html#ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___
@@ -158,15 +220,6 @@ references:
   commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraph
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph
   nameWithType: CubicGraph
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)
-  name: CubicGraph(int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)
-  name.vb: New(Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.CubicGraph(int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New(Integer)
-  nameWithType: CubicGraph.CubicGraph(int)
-  nameWithType.vb: CubicGraph.New(Integer)
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
   name: CubicGraph(int[,])
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0__0___
@@ -186,22 +239,6 @@ references:
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New
   nameWithType: CubicGraph.CubicGraph
   nameWithType.vb: CubicGraph.New
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)
-  name: AddChordLength(int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)
-  name.vb: AddChordLength(Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(Integer)
-  nameWithType: CubicGraph.AddChordLength(int)
-  nameWithType.vb: CubicGraph.AddChordLength(Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength*
-  name: AddChordLength
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength
-  nameWithType: CubicGraph.AddChordLength
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)
   name: AddEdge(int, int)
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AddEdge_System_Int32_System_Int32_
@@ -218,50 +255,12 @@ references:
   isSpec: "True"
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge
   nameWithType: CubicGraph.AddEdge
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  name: AdjacencyMatrix
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AdjacencyMatrix
-  commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  nameWithType: CubicGraph.AdjacencyMatrix
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
   name: ChordsLengths
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_ChordsLengths
   commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
   nameWithType: CubicGraph.ChordsLengths
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)
-  name: GetNeighbors(int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)
-  name.vb: GetNeighbors(Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(Integer)
-  nameWithType: CubicGraph.GetNeighbors(int)
-  nameWithType.vb: CubicGraph.GetNeighbors(Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors*
-  name: GetNeighbors
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors
-  nameWithType: CubicGraph.GetNeighbors
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)
-  name: GetVertexDegree(int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)
-  name.vb: GetVertexDegree(Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(Integer)
-  nameWithType: CubicGraph.GetVertexDegree(int)
-  nameWithType.vb: CubicGraph.GetVertexDegree(Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree*
-  name: GetVertexDegree
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree
-  nameWithType: CubicGraph.GetVertexDegree
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
   name: HamiltonianCycle
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_HamiltonianCycle
@@ -275,70 +274,12 @@ references:
   isSpec: "True"
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
   nameWithType: CubicGraph.HamiltonianCycle
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)
-  name: HasEdge(int, int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_System_Int32_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)
-  name.vb: HasEdge(Integer, Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(int, int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(Integer, Integer)
-  nameWithType: CubicGraph.HasEdge(int, int)
-  nameWithType.vb: CubicGraph.HasEdge(Integer, Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge*
-  name: HasEdge
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge
-  nameWithType: CubicGraph.HasEdge
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  name: IsCubic()
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic()
-  nameWithType: CubicGraph.IsCubic()
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic*
-  name: IsCubic
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  nameWithType: CubicGraph.IsCubic
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
   name: MaxChordLength
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_MaxChordLength
   commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
   nameWithType: CubicGraph.MaxChordLength
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)
-  name: RemoveEdge(int, int)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_System_Int32_System_Int32_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)
-  name.vb: RemoveEdge(Integer, Integer)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(int, int)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(Integer, Integer)
-  nameWithType: CubicGraph.RemoveEdge(int, int)
-  nameWithType.vb: CubicGraph.RemoveEdge(Integer, Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge*
-  name: RemoveEdge
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge
-  nameWithType: CubicGraph.RemoveEdge
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  name: VertexCount
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount
-  commentId: P:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  nameWithType: CubicGraph.VertexCount
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount*
-  name: VertexCount
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  nameWithType: CubicGraph.VertexCount
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
   name: CubicGraphWithCycle
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html
@@ -373,19 +314,6 @@ references:
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.New
   nameWithType: CubicGraphWithCycle.CubicGraphWithCycle
   nameWithType.vb: CubicGraphWithCycle.New
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  name: CreateCubicGraphHamiltonianCycle(CubicGraph)
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_ThomasonAlgorithm_Core_Graphs_CubicGraph_
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  nameWithType: CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(CubicGraph)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle*
-  name: CreateCubicGraphHamiltonianCycle
-  href: api/ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle
-  isSpec: "True"
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle
-  nameWithType: CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph
   name: Graph
   href: api/ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph
@@ -412,6 +340,168 @@ references:
   isSpec: "True"
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle
   nameWithType: CubicGraphWithCycle.HamiltonianCycle
+- uid: ThomasonAlgorithm.Core.Graphs.Graph
+  name: Graph
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html
+  commentId: T:ThomasonAlgorithm.Core.Graphs.Graph
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph
+  nameWithType: Graph
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32)
+  name: Graph(int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32)
+  name.vb: New(Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.Graph(int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.New(Integer)
+  nameWithType: Graph.Graph(int)
+  nameWithType.vb: Graph.New(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32[0:,0:])
+  name: Graph(int[,])
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph__ctor_System_Int32_0__0___
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.#ctor(System.Int32[0:,0:])
+  name.vb: New(Integer(,))
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.Graph(int[,])
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.New(Integer(,))
+  nameWithType: Graph.Graph(int[,])
+  nameWithType.vb: Graph.New(Integer(,))
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.#ctor*
+  name: Graph
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph__ctor_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.Graph
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.New
+  nameWithType: Graph.Graph
+  nameWithType.vb: Graph.New
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)
+  name: AddEdge(int, int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_System_Int32_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(System.Int32,System.Int32)
+  name.vb: AddEdge(Integer, Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(int, int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.AddEdge(Integer, Integer)
+  nameWithType: Graph.AddEdge(int, int)
+  nameWithType.vb: Graph.AddEdge(Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.AddEdge*
+  name: AddEdge
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AddEdge_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.AddEdge
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.AddEdge
+  nameWithType: Graph.AddEdge
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  name: AdjacencyMatrix
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix
+  commentId: F:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  nameWithType: Graph.AdjacencyMatrix
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  name: GetNeighbors(int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  name.vb: GetNeighbors(Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(Integer)
+  nameWithType: Graph.GetNeighbors(int)
+  nameWithType.vb: Graph.GetNeighbors(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors*
+  name: GetNeighbors
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors
+  nameWithType: Graph.GetNeighbors
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  name: GetVertexDegree(int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  name.vb: GetVertexDegree(Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(Integer)
+  nameWithType: Graph.GetVertexDegree(int)
+  nameWithType.vb: Graph.GetVertexDegree(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree*
+  name: GetVertexDegree
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree
+  nameWithType: Graph.GetVertexDegree
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  name: HasEdge(int, int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  name.vb: HasEdge(Integer, Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(int, int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(Integer, Integer)
+  nameWithType: Graph.HasEdge(int, int)
+  nameWithType.vb: Graph.HasEdge(Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge*
+  name: HasEdge
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.HasEdge
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge
+  nameWithType: Graph.HasEdge
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  name: IsCubic()
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic()
+  nameWithType: Graph.IsCubic()
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic*
+  name: IsCubic
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  nameWithType: Graph.IsCubic
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  name: IsRegular(int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  name.vb: IsRegular(Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(Integer)
+  nameWithType: Graph.IsRegular(int)
+  nameWithType.vb: Graph.IsRegular(Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular*
+  name: IsRegular
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular
+  nameWithType: Graph.IsRegular
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  name: RemoveEdge(int, int)
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  name.vb: RemoveEdge(Integer, Integer)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(int, int)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(Integer, Integer)
+  nameWithType: Graph.RemoveEdge(int, int)
+  nameWithType.vb: Graph.RemoveEdge(Integer, Integer)
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge*
+  name: RemoveEdge
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge
+  nameWithType: Graph.RemoveEdge
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  name: VertexCount
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_VertexCount
+  commentId: P:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  nameWithType: Graph.VertexCount
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount*
+  name: VertexCount
+  href: api/ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_VertexCount_
+  commentId: Overload:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  nameWithType: Graph.VertexCount
 - uid: ThomasonAlgorithm.Core.Graphs.IGraph
   name: IGraph
   href: api/ThomasonAlgorithm.Core.Graphs.IGraph.html
@@ -568,3 +658,67 @@ references:
   isSpec: "True"
   fullName: ThomasonAlgorithm.Core.Models.Gap.RightBound
   nameWithType: Gap.RightBound
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep
+  name: LollipopStep
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html
+  commentId: T:ThomasonAlgorithm.Core.Models.LollipopStep
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep
+  nameWithType: LollipopStep
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})
+  name: LollipopStep(List<List<int>>, List<int>?, List<int>?)
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep__ctor_System_Collections_Generic_List_System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_System_Int32__System_Collections_Generic_List_System_Int32__
+  commentId: M:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}},System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})
+  name.vb: New(List(Of List(Of Integer)), List(Of Integer), List(Of Integer))
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.LollipopStep(System.Collections.Generic.List<System.Collections.Generic.List<int>>, System.Collections.Generic.List<int>?, System.Collections.Generic.List<int>?)
+  fullName.vb: ThomasonAlgorithm.Core.Models.LollipopStep.New(System.Collections.Generic.List(Of System.Collections.Generic.List(Of Integer)), System.Collections.Generic.List(Of Integer), System.Collections.Generic.List(Of Integer))
+  nameWithType: LollipopStep.LollipopStep(List<List<int>>, List<int>?, List<int>?)
+  nameWithType.vb: LollipopStep.New(List(Of List(Of Integer)), List(Of Integer), List(Of Integer))
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.#ctor*
+  name: LollipopStep
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep__ctor_
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.LollipopStep
+  fullName.vb: ThomasonAlgorithm.Core.Models.LollipopStep.New
+  nameWithType: LollipopStep.LollipopStep
+  nameWithType.vb: LollipopStep.New
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  name: AddedEdge
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_AddedEdge
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  nameWithType: LollipopStep.AddedEdge
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge*
+  name: AddedEdge
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_AddedEdge_
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.AddedEdge
+  nameWithType: LollipopStep.AddedEdge
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  name: CurrentCycleEdges
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_CurrentCycleEdges
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  nameWithType: LollipopStep.CurrentCycleEdges
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges*
+  name: CurrentCycleEdges
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_CurrentCycleEdges_
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.CurrentCycleEdges
+  nameWithType: LollipopStep.CurrentCycleEdges
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  name: RemovedEdge
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_RemovedEdge
+  commentId: P:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  nameWithType: LollipopStep.RemovedEdge
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge*
+  name: RemovedEdge
+  href: api/ThomasonAlgorithm.Core.Models.LollipopStep.html#ThomasonAlgorithm_Core_Models_LollipopStep_RemovedEdge_
+  commentId: Overload:ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  isSpec: "True"
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep.RemovedEdge
+  nameWithType: LollipopStep.RemovedEdge

@@ -19,7 +19,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: RandomCubicGraphGenerator
     path: ../src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
@@ -61,7 +61,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: GenerateGraphLimitedChords
     path: ../src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
@@ -111,7 +111,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: GenerateGraphWithOddLengthChords
     path: ../src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
@@ -164,7 +164,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: GenerateGraphWithGapInChordLengths
     path: ../src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
@@ -223,7 +223,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: GenerateGraphFromExactChordsSet
     path: ../src/ThomasonAlgorithm.Core/GraphGenerators/RandomCubicGraphGenerator.cs

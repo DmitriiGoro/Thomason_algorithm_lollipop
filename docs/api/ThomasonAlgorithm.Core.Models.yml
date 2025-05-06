@@ -5,6 +5,7 @@ items:
   id: ThomasonAlgorithm.Core.Models
   children:
   - ThomasonAlgorithm.Core.Models.Gap
+  - ThomasonAlgorithm.Core.Models.LollipopStep
   langs:
   - csharp
   - vb
@@ -22,6 +23,12 @@ references:
   name: Gap
   nameWithType: Gap
   fullName: ThomasonAlgorithm.Core.Models.Gap
+- uid: ThomasonAlgorithm.Core.Models.LollipopStep
+  commentId: T:ThomasonAlgorithm.Core.Models.LollipopStep
+  href: ThomasonAlgorithm.Core.Models.LollipopStep.html
+  name: LollipopStep
+  nameWithType: LollipopStep
+  fullName: ThomasonAlgorithm.Core.Models.LollipopStep
 - uid: ThomasonAlgorithm.Core.Models
   commentId: N:ThomasonAlgorithm.Core.Models
   href: ThomasonAlgorithm.html

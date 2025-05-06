@@ -7,7 +7,6 @@ items:
   children:
   - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)
   - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})
-  - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
   - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph
   - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle
   langs:
@@ -20,7 +19,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: CubicGraphWithCycle
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
@@ -64,23 +63,56 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: .ctor
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-    startLine: 12
+    startLine: 47
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Initializes a new instance of <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle" data-throw-if-not-resolved="false"></xref> with a specified Hamiltonian cycle.
+  remarks: >-
+    <p>
+
+    Use this constructor when you have a precomputed Hamiltonian cycle for the graph.
+
+    The cycle will be used as-is without validation.
+
+    </p>
+
+    <p>
+
+    The cycle must:
+
+    </p>
+
+    <ul><li>Contain all vertices of the graph exactly once</li><li>Form a single connected loop</li><li>Maintain cubic graph properties</li></ul>
+  example:
+  - >-
+    <pre><code class="lang-csharp">var graph = new CubicGraph(adjacencyMatrix);
+
+    var precomputedCycle = new Dictionary&lt;int, List&lt;int&gt;&gt;() { ... };
+
+    var graphWithCycle = new CubicGraphWithCycle(graph, precomputedCycle);</code></pre>
   syntax:
     content: public CubicGraphWithCycle(CubicGraph graph, Dictionary<int, List<int>> cycle)
     parameters:
     - id: graph
       type: ThomasonAlgorithm.Core.Graphs.CubicGraph
+      description: The cubic graph to associate with the cycle.
     - id: cycle
       type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+      description: >-
+        A dictionary representing the Hamiltonian cycle where:
+
+        <ul><li>Keys are vertex indices</li><li>Values are lists of exactly 2 connected vertices</li></ul>
     content.vb: Public Sub New(graph As CubicGraph, cycle As Dictionary(Of Integer, List(Of Integer)))
   overload: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when either <code class="paramref">graph</code> or <code class="paramref">cycle</code> is null.
   nameWithType.vb: CubicGraphWithCycle.New(CubicGraph, Dictionary(Of Integer, List(Of Integer)))
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.New(ThomasonAlgorithm.Core.Graphs.CubicGraph, System.Collections.Generic.Dictionary(Of Integer, System.Collections.Generic.List(Of Integer)))
   name.vb: New(CubicGraph, Dictionary(Of Integer, List(Of Integer)))
@@ -98,21 +130,52 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: .ctor
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-    startLine: 18
+    startLine: 77
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Initializes a new instance of <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle" data-throw-if-not-resolved="false"></xref> with a generated Hamiltonian cycle.
+  remarks: >-
+    <p>
+
+    Automatically generates a trivial Hamiltonian cycle using <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)" data-throw-if-not-resolved="false"></xref>.
+
+    The generated cycle connects vertices in sequential order (0→1→2...→n-1→0).
+
+    </p>
+
+    <p>
+
+    For non-trivial cycles, use the constructor that accepts a precomputed cycle.
+
+    </p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">var graph = new CubicGraph(adjacencyMatrix);
+
+    var graphWithCycle = new CubicGraphWithCycle(graph); // Generates default cycle</code></pre>
   syntax:
     content: public CubicGraphWithCycle(CubicGraph graph)
     parameters:
     - id: graph
       type: ThomasonAlgorithm.Core.Graphs.CubicGraph
+      description: The cubic graph for which to generate a Hamiltonian cycle.
     content.vb: Public Sub New(graph As CubicGraph)
   overload: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">graph</code> is null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown when the graph is not cubic (any vertex doesn't have degree 3).
+  seealso:
+  - linkId: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+    commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
   nameWithType.vb: CubicGraphWithCycle.New(CubicGraph)
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.New(ThomasonAlgorithm.Core.Graphs.CubicGraph)
   name.vb: New(CubicGraph)
@@ -130,19 +193,26 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: Graph
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-    startLine: 24
+    startLine: 97
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Gets the underlying cubic graph associated with this instance.
+  remarks: >-
+    The graph maintains these properties:
+
+    <ul><li>3-regular (each vertex has degree 3)</li><li>Undirected (edges are bidirectional)</li><li>No self-loops</li></ul>
+  example: []
   syntax:
     content: public CubicGraph Graph { get; }
     parameters: []
     return:
       type: ThomasonAlgorithm.Core.Graphs.CubicGraph
+      description: A <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraph" data-throw-if-not-resolved="false"></xref> object representing the graph structure.
     content.vb: Public ReadOnly Property Graph As CubicGraph
   overload: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph*
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle
@@ -159,52 +229,31 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: HamiltonianCycle
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-    startLine: 26
+    startLine: 116
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
+  summary: Gets the Hamiltonian cycle associated with the graph.
+  remarks: >-
+    The cycle is represented as an adjacency dictionary where:
+
+    <ul><li>Keys are vertex indices (0-based)</li><li>Values are lists containing exactly 2 connected vertices</li></ul>
+
+    This ensures the cycle forms a single loop through all vertices.
+  example:
+  - 'For a 4-vertex cycle: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }'
   syntax:
     content: public Dictionary<int, List<int>> HamiltonianCycle { get; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
+      description: A dictionary mapping each vertex to its two adjacent vertices in the cycle.
     content.vb: Public ReadOnly Property HamiltonianCycle As Dictionary(Of Integer, List(Of Integer))
   overload: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle*
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  id: CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
-  langs:
-  - csharp
-  - vb
-  name: CreateCubicGraphHamiltonianCycle(CubicGraph)
-  nameWithType: CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(CubicGraph)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: CreateCubicGraphHamiltonianCycle
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs
-    startLine: 28
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  syntax:
-    content: public static Dictionary<int, List<int>> CreateCubicGraphHamiltonianCycle(CubicGraph graph)
-    parameters:
-    - id: graph
-      type: ThomasonAlgorithm.Core.Graphs.CubicGraph
-    return:
-      type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
-    content.vb: Public Shared Function CreateCubicGraphHamiltonianCycle(graph As CubicGraph) As Dictionary(Of Integer, List(Of Integer))
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle*
 references:
 - uid: ThomasonAlgorithm.Core.Graphs
   commentId: N:ThomasonAlgorithm.Core.Graphs
@@ -473,6 +522,20 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  commentId: T:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+  parent: ThomasonAlgorithm.Core.Graphs
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html
+  name: CubicGraphWithCycle
+  nameWithType: CubicGraphWithCycle
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor*
   commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor
   href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___
@@ -621,6 +684,35 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html
+  name: CreateCubicGraphHamiltonianCycle(CubicGraph)
+  nameWithType: CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(CubicGraph)
+  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+    name: CreateCubicGraphHamiltonianCycle
+  - name: (
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+    name: CubicGraph
+    href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)
+    name: CreateCubicGraphHamiltonianCycle
+  - name: (
+  - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph
+    name: CubicGraph
+    href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html
+  - name: )
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception
+  name: ArgumentOutOfRangeException
+  nameWithType: ArgumentOutOfRangeException
+  fullName: System.ArgumentOutOfRangeException
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph*
   commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph
   href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph
@@ -633,9 +725,3 @@ references:
   name: HamiltonianCycle
   nameWithType: CubicGraphWithCycle.HamiltonianCycle
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_ThomasonAlgorithm_Core_Graphs_CubicGraph_
-  name: CreateCubicGraphHamiltonianCycle
-  nameWithType: CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle

@@ -132,21 +132,171 @@ The first edge removed during the algorithm's execution is (0, n-1).
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_Int32_0__0___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32%5B0%3A%2C0%3A%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L35">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L183">View Source</a>
   </span>
-  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle)</h4>
-  <div class="markdown level1 summary"><p>Applies the Thomason's lollipop algorithm to reconstruct a second Hamiltonian cycle
-from the one provided in the <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a> instance,
-and returns the number of steps taken by the algorithm.</p>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_Int32_0__0___" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.Int32[0:,0:])">CreateLollipopVisualization(int[,])</h4>
+  <div class="markdown level1 summary"><p>Generates interactive visualization of the lollipop algorithm from an adjacency matrix.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle cubicGraph)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void CreateLollipopVisualization(int[,] adjacencyMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</td>
+        <td><span class="parametername">adjacencyMatrix</span></td>
+        <td><p>The adjacency matrix representing a cubic graph. Requirements:</p>
+<ul><li>3-regular graph matrix (each vertex has degree 3)</li><li>Square matrix with consistent connectivity</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_Int32_0__0____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Creates a complete visualization package in the calling project's root directory under <code>VisualizeSteps/</code> containing:
+</p>
+<ul><li><code>index.html</code> - Interactive visualization viewer</li><li><code>steps.json</code> - Complete algorithm execution trace</li></ul>
+<p>
+The visualization demonstrates:
+</p>
+<ul><li>Hamiltonian cycle reconstruction process</li><li>Graph transformations during lollipop operations</li><li>Edge substitutions and cycle extensions</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_Int32_0__0____examples">Examples</h5>
+  <pre><code class="lang-csharp">int[,] matrix = new int[,] { {0,1,1,1}, {1,0,1,1}, {1,1,0,1}, {1,1,1,0} };
+LollipopVisualizer.CreateLollipopVisualization(matrix);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when adjacencyMatrix is null</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when matrix doesn't represent a valid cubic graph</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_String_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L253">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_String_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(System.String)">CreateLollipopVisualization(string)</h4>
+  <div class="markdown level1 summary"><p>Generates interactive visualization of the lollipop algorithm from a compressed neighbor list string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CreateLollipopVisualization(string stringOfNeighbors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">stringOfNeighbors</span></td>
+        <td><p>Compressed string representation of graph connectivity with:</p>
+<ul><li>Underscore-delimited vertex entries</li><li>Exactly 3 comma-separated neighbors per vertex</li><li>Zero-based vertex numbering</li><li>Symmetric relationships (if A lists B, B must list A)</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Creates a complete visualization package in the calling project's root directory under <code>VisualizeSteps/</code> containing:
+</p>
+<ul><li><code>index.html</code> - Interactive visualization viewer</li><li><code>steps.json</code> - Complete algorithm execution trace</li></ul>
+<p>
+<strong>Input String Format:</strong>
+</p>
+<ul><li>Vertex neighbors are separated by underscores (<code>_</code>)</li><li>Each vertex entry contains exactly 3 comma-separated neighbor indices</li><li>Vertex numbering starts at 0</li><li>Example: <code>0,1,2_1,0,3_2,0,3_3,1,2</code> for a 4-vertex cubic graph</li></ul>
+<p>
+The visualization demonstrates:
+</p>
+<ul><li>Hamiltonian cycle reconstruction process</li><li>Graph transformations during lollipop operations</li><li>Edge substitutions and cycle extensions</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_System_String__examples">Examples</h5>
+  <p>For a cube graph:</p>
+<pre><code class="lang-csharp">string cubeNeighbors = "0,1,4_1,0,2,5_2,1,3,6_3,2,7_4,0,5,7_5,1,4,6_6,2,5,7_7,3,4,6";
+LollipopVisualizer.CreateLollipopVisualization(cubeNeighbors);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when input string is null</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></td>
+        <td><p>Thrown when:</p>
+<ul><li>String doesn't match expected pattern</li><li>Vertex has incorrect number of neighbors</li><li>Contains non-numeric values</li></ul>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown when:</p>
+<ul><li>Neighbor list doesn't form a valid cubic graph</li><li>Graph is not 3-regular</li><li>Asymmetric relationships detected</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L142">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.CreateLollipopVisualization(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">CreateLollipopVisualization(CubicGraphWithCycle)</h4>
+  <div class="markdown level1 summary"><p>Generates interactive visualization files for the lollipop algorithm's execution on a cubic graph.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CreateLollipopVisualization(CubicGraphWithCycle cubicGraphWithCycle)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -160,7 +310,82 @@ and returns the number of steps taken by the algorithm.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a></td>
-        <td><span class="parametername">cubicGraph</span></td>
+        <td><span class="parametername">cubicGraphWithCycle</span></td>
+        <td><p>The input cubic graph with Hamiltonian cycle to visualize.
+Requires:</p>
+<ul><li>Valid <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle">HamiltonianCycle</a> containing at least 3 vertices</li><li>Consistent <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html#ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph">Graph</a> adjacency matrix matching the cycle</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+This method creates a complete visualization package consisting of:
+</p>
+<ul><li>A <code>VisualizeSteps</code> directory created at the root of the calling project</li><li><code>index.html</code> - Self-contained visualization viewer with interactive controls</li><li><code>steps.json</code> - Complete algorithm execution trace with graph state at each step</li></ul>
+<p>
+The visualization allows examining:
+</p>
+<ul><li>The complete Hamiltonian cycle reconstruction process</li><li>Intermediate graph states during cycle extension</li><li>Edge transformations during the lollipop operation</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_CreateLollipopVisualization_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__examples">Examples</h5>
+  <p>Basic usage:</p>
+<pre><code class="lang-csharp">var graph = CubicGraphWithCycle.FromAdjacencyMatrix(matrix, cycle);
+LollipopVisualizer.CreateLollipopVisualization(graph);
+// Opens visualization at: [ProjectRoot]/VisualizeSteps/index.html</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code class="paramref">cubicGraphWithCycle</code> or its essential components are null</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Thrown when the graph and cycle fail validation checks</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L40">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndReturnSteps_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndReturnSteps(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle)</h4>
+  <div class="markdown level1 summary"><p>Applies the Thomason's lollipop algorithm to reconstruct a second Hamiltonian cycle
+from the one provided in the <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a> instance,
+and returns the number of steps taken by the algorithm.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FindSecondHamiltonianCycleAndReturnSteps(CubicGraphWithCycle cubicGraphWithCycle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a></td>
+        <td><span class="parametername">cubicGraphWithCycle</span></td>
         <td><p>An object that encapsulates a cubic graph and one of its Hamiltonian cycles.</p>
 </td>
       </tr>
@@ -188,10 +413,122 @@ Make sure to pass a deep copy if the original cycle should be preserved.</p>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary%7BSystem.Int32%2CSystem.Collections.Generic.List%7BSystem.Int32%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_Int32_0__0___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32%5B0%3A%2C0%3A%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L234">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L67">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_Int32_0__0___" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.Int32[0:,0:])">FindSecondHamiltonianCycleAndVisualize(int[,])</h4>
+  <div class="markdown level1 summary"><p>Constructs a cubic graph from the given adjacency matrix, computes an initial Hamiltonian cycle,
+and finds the second Hamiltonian cycle using Thomason’s algorithm, producing visualization steps.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FindSecondHamiltonianCycleAndVisualize(int[,] adjacencyMatrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[,]</td>
+        <td><span class="parametername">adjacencyMatrix</span></td>
+        <td><p>A square 2D array representing the adjacency matrix of a cubic graph (each row contains exactly 3 ones).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_String_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L90">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_String_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(System.String)">FindSecondHamiltonianCycleAndVisualize(string)</h4>
+  <div class="markdown level1 summary"><p>Parses a cubic graph from a compact string representation of neighbor lists,
+constructs an initial Hamiltonian cycle, and applies Thomason’s algorithm
+to find a second Hamiltonian cycle while collecting visualization steps.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FindSecondHamiltonianCycleAndVisualize(string stringOfNeighbors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">stringOfNeighbors</span></td>
+        <td><p>A string where each vertex’s neighbors are given as comma-separated integers,
+and each vertex entry is separated by an underscore '<em>'.<br>
+For example: <code>&quot;1,2,3_0,2,4_0,1,5</code></em>...&quot; represents a graph where vertex 0 is connected to 1, 2, 3,
+vertex 1 is connected to 0, 2, 4, and so on.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Internally uses <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">GetMatrixFromNeighborsString(string)</a> to convert the string into an adjacency matrix.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L54">View Source</a>
+  </span>
+  <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize*"></a>
+  <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_FindSecondHamiltonianCycleAndVisualize_ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.FindSecondHamiltonianCycleAndVisualize(ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle)">FindSecondHamiltonianCycleAndVisualize(CubicGraphWithCycle)</h4>
+  <div class="markdown level1 summary"><p>Finds the second Hamiltonian cycle in a cubic graph that already includes an initial Hamiltonian cycle,
+and collects visualization steps for the transformation using Thomason’s algorithm.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FindSecondHamiltonianCycleAndVisualize(CubicGraphWithCycle cubicGraphWithCycle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a></td>
+        <td><span class="parametername">cubicGraphWithCycle</span></td>
+        <td><p>A <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a> instance containing both the cubic graph and its initial Hamiltonian cycle.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary%7BSystem.Int32%2CSystem.Collections.Generic.List%7BSystem.Int32%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L526">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices*"></a>
   <h4 id="ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm_GetHamiltonianCycleSequencedVertices_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___" data-uid="ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm.GetHamiltonianCycleSequencedVertices(System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})">GetHamiltonianCycleSequencedVertices(Dictionary&lt;int, List&lt;int&gt;&gt;)</h4>
@@ -248,10 +585,10 @@ in the order they appear in the cycle starting from 0.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Algorithm_LollipopAlgorithm.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Algorithm.LollipopAlgorithm%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L18" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Algorithm/LollipopAlgorithm.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

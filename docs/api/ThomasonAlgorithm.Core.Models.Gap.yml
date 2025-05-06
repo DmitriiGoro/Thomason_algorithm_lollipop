@@ -18,7 +18,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Models/Gap.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: Gap
     path: ../src/ThomasonAlgorithm.Core/Models/Gap.cs
@@ -59,7 +59,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Models/Gap.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: .ctor
     path: ../src/ThomasonAlgorithm.Core/Models/Gap.cs
@@ -100,7 +100,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Models/Gap.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: LeftBound
     path: ../src/ThomasonAlgorithm.Core/Models/Gap.cs
@@ -131,7 +131,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Models/Gap.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: RightBound
     path: ../src/ThomasonAlgorithm.Core/Models/Gap.cs

@@ -6,7 +6,7 @@ items:
   children:
   - ThomasonAlgorithm.Core.Graphs.CubicGraph
   - ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
-  - ThomasonAlgorithm.Core.Graphs.IGraph
+  - ThomasonAlgorithm.Core.Graphs.Graph
   langs:
   - csharp
   - vb
@@ -31,13 +31,13 @@ references:
   name: CubicGraphWithCycle
   nameWithType: CubicGraphWithCycle
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph
-  commentId: T:ThomasonAlgorithm.Core.Graphs.IGraph
+- uid: ThomasonAlgorithm.Core.Graphs.Graph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.Graph
   parent: ThomasonAlgorithm.Core.Graphs
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html
-  name: IGraph
-  nameWithType: IGraph
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html
+  name: Graph
+  nameWithType: Graph
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph
 - uid: ThomasonAlgorithm.Core.Graphs
   commentId: N:ThomasonAlgorithm.Core.Graphs
   href: ThomasonAlgorithm.html

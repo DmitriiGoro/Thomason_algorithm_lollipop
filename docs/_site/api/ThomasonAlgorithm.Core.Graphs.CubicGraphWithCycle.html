@@ -128,14 +128,15 @@ providing better consistency and clarity when passing this data between methods 
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.%23ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.%23ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L19">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L78">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph)">CubicGraphWithCycle(CubicGraph)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a> with a generated Hamiltonian cycle.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -154,20 +155,60 @@ providing better consistency and clarity when passing this data between methods 
       <tr>
         <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
         <td><span class="parametername">graph</span></td>
-        <td></td>
+        <td><p>The cubic graph for which to generate a Hamiltonian cycle.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Automatically generates a trivial Hamiltonian cycle using <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CreateCubicGraphHamiltonianCycle(CubicGraph)</a>.
+The generated cycle connects vertices in sequential order (0→1→2...→n-1→0).
+</p>
+<p>
+For non-trivial cycles, use the constructor that accepts a precomputed cycle.
+</p>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph__examples">Examples</h5>
+  <pre><code class="lang-csharp">var graph = new CubicGraph(adjacencyMatrix);
+var graphWithCycle = new CubicGraphWithCycle(graph); // Generates default cycle</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when <code class="paramref">graph</code> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown when the graph is not cubic (any vertex doesn't have degree 3).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CreateCubicGraphHamiltonianCycle</a>(<a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a>)</div>
+  </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.%23ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2CSystem.Collections.Generic.List%7BSystem.Int32%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.%23ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2CSystem.Collections.Generic.List%7BSystem.Int32%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L13">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L48">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32___" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.#ctor(ThomasonAlgorithm.Core.Graphs.CubicGraph,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}})">CubicGraphWithCycle(CubicGraph, Dictionary&lt;int, List&lt;int&gt;&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.html">CubicGraphWithCycle</a> with a specified Hamiltonian cycle.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -186,12 +227,46 @@ providing better consistency and clarity when passing this data between methods 
       <tr>
         <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
         <td><span class="parametername">graph</span></td>
-        <td></td>
+        <td><p>The cubic graph to associate with the cycle.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;&gt;</td>
         <td><span class="parametername">cycle</span></td>
-        <td></td>
+        <td><p>A dictionary representing the Hamiltonian cycle where:</p>
+<ul><li>Keys are vertex indices</li><li>Values are lists of exactly 2 connected vertices</li></ul>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32____remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>
+Use this constructor when you have a precomputed Hamiltonian cycle for the graph.
+The cycle will be used as-is without validation.
+</p>
+<p>
+The cycle must:
+</p>
+<ul><li>Contain all vertices of the graph exactly once</li><li>Form a single connected loop</li><li>Maintain cubic graph properties</li></ul>
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle__ctor_ThomasonAlgorithm_Core_Graphs_CubicGraph_System_Collections_Generic_Dictionary_System_Int32_System_Collections_Generic_List_System_Int32____examples">Examples</h5>
+  <pre><code class="lang-csharp">var graph = new CubicGraph(adjacencyMatrix);
+var precomputedCycle = new Dictionary&lt;int, List&lt;int&gt;&gt;() { ... };
+var graphWithCycle = new CubicGraphWithCycle(graph, precomputedCycle);</code></pre>
+
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>Thrown when either <code class="paramref">graph</code> or <code class="paramref">cycle</code> is null.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -199,14 +274,15 @@ providing better consistency and clarity when passing this data between methods 
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L25">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L98">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.Graph">Graph</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the underlying cubic graph associated with this instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -223,20 +299,26 @@ providing better consistency and clarity when passing this data between methods 
     <tbody>
       <tr>
         <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
-        <td></td>
+        <td><p>A <a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a> object representing the graph structure.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_Graph_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The graph maintains these properties:</p>
+<ul><li>3-regular (each vertex has degree 3)</li><li>Undirected (edges are bidirectional)</li><li>No self-loops</li></ul>
+</div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L27">View Source</a>
+    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L117">View Source</a>
   </span>
   <a id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle*"></a>
   <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.HamiltonianCycle">HamiltonianCycle</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the Hamiltonian cycle associated with the graph.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -253,59 +335,19 @@ providing better consistency and clarity when passing this data between methods 
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;&gt;</td>
-        <td></td>
+        <td><p>A dictionary mapping each vertex to its two adjacent vertices in the cycle.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_ThomasonAlgorithm_Core_Graphs_CubicGraph_.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L29">View Source</a>
-  </span>
-  <a id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle*"></a>
-  <h4 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_CreateCubicGraphHamiltonianCycle_ThomasonAlgorithm_Core_Graphs_CubicGraph_" data-uid="ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle.CreateCubicGraphHamiltonianCycle(ThomasonAlgorithm.Core.Graphs.CubicGraph)">CreateCubicGraphHamiltonianCycle(CubicGraph)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Dictionary&lt;int, List&lt;int&gt;&gt; CreateCubicGraphHamiltonianCycle(CubicGraph graph)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="ThomasonAlgorithm.Core.Graphs.CubicGraph.html">CubicGraph</a></td>
-        <td><span class="parametername">graph</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The cycle is represented as an adjacency dictionary where:</p>
+<ul><li>Keys are vertex indices (0-based)</li><li>Values are lists containing exactly 2 connected vertices</li></ul>
+This ensures the cycle forms a single loop through all vertices.
+</div>
+  <h5 id="ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle_HamiltonianCycle_examples">Examples</h5>
+  <p>For a 4-vertex cycle: { 0:[3,1], 1:[0,2], 2:[1,3], 3:[2,0] }</p>
+
 
 </article>
           </div>
@@ -315,10 +357,10 @@ providing better consistency and clarity when passing this data between methods 
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/first-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/new/second-release/apiSpec/new?filename=ThomasonAlgorithm_Core_Graphs_CubicGraphWithCycle.md&amp;value=---%0Auid%3A%20ThomasonAlgorithm.Core.Graphs.CubicGraphWithCycle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/first-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L11" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DmitriiGoro/Thomason_algorithm_lollipop/blob/second-release/src/ThomasonAlgorithm.Core/Graphs/CubicGraphWithCycle.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

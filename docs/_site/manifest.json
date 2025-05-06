@@ -50,7 +50,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "ThomasonAlgorithm.Core.Extensions.ListExtensions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/ThomasonAlgorithm.Core.Extensions.ListExtensions.yml\" sourcestartlinenumber=\"1\">Provides extension methods for <xref href=\"System.Collections.Generic.List%601\" data-throw-if-not-resolved=\"false\"></xref> collections.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -124,6 +124,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ThomasonAlgorithm.Core.Graphs.Graph.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ThomasonAlgorithm.Core.Graphs.Graph.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ThomasonAlgorithm.Core.Graphs.Graph",
+      "Summary": "<p sourcefile=\"api/ThomasonAlgorithm.Core.Graphs.Graph.yml\" sourcestartlinenumber=\"1\">Represents an unweighted, undirected graph data structure using an adjacency matrix.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ThomasonAlgorithm.Core.Graphs.IGraph.yml",
       "output": {
         ".html": {
@@ -166,6 +180,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/ThomasonAlgorithm.Core.Models.LollipopStep.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ThomasonAlgorithm.Core.Models.LollipopStep.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "ThomasonAlgorithm.Core.Models.LollipopStep",
+      "Summary": "<p sourcefile=\"api/ThomasonAlgorithm.Core.Models.LollipopStep.yml\" sourcestartlinenumber=\"1\">Represents a single step in the reconstruction of a Hamiltonian cycle during the execution of the Thomason (lollipop) algorithm.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/ThomasonAlgorithm.Core.Models.yml",
       "output": {
         ".html": {
@@ -193,10 +221,50 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/experiment-demo.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/experiment-demo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/getting-started.md",
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/lollipop-visualization-demo.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/lollipop-visualization-demo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/root_directory_visualization.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/root_directory_visualization.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ui_steps_visualization.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ui_steps_visualization.png"
         }
       },
       "version": ""

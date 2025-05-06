@@ -5,20 +5,11 @@ items:
   id: CubicGraph
   parent: ThomasonAlgorithm.Core.Graphs
   children:
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)
   - ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)
   - ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(System.Int32,System.Int32)
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
   - ThomasonAlgorithm.Core.Graphs.CubicGraph.ChordsLengths
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)
   - ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
   - ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)
-  - ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
   langs:
   - csharp
   - vb
@@ -29,7 +20,7 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: CubicGraph
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
@@ -43,13 +34,20 @@ items:
     This class manages the graph structure, chord lengths, and Hamiltonian cycle.
   example: []
   syntax:
-    content: 'public class CubicGraph : IGraph'
-    content.vb: Public Class CubicGraph Implements IGraph
+    content: 'public class CubicGraph : Graph'
+    content.vb: Public Class CubicGraph Inherits Graph
   inheritance:
   - System.Object
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph
+  - ThomasonAlgorithm.Core.Graphs.Graph
   inheritedMembers:
+  - ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  - ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  - ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  - ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.GetHashCode
@@ -57,66 +55,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  id: AdjacencyMatrix
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: AdjacencyMatrix
-  nameWithType: CubicGraph.AdjacencyMatrix
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AdjacencyMatrix
-  type: Field
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: AdjacencyMatrix
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 8
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  syntax:
-    content: public readonly int[,] AdjacencyMatrix
-    return:
-      type: System.Int32[,]
-    content.vb: Public ReadOnly AdjacencyMatrix As Integer(,)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  commentId: P:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  id: VertexCount
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: VertexCount
-  nameWithType: CubicGraph.VertexCount
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  type: Property
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: VertexCount
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 13
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Gets the total number of vertices in the graph.
-  example: []
-  syntax:
-    content: public int VertexCount { get; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property VertexCount As Integer
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount*
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
   commentId: F:ThomasonAlgorithm.Core.Graphs.CubicGraph.MaxChordLength
   id: MaxChordLength
@@ -131,11 +69,11 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: MaxChordLength
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 18
+    startLine: 47
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
@@ -160,11 +98,11 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: ChordsLengths
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 23
+    startLine: 52
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
@@ -189,68 +127,23 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: HamiltonianCycle
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 28
+    startLine: 57
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
   summary: Stores the Hamiltonian cycle of the graph, represented as a dictionary of vertices and their neighbors in the cycle.
   example: []
   syntax:
-    content: public Dictionary<int, List<int>> HamiltonianCycle { get; set; }
+    content: public Dictionary<int, List<int>>? HamiltonianCycle { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{System.Int32}}
     content.vb: Public Property HamiltonianCycle As Dictionary(Of Integer, List(Of Integer))
   overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.HamiltonianCycle*
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32)
-  id: '#ctor(System.Int32)'
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: CubicGraph(int)
-  nameWithType: CubicGraph.CubicGraph(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.CubicGraph(int)
-  type: Constructor
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: .ctor
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 42
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Initializes a new instance of the <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraph" data-throw-if-not-resolved="false"></xref> class with an empty adjacency matrix of the specified size.
-  remarks: >-
-    This constructor creates a graph with a zero-initialized adjacency matrix, allowing for manual or programmatic 
-
-    construction of edges. It does not enforce the cubic property upon creation. 
-
-    The resulting graph must be later modified to ensure that each vertex has degree 3 (i.e., the graph becomes cubic).
-  example: []
-  syntax:
-    content: public CubicGraph(int size)
-    parameters:
-    - id: size
-      type: System.Int32
-      description: The number of vertices in the graph (the size of the square adjacency matrix).
-    content.vb: Public Sub New(size As Integer)
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*
-  exceptions:
-  - type: System.ArgumentOutOfRangeException
-    commentId: T:System.ArgumentOutOfRangeException
-    description: Thrown when <code class="paramref">size</code> is less than 4.
-  nameWithType.vb: CubicGraph.New(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New(Integer)
-  name.vb: New(Integer)
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
   commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor(System.Int32[0:,0:])
   id: '#ctor(System.Int32[0:,0:])'
@@ -265,16 +158,21 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: .ctor
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 61
+    startLine: 72
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
   summary: Initializes a new instance of the <xref href="ThomasonAlgorithm.Core.Graphs.CubicGraph" data-throw-if-not-resolved="false"></xref> class using the provided adjacency matrix.
-  remarks: This constructor ensures that the input graph is cubic at the time of initialization.
+  remarks: >-
+    This constructor ensures that the input graph is cubic at the time of initialization. 
+
+    It also computes the chord lengths for all applicable node pairs and sets the maximum chord length
+
+    found in the graph.
   example: []
   syntax:
     content: public CubicGraph(int[,] adjacencyMatrix)
@@ -308,11 +206,11 @@ items:
   source:
     remote:
       path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
+      branch: second-release
       repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
     id: AddEdge
     path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 75
+    startLine: 87
   assemblies:
   - ThomasonAlgorithm.Core
   namespace: ThomasonAlgorithm.Core.Graphs
@@ -333,249 +231,9 @@ items:
   - type: System.InvalidOperationException
     commentId: T:System.InvalidOperationException
     description: Thrown if an edge already exists or the degree of a vertex exceeds 3.
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
   nameWithType.vb: CubicGraph.AddEdge(Integer, Integer)
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge(Integer, Integer)
   name.vb: AddEdge(Integer, Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(System.Int32,System.Int32)
-  id: RemoveEdge(System.Int32,System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: RemoveEdge(int, int)
-  nameWithType: CubicGraph.RemoveEdge(int, int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(int, int)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: RemoveEdge
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 95
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Removes an edge between two vertices.
-  example: []
-  syntax:
-    content: public void RemoveEdge(int from, int to)
-    parameters:
-    - id: from
-      type: System.Int32
-      description: The starting vertex of the edge.
-    - id: to
-      type: System.Int32
-      description: The ending vertex of the edge.
-    content.vb: Public Sub RemoveEdge(from As Integer, [to] As Integer)
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge*
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
-  nameWithType.vb: CubicGraph.RemoveEdge(Integer, Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge(Integer, Integer)
-  name.vb: RemoveEdge(Integer, Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(System.Int32)
-  id: GetVertexDegree(System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: GetVertexDegree(int)
-  nameWithType: CubicGraph.GetVertexDegree(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(int)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: GetVertexDegree
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 109
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Gets the degree of a vertex (the number of edges connected to it).
-  example: []
-  syntax:
-    content: public int GetVertexDegree(int vertex)
-    parameters:
-    - id: vertex
-      type: System.Int32
-      description: The vertex whose degree is to be calculated.
-    return:
-      type: System.Int32
-      description: The degree of the specified vertex.
-    content.vb: Public Function GetVertexDegree(vertex As Integer) As Integer
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree*
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
-  nameWithType.vb: CubicGraph.GetVertexDegree(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree(Integer)
-  name.vb: GetVertexDegree(Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(System.Int32)
-  id: GetNeighbors(System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: GetNeighbors(int)
-  nameWithType: CubicGraph.GetNeighbors(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(int)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: GetNeighbors
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 123
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Gets the list of neighbors (vertices connected by edges) for a specified vertex.
-  example: []
-  syntax:
-    content: public List<int> GetNeighbors(int vertex)
-    parameters:
-    - id: vertex
-      type: System.Int32
-      description: The vertex for which neighbors are to be retrieved.
-    return:
-      type: System.Collections.Generic.List{System.Int32}
-      description: A list of neighboring vertices.
-    content.vb: Public Function GetNeighbors(vertex As Integer) As List(Of Integer)
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors*
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
-  nameWithType.vb: CubicGraph.GetNeighbors(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors(Integer)
-  name.vb: GetNeighbors(Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(System.Int32,System.Int32)
-  id: HasEdge(System.Int32,System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: HasEdge(int, int)
-  nameWithType: CubicGraph.HasEdge(int, int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(int, int)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: HasEdge
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 141
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Checks whether an edge exists between two vertices.
-  example: []
-  syntax:
-    content: public bool HasEdge(int from, int to)
-    parameters:
-    - id: from
-      type: System.Int32
-      description: The starting vertex of the edge.
-    - id: to
-      type: System.Int32
-      description: The ending vertex of the edge.
-    return:
-      type: System.Boolean
-      description: True if an edge exists between the two vertices; otherwise, false.
-    content.vb: Public Function HasEdge(from As Integer, [to] As Integer) As Boolean
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge*
-  implements:
-  - ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
-  nameWithType.vb: CubicGraph.HasEdge(Integer, Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge(Integer, Integer)
-  name.vb: HasEdge(Integer, Integer)
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  id: IsCubic
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: IsCubic()
-  nameWithType: CubicGraph.IsCubic()
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic()
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: IsCubic
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 152
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: Checks if the graph is cubic, meaning each vertex has exactly 3 neighbors.
-  example: []
-  syntax:
-    content: public bool IsCubic()
-    return:
-      type: System.Boolean
-      description: True if the graph is cubic; otherwise, false.
-    content.vb: Public Function IsCubic() As Boolean
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic*
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(System.Int32)
-  id: AddChordLength(System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.CubicGraph
-  langs:
-  - csharp
-  - vb
-  name: AddChordLength(int)
-  nameWithType: CubicGraph.AddChordLength(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(int)
-  type: Method
-  source:
-    remote:
-      path: src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-      branch: first-release
-      repo: https://github.com/DmitriiGoro/Thomason_algorithm_lollipop.git
-    id: AddChordLength
-    path: ../src/ThomasonAlgorithm.Core/Graphs/CubicGraph.cs
-    startLine: 185
-  assemblies:
-  - ThomasonAlgorithm.Core
-  namespace: ThomasonAlgorithm.Core.Graphs
-  summary: >-
-    Adds a chord length to the collection, increasing its count. 
-
-    If the chord length doesn't exist in the collection, it will be added with an initial count of 1.
-
-    Additionally, the method updates the maximum chord length if the new chord length exceeds the current maximum.
-  remarks: >-
-    This method maintains a collection of chord lengths, where each chord length is mapped to its frequency (how many times it has been added).
-
-    It also keeps track of the maximum chord length encountered during the process.
-  example: []
-  syntax:
-    content: public void AddChordLength(int chordLength)
-    parameters:
-    - id: chordLength
-      type: System.Int32
-      description: The length of the chord to be added.
-    content.vb: Public Sub AddChordLength(chordLength As Integer)
-  overload: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength*
-  nameWithType.vb: CubicGraph.AddChordLength(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength(Integer)
-  name.vb: AddChordLength(Integer)
 references:
 - uid: ThomasonAlgorithm.Core.Graphs
   commentId: N:ThomasonAlgorithm.Core.Graphs
@@ -618,13 +276,225 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph
-  commentId: T:ThomasonAlgorithm.Core.Graphs.IGraph
+- uid: ThomasonAlgorithm.Core.Graphs.Graph
+  commentId: T:ThomasonAlgorithm.Core.Graphs.Graph
   parent: ThomasonAlgorithm.Core.Graphs
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html
-  name: IGraph
-  nameWithType: IGraph
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html
+  name: Graph
+  nameWithType: Graph
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  commentId: F:ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_AdjacencyMatrix
+  name: AdjacencyMatrix
+  nameWithType: Graph.AdjacencyMatrix
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.AdjacencyMatrix
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  commentId: P:ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_VertexCount
+  name: VertexCount
+  nameWithType: Graph.VertexCount
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.VertexCount
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  name: HasEdge(int, int)
+  nameWithType: Graph.HasEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(int, int)
+  nameWithType.vb: Graph.HasEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(Integer, Integer)
+  name.vb: HasEdge(Integer, Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+    name: HasEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.HasEdge(System.Int32,System.Int32)
+    name: HasEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_HasEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  name: RemoveEdge(int, int)
+  nameWithType: Graph.RemoveEdge(int, int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(int, int)
+  nameWithType.vb: Graph.RemoveEdge(Integer, Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(Integer, Integer)
+  name.vb: RemoveEdge(Integer, Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+    name: RemoveEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.RemoveEdge(System.Int32,System.Int32)
+    name: RemoveEdge
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_RemoveEdge_System_Int32_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  name: GetVertexDegree(int)
+  nameWithType: Graph.GetVertexDegree(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(int)
+  nameWithType.vb: Graph.GetVertexDegree(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(Integer)
+  name.vb: GetVertexDegree(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+    name: GetVertexDegree
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetVertexDegree(System.Int32)
+    name: GetVertexDegree
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetVertexDegree_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  name: GetNeighbors(int)
+  nameWithType: Graph.GetNeighbors(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(int)
+  nameWithType.vb: Graph.GetNeighbors(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(Integer)
+  name.vb: GetNeighbors(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+    name: GetNeighbors
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.GetNeighbors(System.Int32)
+    name: GetNeighbors
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_GetNeighbors_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  isExternal: true
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  name: IsRegular(int)
+  nameWithType: Graph.IsRegular(int)
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(int)
+  nameWithType.vb: Graph.IsRegular(Integer)
+  fullName.vb: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(Integer)
+  name.vb: IsRegular(Integer)
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+    name: IsRegular
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsRegular(System.Int32)
+    name: IsRegular
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsRegular_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  commentId: M:ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+  parent: ThomasonAlgorithm.Core.Graphs.Graph
+  href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  name: IsCubic()
+  nameWithType: Graph.IsCubic()
+  fullName: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic()
+  spec.csharp:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+    name: IsCubic
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: ThomasonAlgorithm.Core.Graphs.Graph.IsCubic
+    name: IsCubic
+    href: ThomasonAlgorithm.Core.Graphs.Graph.html#ThomasonAlgorithm_Core_Graphs_Graph_IsCubic
+  - name: (
+  - name: )
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -851,44 +721,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Int32[,]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int[,]
-  nameWithType: int[,]
-  fullName: int[,]
-  nameWithType.vb: Integer(,)
-  fullName.vb: Integer(,)
-  name.vb: Integer(,)
-  spec.csharp:
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: '['
-  - name: ','
-  - name: ']'
-  spec.vb:
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: (
-  - name: ','
-  - name: )
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_VertexCount
-  name: VertexCount
-  nameWithType: CubicGraph.VertexCount
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.VertexCount
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
-  commentId: P:ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_VertexCount
-  name: VertexCount
-  nameWithType: IGraph.VertexCount
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.VertexCount
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1101,13 +933,38 @@ references:
   fullName: System.ArgumentOutOfRangeException
 - uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor*
   commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.#ctor
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_
+  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph__ctor_System_Int32_0
   name: CubicGraph
   nameWithType: CubicGraph.CubicGraph
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.CubicGraph
   nameWithType.vb: CubicGraph.New
   fullName.vb: ThomasonAlgorithm.Core.Graphs.CubicGraph.New
   name.vb: New
+- uid: System.Int32[,]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[,]
+  nameWithType: int[,]
+  fullName: int[,]
+  nameWithType.vb: Integer(,)
+  fullName.vb: Integer(,)
+  name.vb: Integer(,)
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ','
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: ','
+  - name: )
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
   isExternal: true
@@ -1121,304 +978,3 @@ references:
   name: AddEdge
   nameWithType: CubicGraph.AddEdge
   fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddEdge
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  isExternal: true
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_AddEdge_System_Int32_System_Int32_
-  name: AddEdge(int, int)
-  nameWithType: IGraph.AddEdge(int, int)
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(int, int)
-  nameWithType.vb: IGraph.AddEdge(Integer, Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(Integer, Integer)
-  name.vb: AddEdge(Integer, Integer)
-  spec.csharp:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
-    name: AddEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_AddEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.AddEdge(System.Int32,System.Int32)
-    name: AddEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_AddEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_RemoveEdge_System_Int32_System_Int32_
-  name: RemoveEdge
-  nameWithType: CubicGraph.RemoveEdge
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.RemoveEdge
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  isExternal: true
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_RemoveEdge_System_Int32_System_Int32_
-  name: RemoveEdge(int, int)
-  nameWithType: IGraph.RemoveEdge(int, int)
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(int, int)
-  nameWithType.vb: IGraph.RemoveEdge(Integer, Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(Integer, Integer)
-  name.vb: RemoveEdge(Integer, Integer)
-  spec.csharp:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
-    name: RemoveEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_RemoveEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.RemoveEdge(System.Int32,System.Int32)
-    name: RemoveEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_RemoveEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetVertexDegree_System_Int32_
-  name: GetVertexDegree
-  nameWithType: CubicGraph.GetVertexDegree
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetVertexDegree
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  isExternal: true
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetVertexDegree_System_Int32_
-  name: GetVertexDegree(int)
-  nameWithType: IGraph.GetVertexDegree(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(int)
-  nameWithType.vb: IGraph.GetVertexDegree(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(Integer)
-  name.vb: GetVertexDegree(Integer)
-  spec.csharp:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
-    name: GetVertexDegree
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetVertexDegree_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetVertexDegree(System.Int32)
-    name: GetVertexDegree
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetVertexDegree_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_GetNeighbors_System_Int32_
-  name: GetNeighbors
-  nameWithType: CubicGraph.GetNeighbors
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.GetNeighbors
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  isExternal: true
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetNeighbors_System_Int32_
-  name: GetNeighbors(int)
-  nameWithType: IGraph.GetNeighbors(int)
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(int)
-  nameWithType.vb: IGraph.GetNeighbors(Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(Integer)
-  name.vb: GetNeighbors(Integer)
-  spec.csharp:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
-    name: GetNeighbors
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetNeighbors_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.GetNeighbors(System.Int32)
-    name: GetNeighbors
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_GetNeighbors_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: System.Collections.Generic.List{System.Int32}
-  commentId: T:System.Collections.Generic.List{System.Int32}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.List`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<int>
-  nameWithType: List<int>
-  fullName: System.Collections.Generic.List<int>
-  nameWithType.vb: List(Of Integer)
-  fullName.vb: System.Collections.Generic.List(Of Integer)
-  name.vb: List(Of Integer)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: System.Collections.Generic.List`1
-  commentId: T:System.Collections.Generic.List`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<T>
-  nameWithType: List<T>
-  fullName: System.Collections.Generic.List<T>
-  nameWithType.vb: List(Of T)
-  fullName.vb: System.Collections.Generic.List(Of T)
-  name.vb: List(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - name: T
-  - name: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_HasEdge_System_Int32_System_Int32_
-  name: HasEdge
-  nameWithType: CubicGraph.HasEdge
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.HasEdge
-- uid: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
-  commentId: M:ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
-  parent: ThomasonAlgorithm.Core.Graphs.IGraph
-  isExternal: true
-  href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_HasEdge_System_Int32_System_Int32_
-  name: HasEdge(int, int)
-  nameWithType: IGraph.HasEdge(int, int)
-  fullName: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(int, int)
-  nameWithType.vb: IGraph.HasEdge(Integer, Integer)
-  fullName.vb: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(Integer, Integer)
-  name.vb: HasEdge(Integer, Integer)
-  spec.csharp:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
-    name: HasEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_HasEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: int
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-  spec.vb:
-  - uid: ThomasonAlgorithm.Core.Graphs.IGraph.HasEdge(System.Int32,System.Int32)
-    name: HasEdge
-    href: ThomasonAlgorithm.Core.Graphs.IGraph.html#ThomasonAlgorithm_Core_Graphs_IGraph_HasEdge_System_Int32_System_Int32_
-  - name: (
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: ','
-  - name: " "
-  - uid: System.Int32
-    name: Integer
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int32
-  - name: )
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_IsCubic
-  name: IsCubic
-  nameWithType: CubicGraph.IsCubic
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.IsCubic
-- uid: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength*
-  commentId: Overload:ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength
-  href: ThomasonAlgorithm.Core.Graphs.CubicGraph.html#ThomasonAlgorithm_Core_Graphs_CubicGraph_AddChordLength_System_Int32_
-  name: AddChordLength
-  nameWithType: CubicGraph.AddChordLength
-  fullName: ThomasonAlgorithm.Core.Graphs.CubicGraph.AddChordLength
