@@ -1,4 +1,7 @@
 {
+  "sitemap": {
+    "baseUrl": "https://your-github-username.github.io/Thomason_algorithm_lollipop/"
+  },
   "source_base_path": "/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/docs",
   "xrefmap": "xrefmap.yml",
   "files": [

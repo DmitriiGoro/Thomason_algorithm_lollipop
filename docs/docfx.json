@@ -3,30 +3,41 @@
     {
       "src": [
         {
-          "files": ["ThomasonAlgorithm.Core.csproj"],
-          "src": "/Users/dmitrii/Documents/МФТИ/НИР/Thomason_algorithm_lollipop/src/ThomasonAlgorithm.Core"
+          "files": ["**/*.csproj"],
+          "src": "../src/ThomasonAlgorithm.Core",
+          "exclude": ["**/bin/**", "**/obj/**"]
         }
       ],
       "dest": "api",
       "properties": {
-        "TargetFramework": "net8.0"
+        "TargetFramework": "net8.0",
+        "Version": "1.0.0"
       }
     }
   ],
   "build": {
     "resource": [
       {
-        "files": ["**/*.png", "**/*.svg"],
+        "files": ["**/*.png", "**/*.svg", "**/*.jpg"],
         "src": "images",
         "dest": "images"
+      },
+      {
+        "files": ["**/*.css", "**/*.js"],
+        "src": "styles",
+        "dest": "styles"
+      },
+      {
+        "files": ["fonts/**"],
+        "dest": "fonts"
       }
     ],
     "content": [
       {
-        "files": ["api/**.yml"]
+        "files": ["api/**.yml", "api/index.md"]
       },
       {
-        "files": ["index.md", "toc.yml", "articles/**.md"]
+        "files": ["index.md", "toc.yml", "articles/**.md", "articles/**/toc.yml"]
       }
     ],
     "dest": "_site",
@@ -34,8 +45,24 @@
       "_appTitle": "Thomason Algorithm Documentation",
       "_appFooter": "© 2025 MIPT",
       "_enableSearch": true,
-      "_basePath": "Thomason_algorithm_lollipop"
+      "_appLogoPath": "images/logo.png",
+      "_basePath": "/Thomason_algorithm_lollipop",
+      "_appFaviconPath": "images/favicon.ico"
     },
-    "template": ["default"]
+    "fileMetadata": {
+      "**/api/**.yml": {
+        "type": "API"
+      }
+    },
+    "template": [
+      "default",
+      "templates/default"
+    ],
+    "sitemap": {
+      "baseUrl": "https://your-github-username.github.io/Thomason_algorithm_lollipop/"
+    },
+    "api": {
+      "basePath": "/Thomason_algorithm_lollipop/api"
+    }
   }
 }
