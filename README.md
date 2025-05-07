@@ -22,3 +22,4 @@ Key features include:
 This library is well-suited for research and educational purposes related to Hamiltonian graph theory, and supports customization for testing different configurations and properties of chord sets in cubic graphs.
 
 ## Read more in [docs](https://dmitriigoro.github.io/Thomason_algorithm_lollipop/index.html)
+Using examples can be found in `ThomasonAlgorithm.Demo` in `demo` directory
